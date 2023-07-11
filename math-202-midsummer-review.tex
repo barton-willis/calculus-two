@@ -83,30 +83,57 @@ tangent line. To do that we need to first find a formula for \(\displaystyle
 \frac{\mathrm{d} y}{\mathrm{d} x} \) when $x=1$. The chain rule tell us that
 \begin{equation}
     \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{1}{2} \times 2 x (x^2+1)^{-1/2}
+      = x (x^2+1)^{-1/2}.
 \end{equation}
 And pasting in $x \to 1$, we have
 \begin{equation}
     \left . \frac{\mathrm{d} y}{\mathrm{d} x} \right |_{x=1}=  
-    \left . \frac{1}{2} \times 2 x (x^2+1)^{-1/2} \right |_{x=1} =
+    \left .  x (x^2+1)^{-1/2} \right |_{x=1} =
     \frac{1}{\sqrt{2}}.
 \end{equation}
 An equation of the given tangent line is
 \begin{equation}
   y - \sqrt{2} = \frac{1}{\sqrt{2}} (x-1)
 \end{equation}
-Traditionally, we would simplify \(\frac{1}{\sqrt{2}}\)
-to \(\frac{\sqrt{2}}{2}\). But in this context, I 
-don't see an advantage to doing this. So let us LIB 
-(let it be).
 
-As a check to our work, let's ask Desmos to draw 
+Traditionally, we would simplify \(\frac{1}{\sqrt{2}}\)
+to \(\frac{\sqrt{2}}{2}\) and add $\sqrt{2}$ to solve for $y$. Doing so results in
+\begin{equation}
+  y= \frac{\sqrt{2}}{2} (x+1).
+\end{equation}
+Arguably, $ y= \frac{\sqrt{2}}{2} (x+1)$ is more simple than is $y - \sqrt{2} = \frac{\sqrt{2}}{2} (x-1)$.
+But in this context, I don't see much of an advantage to doing this. In the first formula $y - \sqrt{2} = \frac{1}{\sqrt{2}} (x-1)$
+it's clear that $(x=1, y=\sqrt{2})$ is a point on the line.  
+
+In short, all the answers
+\begin{align*}
+  &y - \sqrt{2} = \frac{1}{\sqrt{2}} (x-1),\\
+  &y =  \frac{1}{\sqrt{2}} (x+1),\\
+  &y =\frac{\sqrt{2}}{2} (x+1),
+ \end{align*}
+ are OK answers to the question ``Find an equation of the tangent line.'' Semantically, all these answers are equivalent and
+ each of them are simplified according to our class standard: (from the class FAQ)
+ 
+ \textbf{Question} Is this OK, or do I need to simplify it?
+
+\textbf{Answer} Maybe. Giving guidelines on what it means to 
+  simplified is tough. But if you  (a) do all rational arithmetic (b) combine
+  all like terms, (c) simplify all ``famous'' values of functions, 
+  for example $\cos(0)=1$ and $\sqrt{81} = 9$, and (d) make an effort
+  to simplify all vanishing subexpressions to zero (for example, 
+  $\frac{1}{\sqrt{2}} - \frac{\sqrt{2}}{2}$ simplifies to zero), you'll be OK.
+
+\quad Instead of worrying so much about simplifying expressions according to a murky and 
+unpublished rule, let's shift our
+main attention on to learning to use various tools to check our work. For this question, a graph is a good way
+to check that the line and the curve are tangent.   Let's ask Desmos to draw 
 graphs of both $y=\sqrt{1+x^2}$ and $y - \sqrt{2} = \frac{1}{\sqrt{2}} (x-1)$. Does the line and the curve
 appear to be tangent?  Sure.
 
     \centering
     \includegraphics[scale=0.2]{desmos-graph(44).png}
 
-    
+The picture is fairly convincing--we have a (not the) correct answer.
 
 
 \end{solution}
@@ -123,21 +150,57 @@ appear to be tangent?  Sure.
     \begin{equation}
       \int x^2 - x - 2 \, \mathrm{d} x = \frac{1}{3} x^3 - \frac{1}{2} x^2 - 2 x.
       \end{equation}
-
-    Some teachers will insist on the $+c$.  I say let's just
-    remember that all antiderivatives are undetermined 
-    up to an additive constant and for forget the silly $+c$ rule.
+    Some teachers will insist on the $+c$.  I say let's just  remember that all anti-derivatives are undetermined 
+    up to an additive constant and implicitly include the additive constant in with the left side of
+      \begin{equation}
+      \int x^2 - x - 2 \, \mathrm{d} x = \frac{1}{3} x^3 - \frac{1}{2} x^2 - 2 x
+      \end{equation}    
+    (and not the right side) and for forget the silly explicit $+c$ rule. It is maybe a bit peculiar, but we do need to remember that
+    \begin{equation}
+      \int F(x) \, \mathrm{d} x =  \int F(x) \, \mathrm{d} x
+     \end{equation}
+     is \emph{not} an identity. Usually visually equal things are equivalent, but this case is an exception.
+    
+    \quad Notice that the $+c$ rule is a problem if the variable name is $c$. Should we add $+c$ to
+    \begin{equation}
+      \int c^2 - c - 2 \, \mathrm{d} c = \frac{1}{3} c^3 - \frac{1}{2} c^2 - 2 c?
+      \end{equation}
+     Unless we want a wrong answer, no we should not.
     \end{solution}
 
     \part $\int (x-1)(x+2) \, \mathrm{d} x $
-    \begin{solution}[2.5in]
-    \end{solution}
+    \begin{solution}[2.5in] This one is a freebie.  Expanding the integrand, this problem is the same as the previous problem.
+    
+    \quad It's tempting, I know, but do not make the \textbf{error} of thinking that that the anti derivative of a product is 
+    the product of the anti derivatives. That is \text{do not do}
+    \begin{equation}
+      \int (x-1)(x+2) \, \mathrm{d} x = \frac{1}{2} (x-1)^2 \times \frac{1}{2} (x+2)^2
+    \end{equation}
+    We should practice the good habit of checking anti derivatives by differentiating. Doing so we have
+    \begin{align*}
+      \frac{\mathrm{d}}{\mathrm{d} x} \left(\frac{1}{2} (x-1)^2 \times \frac{1}{2} (x+2)^2 \right)
+          &= \frac{\left( x-1\right) \, {{\left( x+2\right) }^{2}}}{2}+\frac{{{\left( x-1\right) }^{2}}\, \left( x+2\right) }{2},\\
+          &= \frac{\left( x-1\right) \, \left( x+2\right) \, \left( 2 x+1\right) }{2}, \\
+          &= {{x}^{3}}+\frac{3 {{x}^{2}}}{2}-\frac{3 x}{2}-1.
+   \end{align*}
+   This is not equivalent to the integrand $(x-1)(x+2) $, so our work is \textbf{wrong}.
+        \end{solution}
 
 
 
     \part $\int \frac{1+x^2}{x^2} \, \mathrm{d} x$
 
-\begin{solution} Expanding the integrand shows that this problem is identical to the previous.
+\begin{solution} On any interval on that does not contain zero, we have
+\begin{align*}
+\int \frac{1+x^2}{x^2} \, \mathrm{d} x &= \int x^{-2} + 1 , \mathrm{d} x, \\
+                                                          &=- \frac{1}{x} + x.
+\end{align*}
+If you worked this problem with a first step something like
+\begin{equation}
+\int \frac{1+x^2}{x^2} \, \mathrm{d} x = \frac{x^2 \int 1+x^2 \, \mathrm{d} x - (1+x^2) \int x^2 \, \mathrm{d} x}
+ {\left(\int x^2 \, \mathrm{d} x\right)^2}
+\end{equation}
+let's make this the very last time you make this mistake.
 
 \end{solution}
 \end{parts}
@@ -159,12 +222,11 @@ appear to be tangent?  Sure.
     Graphically, we can tell that this definite integral is negative. Why? The graph of the integrand is entirely below
     the x-axis, that's why. Here is a graph of the integrand
     
-      \centering
-    \includegraphics[scale=0.2]{desmos-graph(45).png}
+    \quad \quad \quad \includegraphics[scale=0.2]{desmos-graph(45).png}
     
     Actually, the graph of the integrand on the interval $[1,2]$ is pretty well approximated by a line segment joining 
     $(x=1,y=-2)$ and  $(x=2,y=0)$. Doing so, we see that  $ \int_1^2 x^2 - x - 2 \, \mathrm{d} x $ is pretty close
-    to the negative of the area of a triangle with base one and height two.
+    to the negative of the area of a triangle with base one and height two. So $ \int_1^2 x^2 - x - 2 \, \mathrm{d} x \approx -1$. And I'd say that $- \frac{7}{6} \approx -1$.
     
 
     \end{solution}
@@ -177,6 +239,14 @@ appear to be tangent?  Sure.
 
 
     \part $\int_1^4 \frac{1+x^2}{x^2} \, \mathrm{d} x$
+    
+    \begin{solution} We have
+    \begin{align*}
+    \int_1^4 \frac{1+x^2}{x^2} \, \mathrm{d} x &= \left. \left(- \frac{1}{x} + x \right) \right |_{x=1}^{x=2}, \\
+                                                                      &= \frac{3}{2}.
+    \end{align*}
+    
+    \end{solution}
 
 
 \end{parts}
@@ -188,11 +258,19 @@ appear to be tangent?  Sure.
 \begin{parts}
 
     \part $F(x) = x^2+x+3$
-    \begin{solution}[2.5in]
+    \begin{solution}[2.5in] We need to solve
+    \begin{equation}
+      \left[2x + 1 = 0 \right] = \left[x=-1/2 \right].
+    \end{equation}
     \end{solution}
 
     \part $F(x) = (x-3)(x^2+3)$
-    \begin{solution}[2.5in]
+    \begin{solution}[2.5in] Using the product rule, we have $F^\prime(x) = 3 {{x}^{2}}-6 x+3$. So we
+    need to solve
+     \begin{align*}
+      \left[3 {{x}^{2}}-6 x+3 \right] &= \left[  3 {{\left( x-1\right) }^{2}} \right] & \mbox{(factor)} \\
+                                                   &= \left[x=1\right].
+    \end{align*}
     \end{solution}
 
     \part $F(x) = 2 x +  \frac{x}{x-2}$
