@@ -1,8 +1,9 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
 \usepackage{epsfig}
+\usepackage{graphicx}
 \usepackage[]{hyperref}
 \usepackage{geometry}
 \geometry{letterpaper, margin=0.75in}
@@ -74,6 +75,40 @@ enter into your class grade in any way--this work is
 \question Find an equation of the tangent line to the 
 curve $y = \sqrt{x^2+1}$ at the point \mbox{$(x=1, y=\sqrt{2})$.}
 \begin{solution}[2.5in]
+
+To find an equation of a line we need to know (a) its slope and (b) a point on the
+line.  We're given a point on the line, so our main task is to find the slope of the 
+tangent line. To do that we need to first find a formula for \(\displaystyle
+\frac{\mathrm{d} y}{\mathrm{d} x} \) and second we need to evaluate \(\displaystyle
+\frac{\mathrm{d} y}{\mathrm{d} x} \) when $x=1$. The chain rule tell us that
+\begin{equation}
+    \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{1}{2} \times 2 x (x^2+1)^{-1/2}
+\end{equation}
+And pasting in $x \to 1$, we have
+\begin{equation}
+    \left . \frac{\mathrm{d} y}{\mathrm{d} x} \right |_{x=1}=  
+    \left . \frac{1}{2} \times 2 x (x^2+1)^{-1/2} \right |_{x=1} =
+    \frac{1}{\sqrt{2}}.
+\end{equation}
+An equation of the given tangent line is
+\begin{equation}
+  y - \sqrt{2} = \frac{1}{\sqrt{2}} (x-1)
+\end{equation}
+Traditionally, we would simplify \(\frac{1}{\sqrt{2}}\)
+to \(\frac{\sqrt{2}}{2}\). But in this context, I 
+don't see an advantage to doing this. So let us LIB 
+(let it be).
+
+As a check to our work, let's ask Desmos to draw 
+graphs of both $y=\sqrt{1+x^2}$ and $y - \sqrt{2} = \frac{1}{\sqrt{2}} (x-1)$. Does the line and the curve
+appear to be tangent?  Sure.
+
+    \centering
+    \includegraphics[scale=0.2]{desmos-graph(44).png}
+
+    
+
+
 \end{solution}
 
 \newpage
@@ -84,6 +119,14 @@ curve $y = \sqrt{x^2+1}$ at the point \mbox{$(x=1, y=\sqrt{2})$.}
     
     \part $\int x^2 - x - 2 \, \mathrm{d} x $
     \begin{solution}[2.5in]
+  
+    \begin{equation}
+      \int x^2 - x - 2 \, \mathrm{d} x = \frac{1}{3} x^3 - \frac{1}{2} x^2 - 2 x.
+      \end{equation}
+
+    Some teachers will insist on the $+c$.  I say let's just
+    remember that all antiderivatives are undetermined 
+    up to an additive constant and for forget the silly $+c$ rule.
     \end{solution}
 
     \part $\int (x-1)(x+2) \, \mathrm{d} x $
@@ -94,7 +137,9 @@ curve $y = \sqrt{x^2+1}$ at the point \mbox{$(x=1, y=\sqrt{2})$.}
 
     \part $\int \frac{1+x^2}{x^2} \, \mathrm{d} x$
 
+\begin{solution} Expanding the integrand shows that this problem is identical to the previous.
 
+\end{solution}
 \end{parts}
 
 \newpage
@@ -106,10 +151,27 @@ curve $y = \sqrt{x^2+1}$ at the point \mbox{$(x=1, y=\sqrt{2})$.}
     
     \part $\int_1^2 x^2 - x - 2 \, \mathrm{d} x $
     \begin{solution}[2.5in]
+    In the previous question, we found the antiderivative; so all we need to do is
+    \begin{equation}
+    \int_1^2 x^2 - x - 2 \, \mathrm{d} x = \left . \frac{1}{3} x^3 - \frac{1}{2} x^2 - 2 x \right |_{x=1}^{x=2}
+     = - \frac{7}{6}.
+    \end{equation}
+    Graphically, we can tell that this definite integral is negative. Why? The graph of the integrand is entirely below
+    the x-axis, that's why. Here is a graph of the integrand
+    
+      \centering
+    \includegraphics[scale=0.2]{desmos-graph(45).png}
+    
+    Actually, the graph of the integrand on the interval $[1,2]$ is pretty well approximated by a line segment joining 
+    $(x=1,y=-2)$ and  $(x=2,y=0)$. Doing so, we see that  $ \int_1^2 x^2 - x - 2 \, \mathrm{d} x $ is pretty close
+    to the negative of the area of a triangle with base one and height two.
+    
+
     \end{solution}
 
     \part $\int_1^2 (x-1)(x+2) \, \mathrm{d} x $
     \begin{solution}[2.5in]
+    Expanding the integrand, we see that we've done this problem before.
     \end{solution}
 
 
@@ -151,12 +213,19 @@ curve $y = \sqrt{x^2+1}$ at the point \mbox{$(x=1, y=\sqrt{2})$.}
 \begin{parts}
 
 \part $\displaystyle \lim_{x \to 4} \frac{\cos(x)+1}{x-3}$
-\begin{solution}[2.5in]
+\begin{solution}[2.5in] The function is continuous at 4, so we can use DS (direct substitution); we have
+\begin{equation}
+ \lim_{x \to 4} \frac{\cos(x)+1}{x-3} = \cos(4)+1.
+\end{equation}
+If somebody wants a decimal approximation to $\cos(4)+1$ to any number of digits, they can do that.
     
 \end{solution}
 
 \part $\displaystyle \lim_{x \to 4} \frac{{{x}^{2}}-2 x-3}{x-3}$
-\begin{solution}[2.5in]
+\begin{solution}[2.5in] Again, the function is continuous at 4, so let's use DS; we have
+\begin{equation}
+  \lim_{x \to 4} \frac{{{x}^{2}}-2 x-3}{x-3} = 4^2-2 \times 4 - 3 = 5.
+\end{equation}
     
 \end{solution}
 
