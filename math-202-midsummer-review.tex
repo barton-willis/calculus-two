@@ -150,17 +150,9 @@ The picture is fairly convincing--we have a (not the) correct answer.
     \begin{equation}
       \int x^2 - x - 2 \, \mathrm{d} x = \frac{1}{3} x^3 - \frac{1}{2} x^2 - 2 x.
       \end{equation}
-    Some teachers will insist on the $+c$.  I say let's just  remember that all anti-derivatives are undetermined 
-    up to an additive constant and implicitly include the additive constant in with the left side of
-      \begin{equation}
-      \int x^2 - x - 2 \, \mathrm{d} x = \frac{1}{3} x^3 - \frac{1}{2} x^2 - 2 x
-      \end{equation}    
-    (and not the right side) and for forget the silly explicit $+c$ rule. It is maybe a bit peculiar, but we do need to remember that
-    \begin{equation}
-      \int F(x) \, \mathrm{d} x =  \int F(x) \, \mathrm{d} x
-     \end{equation}
-     is \emph{not} an identity. Usually visually equal things are equivalent, but this case is an exception.
-    
+    Some teachers will insist on the $+c$.  I say let's just  remember that all 
+    antiderivatives are undetermined up to an additive constant.
+   
     \quad Notice that the $+c$ rule is a problem if the variable name is $c$. Should we add $+c$ to
     \begin{equation}
       \int c^2 - c - 2 \, \mathrm{d} c = \frac{1}{3} c^3 - \frac{1}{2} c^2 - 2 c?
@@ -274,11 +266,28 @@ let's make this the very last time you make this mistake.
     \end{solution}
 
     \part $F(x) = 2 x +  \frac{x}{x-2}$
-    \begin{solution}[2.5in]
+    \begin{solution}[2.5in] We have
+    \begin{equation} 
+      F^\prime(x) = \frac{2 \left( x-3\right) \, \left( x-1\right) }{{{\left( x-2\right) }^{2}}}.
+    \end{equation}
+    We have
+    \begin{align*}
+        \left[ F^\prime(x) = 0 \right] &=
+           \left[ \frac{2 \left( x-3\right) \, \left( x-1\right) }{{{\left( x-2\right) }^{2}}} = 0 \right], \\
+           &= \left[ 0 = (x-3)(x-1), x-2 \neq 0 \right], \\
+           &= \left[x=3, x=2\right].
+    \end{align*}
     \end{solution}
 
     \part $F(x) = \cos(x) \sin(x)$
-    \begin{solution}[2.5in]
+    \begin{solution}[2.5in] I think this problem is easier if we 
+      use the indentity $\cos(x) \sin(x) = \frac{1}{2} \sin(2 x)$. So
+      \begin{align*}
+        \left[ F^\prime(x) = 0 \right] &= \left[\cos(2 x) = 0 \right], \\
+            &= \left[ 2 x = \uppi (k  - \frac{1}{2}), k \in \mathbf{Z} \right], \\
+            &= \left[x = \frac{\uppi}{2} \left (k  - \frac{1}{2} \right), 
+            k \in \mathbf{Z} \right],
+      \end{align*}
     \end{solution}
 
 
@@ -309,6 +318,15 @@ If somebody wants a decimal approximation to $\cos(4)+1$ to any number of digits
 
 \part $\displaystyle \lim_{x \to \infty} \frac{5 x^2 + x+1}{7 x^2 + 107}$
 
+\begin{solution}
+Toward $\infty$, the dominate term of the numerator is $5 x^2$;
+and to dominate term of the denominator is $7 x^2$. So
+\begin{align*}
+  \lim_{x \to \infty} \frac{5 x^2 + x+1}{7 x^2 + 107}
+     = \lim_{x \to \infty} \frac{5 x^2}{7 x^2} = \frac{5}{7}.
+\end{align*}
+  
+\end{solution}
 \end{parts}
 \end{questions}
 
