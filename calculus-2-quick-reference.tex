@@ -14,6 +14,7 @@
 \usepackage{isomath,upgreek,xcolor,comment,fourier}
 \usepackage{pdfpages}
 \usepackage{tkz-euclide}
+\usepackage{enumitem}
 %\usetkzobj{all}
 \pagestyle{empty}
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
@@ -712,7 +713,7 @@ otherwise it diverges.
 \section*{Ratio Test}
 Let $a$ be a sequence with $0 \notin \range(a)$. Define 
 $L = \lim_{k \to \infty} \left| \frac{a_{k+1}}{a_k} \right|$.
-\begin{itemize}
+\begin{itemize}[noitemsep]
 \item $L \in [0,1) \implies \sum |a_k| $ converges.
 \item $L \in (1,\infty) \implies \sum a_k $ diverges.
 \end{itemize}
@@ -721,7 +722,7 @@ $L = \lim_{k \to \infty} \left| \frac{a_{k+1}}{a_k} \right|$.
 
 Let $a$ and $b$ be positive sequences. Define 
 $L = \lim_{k \to \infty} \frac{a_k}{b_k}$.
-\begin{itemize}
+\begin{itemize}[noitemsep]
     \item If $L \in \reals_{> 0}$ and $\sum a_k$ converges then  
     $\sum b_k$ converges.
 
@@ -763,6 +764,22 @@ r &= \sqrt{x^2 + y^2} \\
 \end{align*}
 \end{minipage}      
 
+\section*{Trig substitutions}
+
+\begin{itemize}[noitemsep]
+\item $\int F \left(x, \left(1-x^2\right)^{n/2}\right) \, \mathrm{d} x$, 
+use $x = \sin(\vartheta)$, where  $\vartheta \in [-\uppi/2, \uppi/2]$
+then integrate $\int F \left(\sin(\vartheta),\cos(\vartheta)^n\right) \cos(\vartheta) \, \mathrm{d} \vartheta$
+\item  $\int F\left(x, \left (1+x^2 \right)^{n/2}\right) \, 
+\mathrm{d} x$, use $x = \sinh(\vartheta)$,
+where $\vartheta \in \reals$; then integrate
+$\int F\left(\sinh(\vartheta), \cosh(\vartheta)^n \right)  \cosh(\vartheta)\, \mathrm{d} \vartheta$
+
+\item  $\int F \left(x, \left(x^2-1\right)^{n/2} \right) \, \mathrm{d} x$, 
+use $x = \sec(\vartheta)$; then  integrate \\
+$\int F(\sec(\vartheta), \tan(\vartheta)^n) \sec(\vartheta), \tan(\vartheta) 
+\, \mathrm{d} \vartheta)$.
+\end{itemize}
 \vfill
 
 \noindent Revised \today. Barton Willis is the author of this work. This work is
