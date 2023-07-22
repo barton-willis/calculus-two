@@ -90,7 +90,41 @@ As best you can, draw a graph of $G$.
 \end{figure}
 \end{questions}
 
+\begin{solution}
+
+To start, let's review the properties of a function $G$ that is defined by
+\begin{equation*}
+    G(x) = \int_{a}^x F(s) \, \mathrm{d}s,
+\end{equation*} 
+where $F$ is integrable on an interval $[a,b]$. We have:
+
+\begin{itemize}
+\item $G(a)=0$
+\item $G$ is continuous on $[a,b]$.
+\item $G$ is differentiable everywhere that $F$ is continuous.
+\item Wherever $F$ is continuous, we have $G^\prime(x) = F(x)$.
+\end{itemize}
+Specifically for our function $F$ given graphically in Figure 1, we 
+conclude that (b) $G(-4) = 0$, (b) $G$ is continuous on $[-4,4]$  
+  (c)$G^\prime(x) = F(x)$  on $[-4,4]$. Further, since 
+ $F(x) > 0$, we see 
+  that $G^\prime(x) > 0$. This means that $G$ is an increasing 
+  function. The steepest part of the graph of $G$ is at $0$, where
+  $G^\prime(0) = 5$.  Finally, the derivative of $G$ is constant on 
+  the interval $[-4,-1]$, so $G$ is a linear function on this interval.
+  The same is true on the interval $[1,4]$.
+
+  Putting all this together, a graph of $G$ looks something like
+
+  \vfill 
+  \newpage 
+    \begin{center}
+    \includegraphics[scale=0.4]{desmos-graph(51).png}
+  \end{center}
 
 
+  
+\end{solution}
+    
 
 \end{document}
