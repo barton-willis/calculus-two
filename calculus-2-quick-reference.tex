@@ -300,7 +300,7 @@ f^{-1 \prime}(x) & \nicefrac{1}{f^\prime (f^{-1}(x))} \\ \hline
 &\int {\left. \sec{(x)} \, \mathrm{d} x\right.}=\ln{ \big | \tan{(x)}+\sec{(x)} \big |}\\
 &\int {\left. \csc{(x)} \, \mathrm{d} x\right.}  =-\ln  \big | \csc(x)+\cot(x) \big | \\
 &\int \cot(x) \, \mathrm{d} x = \ln \big | \sin (x) \big | \\
-&\int 2 \big |x \big | \, \mathrm{d} x  = x \big |x \big |\\
+&\int \big |x \big | \, \mathrm{d} x  = x \big |x \big | / 2\\
 %&\int 2 \lfloor x \rfloor  \, \mathrm{d} x = (2 x - 1) \lfloor x \rfloor - \lfloor x \rfloor^2\\
 %&\int 2 \lceil x \rceil  \, \mathrm{d} x = (2 x + 1) \lceil x \rceil - \lceil x \rceil^2
 \end{align*}
@@ -749,7 +749,7 @@ If a function $F$ is infinitely differentiable at $a$, its Taylor series centere
 \end{equation*}
 When $a$ is zero, the Taylor series is also known as the MacLaurin Series.
 \section*{Polar to Cartesian}
-%\vspace{-0.5in}
+\vspace{-0.25in}
 \begin{minipage}[c]{0.333\textwidth}
 \begin{align*}
 x &= r \cos(\theta) \\
@@ -764,22 +764,48 @@ r &= \sqrt{x^2 + y^2} \\
 \end{align*}
 \end{minipage}      
 
-\section*{Trig substitutions}
+\section*{Integrate Powers of Trig}
+Let $m,n \in \integers_{\geq 0}$. Then
+
+\begin{itemize}[noitemsep]
+  \item $\int \cos(x)^{2m} \sin(x)^{2n} \, \mathrm{d}x
+         = \int \left(\frac{1+\cos(2 x)}{2}\right)^m 
+                 \left(\frac{1-\cos(2 x)}{2}\right)^n 
+                 \, \mathrm{d}x$
+
+  \item $\int \cos(x)^{2m+1} \sin(x)^{n} \, \mathrm{d}x
+  = \int (1-z^2)^m  z^{n}
+             \, \mathrm{d}z$,  where $z = \cos(x)$
+
+  \item $\int \cos(x)^{m} \sin(x)^{2n+1} \, \mathrm{d}x
+             = \int z^m (1-z^2)^n \, \mathrm{d}z$,  
+             where $z = \sin(x)$
+
+\item $\int \sec(x)^n \, \mathrm{d} x = \frac{1}{n-1} \sec(x)^{n-2} \tan(x) + \frac{n-2}{n-1} \int \sec(x)^{n-2} \, \mathrm{d} x$
+
+\item $\int \tan(x)^{2m+1} \sec(x)^n \, \mathrm{d} x =  \int (z^2-1)^n z^{n-1} \, \mathrm{d} z$,
+where $z=\tan(x)$
+
+\item $\int \tan(x)^{2m} \sec(x)^n \, \mathrm{d} x  = \int (\sec(x)^2-1)^m \sec(x)^n \, \mathrm{d} x$
+
+\end{itemize}                
+\section*{Trig Substitutions}
 
 \begin{itemize}[noitemsep]
 \item $\int F \left(x, \left(1-x^2\right)^{n/2}\right) \, \mathrm{d} x$, 
 use $x = \sin(\vartheta)$, where  $\vartheta \in [-\uppi/2, \uppi/2]$
-then integrate $\int F \left(\sin(\vartheta),\cos(\vartheta)^n\right) \cos(\vartheta) \, \mathrm{d} \vartheta$
+, then integrate $\int F \left(\sin(\vartheta),\cos(\vartheta)^n\right) \cos(\vartheta) \, \mathrm{d} \vartheta$
 \item  $\int F\left(x, \left (1+x^2 \right)^{n/2}\right) \, 
 \mathrm{d} x$, use $x = \sinh(\vartheta)$,
-where $\vartheta \in \reals$; then integrate
+where $\vartheta \in \reals$, then integrate
 $\int F\left(\sinh(\vartheta), \cosh(\vartheta)^n \right)  \cosh(\vartheta)\, \mathrm{d} \vartheta$
 
 \item  $\int F \left(x, \left(x^2-1\right)^{n/2} \right) \, \mathrm{d} x$, 
-use $x = \sec(\vartheta)$; then  integrate \\
+use $x = \sec(\vartheta)$, then  integrate \\
 $\int F(\sec(\vartheta), \tan(\vartheta)^n) \sec(\vartheta), \tan(\vartheta) 
-\, \mathrm{d} \vartheta)$.
+\, \mathrm{d} \vartheta)$
 \end{itemize}
+
 \vfill
 
 \noindent Revised \today. Barton Willis is the author of this work. This work is
