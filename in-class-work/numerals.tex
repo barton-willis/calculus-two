@@ -1,0 +1,247 @@
+\documentclass{article}
+\usepackage{scalerel,amsmath}
+\usepackage{tikz}
+\makeatletter
+\DeclareRobustCommand{\checkbold}[1]{% https://tex.stackexchange.com/a/24635/121799
+ \edef\@tempa{\math@version}\edef\@tempb{bold}%
+ \ifx\@tempa\@tempb%
+  \def#1{1}%
+ \else
+  \def#1{0}%
+ \fi}
+\makeatother 
+\tikzset{pics/InupiaqNo/.cd,
+1/.style={code={\draw \ifnum\FiveDigits>0 (0,1.2ex) \else (0,1ex)\fi -- (0.5ex,0);}},
+2/.style={code={\draw \ifnum\FiveDigits>0 (0,1.2ex) \else (0,1ex)\fi -- (0.4ex,0)-- (0.8ex,1ex);}},
+3/.style={code={\draw \ifnum\FiveDigits>0 (0,1.2ex) \else (0,1ex)\fi -- (0.3ex,0)-- (0.6ex,1ex) -- (0.9ex,0ex);}},
+4/.style={code={\draw \ifnum\FiveDigits>0 (0,1.2ex) \else (0,1ex)\fi -- (0.25ex,0)-- (0.5ex,1ex) -- (0.75ex,0ex)-- (1ex,1ex) ;}},
+5/.style={code={\draw (0,0) -- (1ex,0.4ex);}},
+10/.style={code={\draw (0,0) -- (1ex,0.3ex) -- (0,0.6ex);}},
+15/.style={code={\draw (0,0) -- (1ex,0.25ex) -- (0,0.5ex) --(1ex,0.75ex);}},
+}
+\newcommand{\InupiaqNo}[2][]{\checkbold\tmp%
+\scalerel*{%
+\begin{tikzpicture}[baseline=0em,line width={(1+0.45*\tmp)*0.06em},
+    line cap=round,line join=round,#1]
+\ifnum#2>0
+ \ifnum#2<21
+  \ifnum#2=20
+   \pgfmathtruncatemacro{\SingleDigits}{1}%
+   \pgfmathtruncatemacro{\FiveDigits}{0}%
+   \path \ifnum\SingleDigits=0 \else pic{InupiaqNo/\SingleDigits} \fi
+   \ifnum\FiveDigits=0 \else (0,1.2ex) pic{InupiaqNo/\FiveDigits} \fi
+   (0,0) (1ex,2ex);
+   \begin{scope} [xshift=1ex,yshift=0ex]
+   \draw[looseness=1.6] (0,1ex) to[out=-45,in=0] (0.5ex,0) to[out=180,in=-135] (1ex,1ex);
+   \path (0,0) (1ex,2ex);
+   \end{scope}
+  \else 
+   \pgfmathtruncatemacro{\SingleDigits}{Mod(#2,5)}%
+   \pgfmathtruncatemacro{\FiveDigits}{int(#2/5)*5}%
+   \path \ifnum\SingleDigits=0 \else pic{InupiaqNo/\SingleDigits} \fi
+   \ifnum\FiveDigits=0 \else (0,1.2ex) pic{InupiaqNo/\FiveDigits} \fi
+    (0,0) (1ex,2ex);
+  \fi   
+ \fi
+\else
+ \draw[looseness=1.6] (0,1ex) to[out=-45,in=0] (0.5ex,0) to[out=180,in=-135] (1ex,1ex);
+ \path (0,0) (1ex,2ex); 
+\fi
+\end{tikzpicture}}{M}%
+}
+\begin{document}
+
+$$
+\begin{bmatrix}
+ \mbox{ + }&\InupiaqNo{0} &\InupiaqNo{0} &\InupiaqNo{0} \cr 
+ \InupiaqNo{0} &\InupiaqNo{1} &\InupiaqNo{2} &\InupiaqNo{3} \cr 
+ \InupiaqNo{0} &\InupiaqNo{2} &\InupiaqNo{4} &\InupiaqNo{6} \cr 
+ \InupiaqNo{0} &\InupiaqNo{3} &\InupiaqNo{6} &\InupiaqNo{9} \cr 
+ \end{bmatrix} 
+ $$
+ 
+ $$
+ \begin{bmatrix}
+ +  &\InupiaqNo{0} &\InupiaqNo{0} &\InupiaqNo{0} &
+ \InupiaqNo{0} &\InupiaqNo{0} &\InupiaqNo{0} &\InupiaqNo{0} &
+ \InupiaqNo{0} &\InupiaqNo{0} &\InupiaqNo{0} &\InupiaqNo{0} &
+ \InupiaqNo{0} &\InupiaqNo{0} &\InupiaqNo{0} &\InupiaqNo{0} &
+ \InupiaqNo{0} &\InupiaqNo{0} &\InupiaqNo{0} &\InupiaqNo{0} \cr 
+ \InupiaqNo{0} &\InupiaqNo{1} &\InupiaqNo{2} &\InupiaqNo{3} &
+ \InupiaqNo{4} &\InupiaqNo{5} &\InupiaqNo{6} &\InupiaqNo{7} &
+ \InupiaqNo{8} &\InupiaqNo{9} &\InupiaqNo{10} &\InupiaqNo{11} &
+ \InupiaqNo{12} &\InupiaqNo{13} &\InupiaqNo{14} &\InupiaqNo{15} &
+ \InupiaqNo{16} &\InupiaqNo{17} &\InupiaqNo{18} &\InupiaqNo{19} \cr 
+ \InupiaqNo{0} &\InupiaqNo{2} &\InupiaqNo{4} &\InupiaqNo{6} &
+ \InupiaqNo{8} &\InupiaqNo{10} &\InupiaqNo{12} &\InupiaqNo{14} &
+ \InupiaqNo{16} &\InupiaqNo{18} &\InupiaqNo{0} \InupiaqNo{1} &
+ \InupiaqNo{2} \InupiaqNo{1} &\InupiaqNo{4} \InupiaqNo{1} &
+ \InupiaqNo{6} \InupiaqNo{1} &\InupiaqNo{8} \InupiaqNo{1} &
+ \InupiaqNo{10} \InupiaqNo{1} &\InupiaqNo{12} \InupiaqNo{1} &
+ \InupiaqNo{14} \InupiaqNo{1} &\InupiaqNo{16} \InupiaqNo{1} &
+ \InupiaqNo{18} \InupiaqNo{1} \cr \InupiaqNo{0} &\InupiaqNo{3} &
+ \InupiaqNo{6} &\InupiaqNo{9} &\InupiaqNo{12} &\InupiaqNo{15} &
+ \InupiaqNo{18} &\InupiaqNo{1} \InupiaqNo{1} &
+ \InupiaqNo{4} \InupiaqNo{1} &\InupiaqNo{7} \InupiaqNo{1} &
+ \InupiaqNo{10} \InupiaqNo{1} &\InupiaqNo{13} \InupiaqNo{1} &
+ \InupiaqNo{16} \InupiaqNo{1} &\InupiaqNo{19} \InupiaqNo{1} &
+ \InupiaqNo{2} \InupiaqNo{2} &\InupiaqNo{5} \InupiaqNo{2} &
+ \InupiaqNo{8} \InupiaqNo{2} &\InupiaqNo{11} \InupiaqNo{2} &
+ \InupiaqNo{14} \InupiaqNo{2} &\InupiaqNo{17} \InupiaqNo{2} \cr 
+ \InupiaqNo{0} &\InupiaqNo{4} &\InupiaqNo{8} &\InupiaqNo{12} &
+ \InupiaqNo{16} &\InupiaqNo{0} \InupiaqNo{1} &
+ \InupiaqNo{4} \InupiaqNo{1} &\InupiaqNo{8} \InupiaqNo{1} &
+ \InupiaqNo{12} \InupiaqNo{1} &\InupiaqNo{16} \InupiaqNo{1} &
+ \InupiaqNo{0} \InupiaqNo{2} &\InupiaqNo{4} \InupiaqNo{2} &
+ \InupiaqNo{8} \InupiaqNo{2} &\InupiaqNo{12} \InupiaqNo{2} &
+ \InupiaqNo{16} \InupiaqNo{2} &\InupiaqNo{0} \InupiaqNo{3} &
+ \InupiaqNo{4} \InupiaqNo{3} &\InupiaqNo{8} \InupiaqNo{3} &
+ \InupiaqNo{12} \InupiaqNo{3} &\InupiaqNo{16} \InupiaqNo{3} \cr 
+ \InupiaqNo{0} &\InupiaqNo{5} &\InupiaqNo{10} &\InupiaqNo{15} &
+ \InupiaqNo{0} \InupiaqNo{1} &\InupiaqNo{5} \InupiaqNo{1} &
+ \InupiaqNo{10} \InupiaqNo{1} &\InupiaqNo{15} \InupiaqNo{1} &
+ \InupiaqNo{0} \InupiaqNo{2} &\InupiaqNo{5} \InupiaqNo{2} &
+ \InupiaqNo{10} \InupiaqNo{2} &\InupiaqNo{15} \InupiaqNo{2} &
+ \InupiaqNo{0} \InupiaqNo{3} &\InupiaqNo{5} \InupiaqNo{3} &
+ \InupiaqNo{10} \InupiaqNo{3} &\InupiaqNo{15} \InupiaqNo{3} &
+ \InupiaqNo{0} \InupiaqNo{4} &\InupiaqNo{5} \InupiaqNo{4} &
+ \InupiaqNo{10} \InupiaqNo{4} &\InupiaqNo{15} \InupiaqNo{4} \cr 
+ \InupiaqNo{0} &\InupiaqNo{6} &\InupiaqNo{12} &\InupiaqNo{18} &
+ \InupiaqNo{4} \InupiaqNo{1} &\InupiaqNo{10} \InupiaqNo{1} &
+ \InupiaqNo{16} \InupiaqNo{1} &\InupiaqNo{2} \InupiaqNo{2} &
+ \InupiaqNo{8} \InupiaqNo{2} &\InupiaqNo{14} \InupiaqNo{2} &
+ \InupiaqNo{0} \InupiaqNo{3} &\InupiaqNo{6} \InupiaqNo{3} &
+ \InupiaqNo{12} \InupiaqNo{3} &\InupiaqNo{18} \InupiaqNo{3} &
+ \InupiaqNo{4} \InupiaqNo{4} &\InupiaqNo{10} \InupiaqNo{4} &
+ \InupiaqNo{16} \InupiaqNo{4} &\InupiaqNo{2} \InupiaqNo{5} &
+ \InupiaqNo{8} \InupiaqNo{5} &\InupiaqNo{14} \InupiaqNo{5} \cr 
+ \InupiaqNo{0} &\InupiaqNo{7} &\InupiaqNo{14} &
+ \InupiaqNo{1} \InupiaqNo{1} &\InupiaqNo{8} \InupiaqNo{1} &
+ \InupiaqNo{15} \InupiaqNo{1} &\InupiaqNo{2} \InupiaqNo{2} &
+ \InupiaqNo{9} \InupiaqNo{2} &\InupiaqNo{16} \InupiaqNo{2} &
+ \InupiaqNo{3} \InupiaqNo{3} &\InupiaqNo{10} \InupiaqNo{3} &
+ \InupiaqNo{17} \InupiaqNo{3} &\InupiaqNo{4} \InupiaqNo{4} &
+ \InupiaqNo{11} \InupiaqNo{4} &\InupiaqNo{18} \InupiaqNo{4} &
+ \InupiaqNo{5} \InupiaqNo{5} &\InupiaqNo{12} \InupiaqNo{5} &
+ \InupiaqNo{19} \InupiaqNo{5} &\InupiaqNo{6} \InupiaqNo{6} &
+ \InupiaqNo{13} \InupiaqNo{6} \cr \InupiaqNo{0} &\InupiaqNo{8} &
+ \InupiaqNo{16} &\InupiaqNo{4} \InupiaqNo{1} &
+ \InupiaqNo{12} \InupiaqNo{1} &\InupiaqNo{0} \InupiaqNo{2} &
+ \InupiaqNo{8} \InupiaqNo{2} &\InupiaqNo{16} \InupiaqNo{2} &
+ \InupiaqNo{4} \InupiaqNo{3} &\InupiaqNo{12} \InupiaqNo{3} &
+ \InupiaqNo{0} \InupiaqNo{4} &\InupiaqNo{8} \InupiaqNo{4} &
+ \InupiaqNo{16} \InupiaqNo{4} &\InupiaqNo{4} \InupiaqNo{5} &
+ \InupiaqNo{12} \InupiaqNo{5} &\InupiaqNo{0} \InupiaqNo{6} &
+ \InupiaqNo{8} \InupiaqNo{6} &\InupiaqNo{16} \InupiaqNo{6} &
+ \InupiaqNo{4} \InupiaqNo{7} &\InupiaqNo{12} \InupiaqNo{7} \cr 
+ \InupiaqNo{0} &\InupiaqNo{9} &\InupiaqNo{18} &
+ \InupiaqNo{7} \InupiaqNo{1} &\InupiaqNo{16} \InupiaqNo{1} &
+ \InupiaqNo{5} \InupiaqNo{2} &\InupiaqNo{14} \InupiaqNo{2} &
+ \InupiaqNo{3} \InupiaqNo{3} &\InupiaqNo{12} \InupiaqNo{3} &
+ \InupiaqNo{1} \InupiaqNo{4} &\InupiaqNo{10} \InupiaqNo{4} &
+ \InupiaqNo{19} \InupiaqNo{4} &\InupiaqNo{8} \InupiaqNo{5} &
+ \InupiaqNo{17} \InupiaqNo{5} &\InupiaqNo{6} \InupiaqNo{6} &
+ \InupiaqNo{15} \InupiaqNo{6} &\InupiaqNo{4} \InupiaqNo{7} &
+ \InupiaqNo{13} \InupiaqNo{7} &\InupiaqNo{2} \InupiaqNo{8} &
+ \InupiaqNo{11} \InupiaqNo{8} \cr \InupiaqNo{0} &\InupiaqNo{10} &
+ \InupiaqNo{0} \InupiaqNo{1} &\InupiaqNo{10} \InupiaqNo{1} &
+ \InupiaqNo{0} \InupiaqNo{2} &\InupiaqNo{10} \InupiaqNo{2} &
+ \InupiaqNo{0} \InupiaqNo{3} &\InupiaqNo{10} \InupiaqNo{3} &
+ \InupiaqNo{0} \InupiaqNo{4} &\InupiaqNo{10} \InupiaqNo{4} &
+ \InupiaqNo{0} \InupiaqNo{5} &\InupiaqNo{10} \InupiaqNo{5} &
+ \InupiaqNo{0} \InupiaqNo{6} &\InupiaqNo{10} \InupiaqNo{6} &
+ \InupiaqNo{0} \InupiaqNo{7} &\InupiaqNo{10} \InupiaqNo{7} &
+ \InupiaqNo{0} \InupiaqNo{8} &\InupiaqNo{10} \InupiaqNo{8} &
+ \InupiaqNo{0} \InupiaqNo{9} &\InupiaqNo{10} \InupiaqNo{9} \cr 
+ \InupiaqNo{0} &\InupiaqNo{11} &\InupiaqNo{2} \InupiaqNo{1} &
+ \InupiaqNo{13} \InupiaqNo{1} &\InupiaqNo{4} \InupiaqNo{2} &
+ \InupiaqNo{15} \InupiaqNo{2} &\InupiaqNo{6} \InupiaqNo{3} &
+ \InupiaqNo{17} \InupiaqNo{3} &\InupiaqNo{8} \InupiaqNo{4} &
+ \InupiaqNo{19} \InupiaqNo{4} &\InupiaqNo{10} \InupiaqNo{5} &
+ \InupiaqNo{1} \InupiaqNo{6} &\InupiaqNo{12} \InupiaqNo{6} &
+ \InupiaqNo{3} \InupiaqNo{7} &\InupiaqNo{14} \InupiaqNo{7} &
+ \InupiaqNo{5} \InupiaqNo{8} &\InupiaqNo{16} \InupiaqNo{8} &
+ \InupiaqNo{7} \InupiaqNo{9} &\InupiaqNo{18} \InupiaqNo{9} &
+ \InupiaqNo{9} \InupiaqNo{10} \cr \InupiaqNo{0} &\InupiaqNo{12} &
+ \InupiaqNo{4} \InupiaqNo{1} &\InupiaqNo{16} \InupiaqNo{1} &
+ \InupiaqNo{8} \InupiaqNo{2} &\InupiaqNo{0} \InupiaqNo{3} &
+ \InupiaqNo{12} \InupiaqNo{3} &\InupiaqNo{4} \InupiaqNo{4} &
+ \InupiaqNo{16} \InupiaqNo{4} &\InupiaqNo{8} \InupiaqNo{5} &
+ \InupiaqNo{0} \InupiaqNo{6} &\InupiaqNo{12} \InupiaqNo{6} &
+ \InupiaqNo{4} \InupiaqNo{7} &\InupiaqNo{16} \InupiaqNo{7} &
+ \InupiaqNo{8} \InupiaqNo{8} &\InupiaqNo{0} \InupiaqNo{9} &
+ \InupiaqNo{12} \InupiaqNo{9} &\InupiaqNo{4} \InupiaqNo{10} &
+ \InupiaqNo{16} \InupiaqNo{10} &\InupiaqNo{8} \InupiaqNo{11} \cr 
+ \InupiaqNo{0} &\InupiaqNo{13} &\InupiaqNo{6} \InupiaqNo{1} &
+ \InupiaqNo{19} \InupiaqNo{1} &\InupiaqNo{12} \InupiaqNo{2} &
+ \InupiaqNo{5} \InupiaqNo{3} &\InupiaqNo{18} \InupiaqNo{3} &
+ \InupiaqNo{11} \InupiaqNo{4} &\InupiaqNo{4} \InupiaqNo{5} &
+ \InupiaqNo{17} \InupiaqNo{5} &\InupiaqNo{10} \InupiaqNo{6} &
+ \InupiaqNo{3} \InupiaqNo{7} &\InupiaqNo{16} \InupiaqNo{7} &
+ \InupiaqNo{9} \InupiaqNo{8} &\InupiaqNo{2} \InupiaqNo{9} &
+ \InupiaqNo{15} \InupiaqNo{9} &\InupiaqNo{8} \InupiaqNo{10} &
+ \InupiaqNo{1} \InupiaqNo{11} &\InupiaqNo{14} \InupiaqNo{11} &
+ \InupiaqNo{7} \InupiaqNo{12} \cr \InupiaqNo{0} &\InupiaqNo{14} &
+ \InupiaqNo{8} \InupiaqNo{1} &\InupiaqNo{2} \InupiaqNo{2} &
+ \InupiaqNo{16} \InupiaqNo{2} &\InupiaqNo{10} \InupiaqNo{3} &
+ \InupiaqNo{4} \InupiaqNo{4} &\InupiaqNo{18} \InupiaqNo{4} &
+ \InupiaqNo{12} \InupiaqNo{5} &\InupiaqNo{6} \InupiaqNo{6} &
+ \InupiaqNo{0} \InupiaqNo{7} &\InupiaqNo{14} \InupiaqNo{7} &
+ \InupiaqNo{8} \InupiaqNo{8} &\InupiaqNo{2} \InupiaqNo{9} &
+ \InupiaqNo{16} \InupiaqNo{9} &\InupiaqNo{10} \InupiaqNo{10} &
+ \InupiaqNo{4} \InupiaqNo{11} &\InupiaqNo{18} \InupiaqNo{11} &
+ \InupiaqNo{12} \InupiaqNo{12} &\InupiaqNo{6} \InupiaqNo{13} \cr 
+ \InupiaqNo{0} &\InupiaqNo{15} &\InupiaqNo{10} \InupiaqNo{1} &
+ \InupiaqNo{5} \InupiaqNo{2} &\InupiaqNo{0} \InupiaqNo{3} &
+ \InupiaqNo{15} \InupiaqNo{3} &\InupiaqNo{10} \InupiaqNo{4} &
+ \InupiaqNo{5} \InupiaqNo{5} &\InupiaqNo{0} \InupiaqNo{6} &
+ \InupiaqNo{15} \InupiaqNo{6} &\InupiaqNo{10} \InupiaqNo{7} &
+ \InupiaqNo{5} \InupiaqNo{8} &\InupiaqNo{0} \InupiaqNo{9} &
+ \InupiaqNo{15} \InupiaqNo{9} &\InupiaqNo{10} \InupiaqNo{10} &
+ \InupiaqNo{5} \InupiaqNo{11} &\InupiaqNo{0} \InupiaqNo{12} &
+ \InupiaqNo{15} \InupiaqNo{12} &\InupiaqNo{10} \InupiaqNo{13} &
+ \InupiaqNo{5} \InupiaqNo{14} \cr \InupiaqNo{0} &\InupiaqNo{16} &
+ \InupiaqNo{12} \InupiaqNo{1} &\InupiaqNo{8} \InupiaqNo{2} &
+ \InupiaqNo{4} \InupiaqNo{3} &\InupiaqNo{0} \InupiaqNo{4} &
+ \InupiaqNo{16} \InupiaqNo{4} &\InupiaqNo{12} \InupiaqNo{5} &
+ \InupiaqNo{8} \InupiaqNo{6} &\InupiaqNo{4} \InupiaqNo{7} &
+ \InupiaqNo{0} \InupiaqNo{8} &\InupiaqNo{16} \InupiaqNo{8} &
+ \InupiaqNo{12} \InupiaqNo{9} &\InupiaqNo{8} \InupiaqNo{10} &
+ \InupiaqNo{4} \InupiaqNo{11} &\InupiaqNo{0} \InupiaqNo{12} &
+ \InupiaqNo{16} \InupiaqNo{12} &\InupiaqNo{12} \InupiaqNo{13} &
+ \InupiaqNo{8} \InupiaqNo{14} &\InupiaqNo{4} \InupiaqNo{15} \cr 
+ \InupiaqNo{0} &\InupiaqNo{17} &\InupiaqNo{14} \InupiaqNo{1} &
+ \InupiaqNo{11} \InupiaqNo{2} &\InupiaqNo{8} \InupiaqNo{3} &
+ \InupiaqNo{5} \InupiaqNo{4} &\InupiaqNo{2} \InupiaqNo{5} &
+ \InupiaqNo{19} \InupiaqNo{5} &\InupiaqNo{16} \InupiaqNo{6} &
+ \InupiaqNo{13} \InupiaqNo{7} &\InupiaqNo{10} \InupiaqNo{8} &
+ \InupiaqNo{7} \InupiaqNo{9} &\InupiaqNo{4} \InupiaqNo{10} &
+ \InupiaqNo{1} \InupiaqNo{11} &\InupiaqNo{18} \InupiaqNo{11} &
+ \InupiaqNo{15} \InupiaqNo{12} &\InupiaqNo{12} \InupiaqNo{13} &
+ \InupiaqNo{9} \InupiaqNo{14} &\InupiaqNo{6} \InupiaqNo{15} &
+ \InupiaqNo{3} \InupiaqNo{16} \cr \InupiaqNo{0} &\InupiaqNo{18} &
+ \InupiaqNo{16} \InupiaqNo{1} &\InupiaqNo{14} \InupiaqNo{2} &
+ \InupiaqNo{12} \InupiaqNo{3} &\InupiaqNo{10} \InupiaqNo{4} &
+ \InupiaqNo{8} \InupiaqNo{5} &\InupiaqNo{6} \InupiaqNo{6} &
+ \InupiaqNo{4} \InupiaqNo{7} &\InupiaqNo{2} \InupiaqNo{8} &
+ \InupiaqNo{0} \InupiaqNo{9} &\InupiaqNo{18} \InupiaqNo{9} &
+ \InupiaqNo{16} \InupiaqNo{10} &\InupiaqNo{14} \InupiaqNo{11} &
+ \InupiaqNo{12} \InupiaqNo{12} &\InupiaqNo{10} \InupiaqNo{13} &
+ \InupiaqNo{8} \InupiaqNo{14} &\InupiaqNo{6} \InupiaqNo{15} &
+ \InupiaqNo{4} \InupiaqNo{16} &\InupiaqNo{2} \InupiaqNo{17} \cr 
+ \InupiaqNo{0} &\InupiaqNo{19} &\InupiaqNo{18} \InupiaqNo{1} &
+ \InupiaqNo{17} \InupiaqNo{2} &\InupiaqNo{16} \InupiaqNo{3} &
+ \InupiaqNo{15} \InupiaqNo{4} &\InupiaqNo{14} \InupiaqNo{5} &
+ \InupiaqNo{13} \InupiaqNo{6} &\InupiaqNo{12} \InupiaqNo{7} &
+ \InupiaqNo{11} \InupiaqNo{8} &\InupiaqNo{10} \InupiaqNo{9} &
+ \InupiaqNo{9} \InupiaqNo{10} &\InupiaqNo{8} \InupiaqNo{11} &
+ \InupiaqNo{7} \InupiaqNo{12} &\InupiaqNo{6} \InupiaqNo{13} &
+ \InupiaqNo{5} \InupiaqNo{14} &\InupiaqNo{4} \InupiaqNo{15} &
+ \InupiaqNo{3} \InupiaqNo{16} &\InupiaqNo{2} \InupiaqNo{17} &
+ \InupiaqNo{1} \InupiaqNo{18} \cr 
+ \end{bmatrix}
+  $$
+ 
+
+
+\end{document}

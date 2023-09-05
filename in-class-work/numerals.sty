@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{scalerel}
+\usepackage{tikz}
+\makeatletter
+\DeclareRobustCommand{\checkbold}[1]{% https://tex.stackexchange.com/a/24635/121799
+ \edef\@tempa{\math@version}\edef\@tempb{bold}%
+ \ifx\@tempa\@tempb%
+  \def#1{1}%
+ \else
+  \def#1{0}%
+ \fi}
+\makeatother 
+\tikzset{pics/InupiaqNo/.cd,
+1/.style={code={\draw \ifnum\FiveDigits>0 (0,1.2ex) \else (0,1ex)\fi -- (0.5ex,0);}},
+2/.style={code={\draw \ifnum\FiveDigits>0 (0,1.2ex) \else (0,1ex)\fi -- (0.4ex,0)-- (0.8ex,1ex);}},
+3/.style={code={\draw \ifnum\FiveDigits>0 (0,1.2ex) \else (0,1ex)\fi -- (0.3ex,0)-- (0.6ex,1ex) -- (0.9ex,0ex);}},
+4/.style={code={\draw \ifnum\FiveDigits>0 (0,1.2ex) \else (0,1ex)\fi -- (0.25ex,0)-- (0.5ex,1ex) -- (0.75ex,0ex)-- (1ex,1ex) ;}},
+5/.style={code={\draw (0,0) -- (1ex,0.4ex);}},
+10/.style={code={\draw (0,0) -- (1ex,0.3ex) -- (0,0.6ex);}},
+15/.style={code={\draw (0,0) -- (1ex,0.25ex) -- (0,0.5ex) --(1ex,0.75ex);}},
+}
+\newcommand{\InupiaqNo}[2][]{\checkbold\tmp%
+\scalerel*{%
+\begin{tikzpicture}[baseline=0em,line width={(1+0.45*\tmp)*0.06em},
+    line cap=round,line join=round,#1]
+\ifnum#2>0
+ \ifnum#2<21
+  \ifnum#2=20
+   \draw[looseness=1.6] (0,1ex) to[out=-45,in=0] (0.5ex,0) to[out=180,in=-135] (1ex,1ex);
+   \path (0,0) (1ex,2ex);
+  \else 
+   \pgfmathtruncatemacro{\SingleDigits}{Mod(#2,5)}%
+   \pgfmathtruncatemacro{\FiveDigits}{int(#2/5)*5}%
+   \path \ifnum\SingleDigits=0 \else pic{InupiaqNo/\SingleDigits} \fi
+   \ifnum\FiveDigits=0 \else (0,1.2ex) pic{InupiaqNo/\FiveDigits} \fi
+    (0,0) (1ex,2ex);
+  \fi   
+ \fi
+\fi
+\end{tikzpicture}}{M}%
+}
+\begin{document}
+\foreach \X [evaluate=\X as \Y using {int(\X+10)}] in {1,...,10}
+{$\X:~\InupiaqNo{\X}\ifnum\X=10 \quad~\,\else\qquad\fi\Y:~\InupiaqNo{\Y}$\par}
+
+{\Large $12:~\InupiaqNo{12}$} {\Large\boldmath $12:~\InupiaqNo{12}$} 
+{\Huge $7:~\InupiaqNo{7}$} {\Huge\boldmath $17:~\InupiaqNo{17}$}
+\end{document}

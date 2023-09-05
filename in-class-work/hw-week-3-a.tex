@@ -1,0 +1,126 @@
+\documentclass[12pt,fleqn]{exam}
+%\usepackage{pifont}
+%\usepackage{dingbat,bbding}
+
+\usepackage{amssymb}
+\usepackage[intlimits]{amsmath}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+\usepackage[final]{microtype}
+\frenchspacing
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[]{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+%\shadedsolutions
+%\definecolor{SolutionColor}{rgb}{1,0.72,0.46} %{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{4}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Tuesday 5 September 13:20}
+\newcommand{\class}{MATH 202, Fall \the\year}
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work \quiz}}
+\textbf{Row and Seat}:\hrulefill\\
+\vspace{0.1in}
+
+
+\noindent  In class work  \textbf{\quiz\/}  has questions \textbf{1} through  \textbf{\numquestions} \/ with a total of \textbf{\numpoints\/}  points.   
+Turn in your work at the end of class  \emph{on paper}. This assignment is due \emph{\due}.
+
+\vspace{0.1in}
+
+
+\begin{questions} 
+
+\question Define a region $Q$ of the xy plane by
+$Q = \{(x,y) \mid 0 \leq y \leq 1-|x|,-1 \leq x \leq 1 \}$.
+
+\begin{parts}
+
+    \part [1] Sketch the region $Q$ in the xy plane.
+
+    \begin{solution}[2.5in]
+        
+    \end{solution}
+
+    \part [2] Make a conjecture about the location of the centroid of $Q$.
+    Of course $\overline{x} \leq 107$ and $\overline{y} \leq 107$ is a conjecture, but 
+    try for something more specific.
+    \begin{solution}[2.5in]
+        
+    \end{solution}
+
+    \part [1] Use junior high math (no calculus) to find $\mbox{area}(Q)$.
+    
+    
+    \begin{solution}%[2.5in]
+        
+    \end{solution}
+
+    \newpage
+    \part [1] Solve $M \overline{x} = \int_{-1}^1 x (1- |x|) \, \mathrm{d} x$,
+    where $M$ is the area of $Q$, for $\overline{x}$. To evaluate the
+    definite integral $\int_{-1}^1 x (1- |x|) \, \mathrm{d} x$, use a 
+    fact about the integral of an odd function over a symmetric interval.
+    \begin{solution}[2.5in]
+        
+    \end{solution}
+
+    \part [1] Solve $M \overline{y} = \frac{1}{2} \int_{-1}^1 (1 - |x|)^2 \, \mathrm{d} x$,
+    where $M$ is the area of $Q$, for $\overline{y}$. To  do this,
+    use the fun fact that
+    $\displaystyle
+       \int |x| \, \mathrm{d}x = \frac{1}{2} x |x|.
+    $
+    \begin{solution}[2.5in]
+        
+    \end{solution}
+\end{parts}
+\end{questions}
+
+\end{document}
+
