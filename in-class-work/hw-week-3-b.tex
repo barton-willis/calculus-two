@@ -1,0 +1,169 @@
+\documentclass[12pt,fleqn,answers]{exam}
+%\usepackage{pifont}
+%\usepackage{dingbat,bbding}
+
+\usepackage{amssymb}
+\usepackage[intlimits]{amsmath}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+\usepackage[final]{microtype}
+\frenchspacing
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[]{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+%\shadedsolutions
+%\definecolor{SolutionColor}{rgb}{1,0.72,0.46} %{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{5}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Thursday 7 September 13:20}
+\newcommand{\class}{MATH 202, Fall \the\year}
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work \quiz}}
+\textbf{Row and Seat}:\hrulefill\\
+\vspace{0.1in}
+
+
+\noindent  In class work  \textbf{\quiz\/}  has questions \textbf{1} through  \textbf{\numquestions} \/ with a total of \textbf{\numpoints\/}  points.   
+Turn in your work at the end of class  \emph{on paper}. This assignment is due \emph{\due}.
+
+\vspace{0.1in}
+
+
+\begin{questions} 
+
+\question Find a formula for $F^\prime$ given
+
+\begin{parts}
+
+    \part [2] $F(x) =  \ln(x^2 + 1)$
+    \begin{solution}[2.5in]  The chain rule when the outer function is the natural logarithm is
+    \begin{equation*}
+       \left(\ln(f(x)) \right)^\prime  = \frac{f^\prime(x)}{f(x)}.
+     \end{equation*}
+    Using this, we have
+    \begin{align*}
+       F^\prime(x)  &= \frac{(x^2 + 1)^\prime}{x^2 + 1}, && \mbox{(chain rule)} \\
+                           &= \frac{2x }{x^2 + 1}. && \mbox{(polynomial derivative)} 
+     \end{align*}
+        
+    \end{solution}
+
+    \part [2] $F(x) = x \ln(x^2 + 1)$
+    \begin{solution}[2.5in]
+    For our first step, we need to use the product rule:
+    \begin{align*}
+       F^\prime(x)  &= \left(x\right)^\prime \ln(x^2 +1) + x   \left( \ln(x^2 +1) \right)^\prime,   
+                                             && \mbox{(product rule)} \\
+                         &=  \ln(x^2 +1) + x \frac{2x }{x^2 + 1},  &&\mbox{(polynomial derivative and part `a')} \\
+                            &=  \ln(x^2 +1) + \frac{2x^2 }{x^2 + 1}.  &&\mbox{(generally viewed as simplification)}
+\end{align*}
+    \end{solution}
+
+    \part [2] $F(x) = \frac{\ln(1+x) - \ln(1-x)}{2}$
+    \begin{solution}
+    For our first step, let's not use the quotient rule; instead  let's use outativity
+    \begin{align*}
+     F^\prime(x)  &= \frac{1}{2} \left(\ln(1+x) - \ln(1-x) \right)^\prime,  &&\mbox{(outative rule)}\\
+                        &= \frac{1}{2} \left( \frac{1}{1+x} + \frac{1}{1-x} \right),  &&\mbox{(chain rule)} \\
+                        &= \frac{1}{1-x^2}. &&\mbox{(generally viewed as simplification)} \\
+    \end{align*}
+        
+    \end{solution}
+
+\end{parts}
+%\newpage
+
+\question Find the numerical values of the definite integrals
+
+\begin{parts}
+
+    \part [2] $\int_{0}^1 \frac{x}{1+x^2} \, \mathrm{d} x$
+    \begin{solution}[2.5in] The integrand doesn't match a standard integrands, so let's try a substitution.  
+    Since we are substituting into a definite integral, there are \textbf{four} ingredients:
+    \begin{enumerate}
+        \item $z = 1 + x^2$
+        \item $\mathrm{d} z = 2 x \mathrm{d} x$; alternatively $x \mathrm{d} x = \frac{1}{2} \mathrm{d} z$ 
+        \item $x=0 \implies z = 1+0^2 = 1$
+        \item $x=1 \implies z = 1+1^2 = 2$
+    \end{enumerate}
+    With that, we have
+    \begin{align*}
+    \int_{0}^1 \frac{x}{1+x^2} \, \mathrm{d} x &= \int_{1}^2 \frac{1}{2} \frac{1}{z} \, \mathrm{d} z, \\
+               &= \left. \frac{1}{2} \ln(z) \right |_{z=1}^{z=2}, \\
+               &= \frac{1}{2} \left( \ln(2) - \ln(1) \right) ,\\
+                &= \frac{1}{2} \ln(2). \\
+    \end{align*}
+    Another answer is $\ln(\sqrt{2})$, but  one logarithm and one square root is less simple than is 
+    one logarithm and one divide.   It's OK, to use $\int \frac{1}{z} \, \mathrm{d} z = \ln(|z|)$, but
+    I recognized that the definite integral is over a positive interval, so forget about the absolute value.
+    \end{solution}
+
+    \part [2] $\int_{-4}^{-2} \frac{1}{x + 10} \, \mathrm{d} x$
+    \begin{solution}[2.5in] The integrand doesn't match a standard integrands, so let's try a substitution.  
+    Since we are substituting into a definite integral, there are \textbf{four} ingredients:
+    \begin{enumerate}
+        \item $z = x + 10$
+        \item $\mathrm{d} z = \mathrm{d} x$
+        \item $x=-4 \implies z = -4+10 = 6$
+        \item $x=-2 \implies z = -2 + 10 = 8$
+    \end{enumerate}
+    So
+    \begin{equation*}
+    \int_{-4}^{-2} \frac{1}{x + 10} \, \mathrm{d} x = 
+     \int_6^8 \frac{1}{z} \, \mathrm{d} z = \ln(8) - \ln(6) = \ln\left(\frac{4}{3}\right).
+    \end{equation*}
+    Since $ \ln(8) - \ln(6)$ involves two logarithms and $\ln\left(\frac{4}{3}\right)$ involves only
+    one, generally,  $\ln\left(\frac{4}{3}\right)$ is a simplification of $\ln(8) - \ln(6)$
+        
+    \end{solution}
+
+\end{parts}
+\end{questions}
+
+\end{document}
+
