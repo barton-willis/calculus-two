@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{scalerel,amsmath}
+\usepackage{fourier,enumerate}
+\newenvironment{alphalist}{
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{-0.5\itemsep}}
+  {\end{enumerate}}
+  
+      
+\begin{document} 
+
+\noindent Show that $\int_1^2 \sqrt{1 + \frac{1}{4x}} \, \mathrm{d} x = \int_1^{\sqrt{2}} \sqrt{1+ 4 x^2}  \, \mathrm{d} x$. Try to do this in three different ways:
+
+\begin{alphalist}
+
+\item using lots of grubby calculus
+\item using a modest amount of calculus
+\item not much calculus
+\end{alphalist}
+Of course, ``lots of grubby calculus`` has no particular meaning, but see how much and how little calculus you can use to find a solution.
+\end{document}
