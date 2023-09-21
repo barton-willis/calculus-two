@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 %\usepackage{pifont}
 %\usepackage{dingbat,bbding}
 
@@ -63,15 +63,20 @@
 \vspace{0.1in}
 \noindent\makebox[3.0truein][l]{\textbf{\class}}
 \textbf{Name:} \hrulefill \\
-\noindent \makebox[3.0truein][l]{\textbf{In class work week \quiz}}
+\noindent \makebox[3.0truein][l]{\textbf{In class work  \quiz}}
 \textbf{Row and Seat}:\hrulefill\\
 \vspace{0.1in}
 
-
+\vspace{0.1in}
 \noindent  In class work  \textbf{\quiz\/}  has questions \textbf{1} through  \textbf{\numquestions} \/ with a total of \textbf{\numpoints\/}  points.   
 Turn in your work at the end of class  \emph{on paper}. This assignment is due \emph{\due}.
 
 \vspace{0.1in}
+
+\noindent \textbf{Notice:} $\cos(x)^2$ means $\left(\cos(x)\right)^2$. 
+It \emph{doesn't} mean $\cos(x^2)$. Our textbook writes this 
+expression as $\cos^2(x)$. Either way is OK.
+
 
 
 \begin{questions} 
@@ -79,14 +84,36 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
 \question [2] Find the area of the region $\{(x,y) | 0 \leq y \leq \sin(x)^2 \mbox{ and } 0 \leq x \leq \uppi \}$.
 
 \begin{solution}[2.5in]
+    \begin{align*} \text{Area} &= \int_0^\uppi \sin(x)^2 \, \mathrm{d} x, && \text{(area formula)} \\
+                               &= \int_0^\uppi \frac{1}{2} - \frac{1}{2} \cos(2 x) \, \mathrm{d} x, && \text{(double angle)} \\
+                               &= \left. \frac{1}{2} x  - \frac{1}{4} \sin(2 x) \right |_{0}^\uppi, && \text{(known antiderivatives)}\\
+                               &= \frac{\uppi}{2}. && \text{(algebra)}
+    \end{align*}
 \end{solution}
 
-\question [2] Find the numerical value of $\int_0^\uppi \cos(x)^3 \, \mathrm{d} x$.
-\begin{solution}[2.5in]
-\end{solution}
 
-\question [2] Find the numerical value of $\int_0^\uppi \cos(x)^3 \, \mathrm{d} x$.
+\question [2] Use Desmos to graph $y = \cos(x)^3$ on the interval $[0,\uppi]$. Based 
+on the graph, make a pretty good guess for the numerical value of 
+$\int_0^\uppi \cos(x)^3 \, \mathrm{d} x$. Duplicate the graph here 
+and justify your guess.
+
 \begin{solution}%[2.5in]
+
+     \includegraphics[scale=0.15]{desmos-graph(19).png}
+
+The area below the x-axis appears to equal the area above the x-axis. My guess is that $\int_0^\uppi \cos(x)^3 \, \mathrm{d} x = 0$.
+\end{solution}
+
+\newpage
+\question [2] Find the numerical value of $\int_0^\uppi \cos(x)^3 \, \mathrm{d} x$.
+\begin{solution}[2.5in] Let's first find an antiderivative
+\begin{align*}
+  \int \cos(x)^3 \, \mathrm{d} x &= \int \cos(x) (1-\sin(x)^2) \, \mathrm{d} x, \\
+                                                                          &= \int 1-z^2 \, \mathrm{d} z,  && (z = \sin(x) \text{  and  } \mathrm{d} z = \cos(x) \mathrm{d} x)\\
+                                                                          &= z - \frac{1}{3} z^3, \\
+                                                                          &= \sin(x) -  \frac{1}{3} \sin(x)^3
+\end{align*}
+So $\int_0^\uppi \cos(x)^3 \, \mathrm{d} x  = 0$.
 \end{solution}
 
 \newpage 
@@ -101,10 +128,20 @@ to find the values of each of the following definite integrals
 \begin{parts}
 \part [2] $\int_0^{2 \uppi} \sin(5 x) \cos(x) \, \mathrm{d} x.$
 \begin{solution}[2.5in]
+\begin{equation*}
+\int_0^{2 \uppi} \sin(5 x) \cos(x) \, \mathrm{d} x  = \int_0^{2 \uppi}  \frac{\sin{\left( 6 x\right) }+\sin{\left( 4 x\right) }}{2} \, \mathrm{d} x
+=\left . -\frac{\cos{\left( 6 x\right) }}{12}-\frac{\cos{\left( 4 x\right) }}{8} \right |_0^{2 \uppi} = 0.
+\end{equation*}
+Actually for any integer $n$, we have $\int_0^{2 \uppi} \sin(n x) \, \mathrm{d} x = 0$.
 \end{solution}
 
 \part [2] $\int_0^{2 \uppi} \cos(5 x) \cos(x) \, \mathrm{d} x.$
 \begin{solution}[2.5in]
+Let's use the nice fact that for any nonzero integer $n$, we have $\int_0^{2 \uppi} \cos(n x) \, \mathrm{d} x = 0$
+\begin{equation*}
+\int_0^{2 \uppi} \cos(5 x) \cos(x) \, \mathrm{d} x = \int_0^{2 \uppi} \frac{\cos{\left( 6 x\right) }+\cos{\left( 4 x\right) }}{2} \, \mathrm{d} x 
+= 0.
+\end{equation*}
 \end{solution}
 
 
@@ -112,6 +149,10 @@ to find the values of each of the following definite integrals
 \part [2] $\int_0^{2 \uppi} \cos(5 x)^2  \, \mathrm{d} x.$
 
 \begin{solution}%[2.5in]
+Again, use the nice fact that for any nonzero integer $n$, we have $\int_0^{2 \uppi} \cos(n x) \, \mathrm{d} x = 0$.
+\begin{equation*}
+\int_0^{2 \uppi} \cos(5 x)^2  \, \mathrm{d} x = \int_0^{2 \uppi} \frac{1}{2} + \frac{1}{2} \cos(10 x)  \, \mathrm{d} x = \uppi.
+\end{equation*}
 \end{solution}
 \end{parts}
 \end{questions}
