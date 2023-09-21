@@ -75,13 +75,16 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
 
 \noindent \textbf{Notice:} $\cos(x)^2$ means $\left(\cos(x)\right)^2$. 
 It \emph{doesn't} mean $\cos(x^2)$. Our textbook writes this 
-expression as $\cos^2(x)$. Either way is OK.
+expression as $\cos^2(x)$. Both notations are OK. Also, for
+arguments that are products, it's traditional to drop the parenthesis 
+for the trig functions and to write $\cos x$ for $\cos(x)$, for example.
+I think this is the exit ramp to perdition (that is utter ruin).
 
 
 
 \begin{questions} 
 
-\question [2] Find the area of the region $\{(x,y) | 0 \leq y \leq \sin(x)^2 \mbox{ and } 0 \leq x \leq \uppi \}$.
+\question [2] Find the area of the region $\{(x,y) \mid 0 \leq y \leq \sin(x)^2 \mbox{ and } 0 \leq x \leq \uppi \}$.
 
 \begin{solution}[2.5in]
     \begin{align*} \text{Area} &= \int_0^\uppi \sin(x)^2 \, \mathrm{d} x, && \text{(area formula)} \\
@@ -99,20 +102,27 @@ and justify your guess.
 
 \begin{solution}%[2.5in]
 
-     \includegraphics[scale=0.15]{desmos-graph(19).png}
+    \begin{center}
+     \includegraphics[scale=0.2]{desmos-graph(19).png}
+    \end{center}
+The area that the graph bounds that is below the x-axis appears to 
+equal the area the graph bounds that is above the x-axis. My guess 
+is that $\int_0^\uppi \cos(x)^3 \, \mathrm{d} x = 0$. 
 
-The area below the x-axis appears to equal the area above the x-axis. My guess is that $\int_0^\uppi \cos(x)^3 \, \mathrm{d} x = 0$.
+\quad We could prove this by making a change of variable $x = z + \uppi/2$
+and showing that the new integrand is odd and the new interval is
+symmetric with respect to the origin.
 \end{solution}
-
 \newpage
 \question [2] Find the numerical value of $\int_0^\uppi \cos(x)^3 \, \mathrm{d} x$.
-\begin{solution}[2.5in] Let's first find an antiderivative
+\begin{solution}[2.5in] Let's first find an antiderivative 
+    and second find the value of the definite integral.
 \begin{align*}
   \int \cos(x)^3 \, \mathrm{d} x &= \int \cos(x) (1-\sin(x)^2) \, \mathrm{d} x, \\
-                                                                          &= \int 1-z^2 \, \mathrm{d} z,  && (z = \sin(x) \text{  and  } \mathrm{d} z = \cos(x) \mathrm{d} x)\\
-                                                                          &= z - \frac{1}{3} z^3, \\
-                                                                          &= \sin(x) -  \frac{1}{3} \sin(x)^3
-\end{align*}
+                                 &= \int 1 - z^2 \, \mathrm{d}z &&(z = \sin(x) \text{ and } \mathrm{d}z = \cos(x) \mathrm{d} x)\\
+                                 &= z - \frac{1}{3} z^3,\\
+                                 &= \cos(x ) - \frac{1}{3} \cos(x)^3
+  \end{align*}                    
 So $\int_0^\uppi \cos(x)^3 \, \mathrm{d} x  = 0$.
 \end{solution}
 
@@ -121,7 +131,7 @@ So $\int_0^\uppi \cos(x)^3 \, \mathrm{d} x  = 0$.
 \begin{align*}
     \sin{(x)} \cos{(y)} &= \frac{\sin{\left( y+x\right) }-\sin{\left( y-x\right) }}{2}, \\
     \sin{(x)} \sin{(y)} &=  -\frac{\cos{\left( y+x\right) }-\cos{\left( y-x\right) }}{2}, \\
-    \cos{(x)} \cos{(y)} &= \frac{\cos{\left( y+x\right) }+\cos{\left( y-x\right) }}{2}.    
+    \cos{(x)} \cos{(y)} &= \frac{\cos{\left( y+x\right) }+\cos{\left( y-x\right) }}{2}  
 \end{align*}
 to find the values of each of the following definite integrals
 
@@ -133,6 +143,8 @@ to find the values of each of the following definite integrals
 =\left . -\frac{\cos{\left( 6 x\right) }}{12}-\frac{\cos{\left( 4 x\right) }}{8} \right |_0^{2 \uppi} = 0.
 \end{equation*}
 Actually for any integer $n$, we have $\int_0^{2 \uppi} \sin(n x) \, \mathrm{d} x = 0$.
+Using that fact, we don't even need the antiderivative to determine 
+that the value is zero.
 \end{solution}
 
 \part [2] $\int_0^{2 \uppi} \cos(5 x) \cos(x) \, \mathrm{d} x.$

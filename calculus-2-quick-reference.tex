@@ -779,18 +779,19 @@ Let $m,n \in \integers_{\geq 0}$. Then
 
   \item $\int \cos(x)^{2m+1} \sin(x)^{n} \, \mathrm{d}x
   = \int (1-z^2)^m  z^{n}
-             \, \mathrm{d}z$,  where $z = \cos(x)$
+             \, \mathrm{d}z$,  where $z = \sin(x)$
 
   \item $\int \cos(x)^{m} \sin(x)^{2n+1} \, \mathrm{d}x
              = \int z^m (1-z^2)^n \, \mathrm{d}z$,  
-             where $z = \sin(x)$
+             where $z = \cos(x)$
 
-\item $\int \sec(x)^n \, \mathrm{d} x = \frac{1}{n-1} \sec(x)^{n-2} \tan(x) + \frac{n-2}{n-1} \int \sec(x)^{n-2} \, \mathrm{d} x$
-
+\item $\int \sec(x)^n \, \mathrm{d} x = \frac{1}{n-1} \sec(x)^{n-2} \tan(x) + \frac{n-2}{n-1} \int \sec(x)^{n-2} \, \mathrm{d} x$,
+provided $n \neq 1$.
 \item $\int \tan(x)^{2m+1} \sec(x)^n \, \mathrm{d} x =  \int (z^2-1)^m z^{n-1} \, \mathrm{d} z$,
 where $z=\sec(x)$
 
-\item $\int \tan(x)^{2m} \sec(x)^n \, \mathrm{d} x  = \int (\sec(x)^2-1)^m \sec(x)^n \, \mathrm{d} x$
+\item $\int \tan(x)^{2m} \sec(x)^n \, \mathrm{d} x  = \int (\sec(x)^2-1)^m \sec(x)^n \, \mathrm{d} x$.
+
 
 \end{itemize}                
 \section*{Trig Substitutions}
