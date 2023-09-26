@@ -1,0 +1,111 @@
+\documentclass[12pt,fleqn]{exam}
+%\usepackage{pifont}
+%\usepackage{dingbat,bbding}
+
+\usepackage{amssymb}
+\usepackage[intlimits]{amsmath}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+\usepackage[final]{microtype}
+\frenchspacing
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[]{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+%\shadedsolutions
+%\definecolor{SolutionColor}{rgb}{1,0.72,0.46} %{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{10}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Tuesday 26 September 13:20}
+\newcommand{\class}{MATH 202, Fall \the\year}
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work  \quiz}}
+\textbf{Row and Seat}:\hrulefill\\
+\vspace{0.1in}
+\small
+\vspace{0.1in}
+\noindent  In class work  \textbf{\quiz\/}  has questions \textbf{1} through  \textbf{\numquestions} \/ with a total of \textbf{\numpoints\/}  points.   
+Turn in your work at the end of class  \emph{on paper}. This assignment is due \emph{\due}.
+
+\vspace{0.1in}
+
+Here are some results that you might like to use
+\begin{align*}
+ {{\cos{(x)}}^{2}} &=\frac{\cos{\left( 2 x\right) }}{2}+\frac{1}{2},\\
+ {{\cos{(x)}}^{4}} &=\frac{\cos{\left( 4 x\right) }}{8}+\frac{\cos{\left( 2 x\right) }}{2}+\frac{3}{8}, \\
+ {{\sin{(x)}}^{2}} &=\frac{1}{2}-\frac{\cos{\left( 2 x\right) }}{2}, \\
+ {{\cos{(x)}}^{2}}\, {{\sin{(x)}}^{2}}&=\frac{1}{8}-\frac{\cos{\left( 4 x\right) }}{8},\\
+ {{\cos{(x)}}^{4}}\, {{\sin{(x)}}^{2}} &=-\frac{\cos{\left( 6 x\right) }}{32}-\frac{\cos{\left( 4 x\right) }}{16}+\frac{\cos{\left( 2 x\right) }}{32}+\frac{1}{16},\\ 
+ {{\sin{(x)}}^{4}}&=\frac{\cos{\left( 4 x\right) }}{8}-\frac{\cos{\left( 2 x\right) }}{2}+\frac{3}{8}, \\ 
+ {{\cos{(x)}}^{2}}\, {{\sin{(x)}}^{4}} &=\frac{\cos{\left( 6 x\right) }}{32}-\frac{\cos{\left( 4 x\right) }}{16}-\frac{\cos{\left( 2 x\right) }}{32}+\frac{1}{16}, \\
+ {{\cos{(x)}}^{4}}\, {{\sin{(x)}}^{4}} &=\frac{\cos{\left( 8 x\right) }}{128}-\frac{\cos{\left( 4 x\right) }}{32}+\frac{3}{128}.
+\end{align*}
+\begin{questions}
+
+    \question[2]  Use Desmos to sketch the region $Q$ defined as $Q = \{(x,y) \mid 0 \leq y \leq x^4 \sqrt{1-x^2}
+    \mbox{ and } 0 \leq x \leq 1 \}$. Duplicate
+    the graph here.
+    \begin{solution}[2.0in]
+    \end{solution}
+    
+    \question[2] Find $\mbox{area}(Q)$.
+  \begin{solution}%[2.0in]
+    \end{solution}
+        \newpage
+        \question[2] Using your graph, make a pretty good guess for the x-coordinate to the centroid of $Q$.
+  \begin{solution}[1.0in]
+    \end{solution}
+    
+
+    
+       \question[2] Find the x-coordinate to the centroid of $Q$.
+  \begin{solution}[2.0in]
+    \end{solution}
+\end{questions}
+
+\end{document}
+
