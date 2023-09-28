@@ -83,22 +83,23 @@
   \hline
   \end{tabular}
   \end{minipage}
-
+  \vspace{0.1in}
 \section*{Exponents}
 \begin{minipage}[c]{0.25\textwidth}
   For \(a,b \in \reals_{>0},  x \in \reals\), and \(m,n \in \reals\),
   \begin{align*}
   &a^0 = 1,  &0^a = 0\\
-  &1^a = 1,   &a^n a^m = a^{n+m}  \\
+  &1^x = 1,   &a^n a^m = a^{n+m}  \\
   &\nicefrac{a^n}{a^m} = a^{n-m}, &(a^n)^m = a^{n \cdot m} \\
   &a^{-m} = \nicefrac{1}{a^m},   &\left(\nicefrac{a}{b}\right)^m = \nicefrac{a^m}{b^m} \\
   &\sqrt{x^2} = |x| &\phantom{xxx}
 \end{align*}
  \end{minipage}
-  
+ \vspace{0.1in}
 \section*{Trigonometric Identities}
-\vspace{-0.25in}
+%\vspace{-0.25in}
 \begin{minipage}[c]{0.25\textwidth}
+  We define $\dom(\arccot) = (0,\uppi)$.
 \begin{align*}
   &\left(\cos(x)\right)^2 + \left(\sin(x)\right)^2 = 1 \\
   &2 \left(\cos(x)\right)^2 =  1 + \cos(2 x) \\
@@ -106,31 +107,31 @@
   & \left(\cos (x)\right)^2 - \left(\sin (x) \right)^2 = \cos(2x) \\
    &\sin\left(x +  y\right) =\sin (x) \cos (y) + \cos (x) \sin (y) \\
   &\cos\left(x+y\right)=\cos (x) \cos (y) - \sin (x) \sin (y)    \\
-  &\arccot(x) = \nicefrac{\uppi}{2} - \arctan(x) \, \dom(\arccot) = (0,\uppi)\\
+  &\arccot(x) = \nicefrac{\uppi}{2} - \arctan(x) \\
   &\arccsc(x) = \arcsin \left (\nicefrac{1}{x} \right ) \\
   &\arcsec(x) = \arccos \left(\nicefrac{1}{x} \right) \\
   & \arcsin (x) + \arccos (x) = \nicefrac{\uppi}{2} \\
     & \arcsec (x) + \arccsc (x) = \nicefrac{\uppi}{2}
   \end{align*}
 \end{minipage}
-
+\vspace{0.1in}
 \section*{Hyperbolic Functions}
-\vspace{-0.35in}
+%\vspace{-0.35in}
 \begin{align*}
   &2 \cosh(x) = \exp(x) + \exp(-x) \\
   &2 \sinh(x) = \exp(x) - \exp(-x) \\
-  & \tanh(x) = \nicefrac{\cosh(x)}{\sinh(x)}\\
+  & \tanh(x) = \nicefrac{\sinh(x)}{\cosh(x)}\\
   &\cosh(x)^2 - \sinh(x)^2 = 1
 \end{align*}
-
+\vspace{0.1in}
   \section*{Logarithms}
-  \vspace{-0.15in}
+ % \vspace{-0.15in}
       \begin{equation*}
     \log_a(x) = \frac{\ln(x)}{\ln(a)}
        \end{equation*}
+\newcolumn
 
 \section*{Derivatives}
-
 \textbf{Specific cases} \\
 \begin{tabular}{| L | L | L|}
 \hline
@@ -175,7 +176,7 @@ f(g(x)) & g^\prime(x) f^\prime \left (g(x) \right) \\
 f^{-1 \prime}(x) & \nicefrac{1}{f^\prime (f^{-1}(x))} \\ \hline
 \end{tabular}
 \end{minipage}
-
+%\vspace{0.05in}
 \section*{Antiderivatives}
 \vspace{-0.1in}
 \begin{minipage}{0.25\textwidth}
@@ -198,8 +199,8 @@ f^{-1 \prime}(x) & \nicefrac{1}{f^\prime (f^{-1}(x))} \\ \hline
 For \(n\in \mathbf{Z}_{>0}\) 
 \begin{align*}
     \sum_{k=0}^{n-1}1 &= n \\
-     \sum_{k=0}^{n-1}{\left. k\right.} &=\frac{\left( n-1\right)  n}{2}\\
-    \sum_{k=0}^{n-1}{\left. {{k}^{2}}\right.} &=\frac{\left( n-1\right)  n\, \left( 2 n-1\right) }{6}\\
+     \sum_{k=0}^{n-1}{\left. k\right.} &=\nicefrac{\left( n-1\right)  n}{2}\\
+    \sum_{k=0}^{n-1}{\left. {{k}^{2}}\right.} &=\nicefrac{\left( n-1\right)  n\, \left( 2 n-1\right) }{6}\\
     \sum_{k=0}^{n-1} x^k &= \frac{1-x^n}{1-x}, \quad  x \neq 1 \\
     \sum_{k=0}^\infty z^k &= \begin{cases} \frac{1}{1-z} & z \in (-1,1) \\
                                       \infty & z \in [1,\infty] 
@@ -357,21 +358,17 @@ opacity=.4](O,B,A)
     \mbox{V} = \uppi r^2 h
 \)
 
-\noindent \textbf{Area: }  (not including circular ends)\,
+\noindent \textbf{Area:}  (not including circular ends)\,
 \(
    \mbox{A} = 2 \uppi r  h
 \)
 
 \vspace{0.2in}
 \noindent \textbf{Sphere} \\
-\begin{minipage}[c]{0.25\textwidth}
-\(\phantom{xxx}\)
-\end{minipage}
-\begin{minipage}[c]{0.25\textwidth}
-\noindent  \textbf{Area:}   \(A = 4 \uppi   r^2 \)
 
+\noindent  \textbf{Area:}   \(A = 4 \uppi   r^2 \)
 \noindent  \textbf{Volume:}   \(V = \frac{4 \uppi}{3} r^3 \)
-\end{minipage}
+
 \end{minipage}
 
 \end{multicols*}
@@ -397,13 +394,13 @@ opacity=.4](O,B,A)
   \begin{minipage}[c]{0.25\textwidth}
   \noindent \textbf{Volume:} \,
   \(
-     \mbox{V} = \frac{1}{3} \uppi r^2 h
+     \mbox{V} = \nicefrac{\uppi r^2 h}{3}
   \) \\ 
   
-\noindent \textbf{Area} (not including circular base) \, \\
+\noindent \textbf{Area} \\
 \(
-   \quad \mbox{A} =  \uppi r   \sqrt{r^2+h^2}
-\) \\
+   \mbox{A} =  \uppi r   \sqrt{r^2+h^2}
+\)  (not including circular base).
 \end{minipage}
 
 
@@ -426,7 +423,7 @@ Let $a$ be a sequence with $0 \notin \range(a)$. Define
 $L = \lim_{k \to \infty} \left| \frac{a_{k+1}}{a_k} \right|$.
 \begin{itemize}[noitemsep]
 \item $L \in [0,1) \implies \sum |a_k| $ converges.
-\item $L \in (1,\infty) \implies \sum a_k $ diverges.
+\item $L \in (1,\infty] \implies \sum a_k $ diverges.
 \end{itemize}
 
 %\vspace{0.25in} 
@@ -440,7 +437,7 @@ $L = \lim_{k \to \infty} \frac{a_k}{b_k}$.
     \item If $L \in \reals_{> 0}$ and $\sum a_k$ diverges then  
     $\sum a_k$ diverges.
 
-    \item If $L = $ and $\sum b_k$  converges, then $\sum a_k $  converges
+    \item If $L = 0$ and $\sum b_k$  converges, then $\sum a_k $  converges
    
     \item If $L = \infty$ and $\sum b_k$ diverges, then $\sum a_k $ diverges.  
 \end{itemize}
@@ -452,7 +449,7 @@ Then $\sum (-1)^k a_k$ converges if and only if $\lim_{k \to \infty} a_k = 0$.
 
 
 
-%\vspace{0.25in}
+\vspace{0.125in}
 \section*{Taylor and MacLaurin Series}
 \vspace{0.25in}
 If a function $F$ is infinitely differentiable at $a$, its Taylor series centered at $a$ is
@@ -462,21 +459,21 @@ If a function $F$ is infinitely differentiable at $a$, its Taylor series centere
 When $a$ is zero, the Taylor series is also known as the MacLaurin Series.
 \vspace{0.1in}
 \section*{Polar to Cartesian}
-\vspace{-0.2in}
+%\vspace{-0.2in}
 \begin{minipage}[c]{0.5\textwidth}
 \begin{equation*}
 x = r \cos(\theta) \quad y = r \sin(\theta)
 \end{equation*}
 For $r > 0$ and $0 \leq \theta < 2 \uppi$
-\begin{align*}
-r &= \sqrt{x^2 + y^2} \\
-\theta &= \begin{cases} 2 \uppi - \arccos(\nicefrac{x}{r})  & \mbox{ if } y < 0  \\
+\begin{equation*}
+r = \sqrt{x^2 + y^2} ,\quad 
+\theta = \begin{cases} 2 \uppi - \arccos(\nicefrac{x}{r})  & \mbox{ if } y < 0  \\
   \arccos(\nicefrac{x}{r})  & \mbox{ if } y \geq 0 
              \end{cases}    
-\end{align*}
+\end{equation*}
 \end{minipage}      
 
-\section*{Integrate Powers of Trig}
+\section*{Integrate Powers of Trigonometric}
 \vspace{0.1in}
 Let $m,n \in \integers_{\geq 0}$. Then
 
@@ -491,7 +488,7 @@ Let $m,n \in \integers_{\geq 0}$. Then
              \, \mathrm{d}z$,  where $z = \sin(x)$
 
   \item $\int \cos(x)^{m} \sin(x)^{2n+1} \, \mathrm{d}x
-             = \int z^m (1-z^2)^n \, \mathrm{d}z$,  
+             = -\int z^m (1-z^2)^n \, \mathrm{d}z$,  
              where $z = \cos(x)$
 
 \item $\int \sec(x)^n \, \mathrm{d} x = \frac{1}{n-1} \sec(x)^{n-2} \tan(x) + \frac{n-2}{n-1} \int \sec(x)^{n-2} \, \mathrm{d} x$,
@@ -517,7 +514,7 @@ $\int F\left(\sinh(\vartheta), \cosh(\vartheta)^n \right)  \cosh(\vartheta)\, \m
 
 \item  $\int F \left(x, \left(x^2-1\right)^{n/2} \right) \, \mathrm{d} x$, 
 use $x = \sec(\vartheta)$, then  integrate \\
-$\int F(\sec(\vartheta), \tan(\vartheta)^n) \sec(\vartheta), \tan(\vartheta) 
+$\int F(\sec(\vartheta), \tan(\vartheta)^n) \sec(\vartheta)\, \tan(\vartheta) 
 \, \mathrm{d} \vartheta)$
 \end{itemize}
 
@@ -599,8 +596,8 @@ $\int F(\sec(\vartheta), \tan(\vartheta)^n) \sec(\vartheta), \tan(\vartheta)
 
 \vfill 
 \noindent Revised \today. Barton Willis is the author of this work. This work is
-licensed under Attribution 4.0 International (CC BY 4.0) \,  \qrcode[height=0.25in]{https://creativecommons.org/licenses/by/4.0/}. For the current version of
-this document, visit \, \qrcode[height=0.25in]{https://github.com/barton-willis/calculus-two} 
+licensed under Attribution 4.0 International (CC BY 4.0) \,  \qrcode[height=0.15in]{https://creativecommons.org/licenses/by/4.0/}. For the current version of
+this document, visit \, \qrcode[height=0.15in]{https://github.com/barton-willis/calculus-two} 
 
 \end{multicols*}
 \end{document}
