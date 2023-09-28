@@ -40,7 +40,7 @@
 \usepackage{tgheros}
 \usepackage{multicol}
 \setlength{\columnseprule}{0pt}
-\setlength{\columnsep}{20.0pt}
+\setlength{\columnsep}{15pt}
 
 
 \usepackage{geometry}
@@ -143,7 +143,7 @@ F(x)  & F^\prime(x) \\ \hline
 \cot(x)  &  -\csc(x)^2 \\
 \arccos(x)  & -\nicefrac{1}{\sqrt{1-{{x}^{2}}}}   \\
 \arcsin(x)  & \nicefrac{1}{\sqrt{1-{{x}^{2}}}}\\
-\arctan(x) &  \nicefrac{1}{\big (x^2+1 \big )}  \\  
+\arctan(x) &  \nicefrac{1}{\big (x^2+1 \big)}  \\  
 %\arcsec(x) & \nicefrac{1}{ \big (\sqrt{{{x}^{2}}-1}\, \left| x\right| \big )} \\
 %\arccsc(x)   & -\nicefrac{1}{ \big (\sqrt{{{x}^{2}}-1}\, \left| x\right| \big ) } \\
 %\arccot(x)   & -\nicefrac{1}{ \big (x^2+1 \big )} \\ 
@@ -169,8 +169,8 @@ F(x)  & F^\prime(x) \\ \hline
 F(x)  &  F^\prime(x)  \\\hline
 a f(x) + b g(x)  & a f^\prime(x) + b g^\prime(x) \\
 f(x) g(x) & f^\prime(x) g(x) + f(x) g^\prime(x) \\
-\nicefrac{1}{g(x)}  & -g^\prime (x) / g(x)^2 \\
-\nicefrac{f(x)}{g(x)}   & \nicefrac{\left (g(x) f^\prime (x) - f(x) g^\prime(x) \right)}{ g(x)^2} \\
+\nicefrac{1}{g(x)}  & - g^\prime (x) / g(x)^2 \\
+\nicefrac{f(x)}{g(x)}   & \nicefrac{\left (g(x) f^\prime (x) - f(x) g^\prime(x) \right )}{ g(x)^2} \\
 f(g(x)) & g^\prime(x) f^\prime \left (g(x) \right) \\ 
 f^{-1 \prime}(x) & \nicefrac{1}{f^\prime (f^{-1}(x))} \\ \hline
 \end{tabular}
@@ -209,7 +209,7 @@ For \(n\in \mathbf{Z}_{>0}\)
  \end{minipage}
  \vspace{0.25in}
  \section*{Applications}
-Arclength of curve \(y = f(x)\) with \(a \leq x \leq b\)
+Arc length of curve \(y = f(x)\) with \(a \leq x \leq b\)
 \[
    = \int_a^b \sqrt{1 + f^\prime(x)^2} \, \mathrm{d} x
 \]
@@ -446,13 +446,13 @@ $L = \lim_{k \to \infty} \frac{a_k}{b_k}$.
 \end{itemize}
 
 Let  $a$ be a positive and eventually decreasing sequence. 
-Then $\sum (-1)^k a_k$ converges iff $\lim_{k \to \infty} a_k = 0$.
+Then $\sum (-1)^k a_k$ converges if and only if $\lim_{k \to \infty} a_k = 0$.
 
 \end{minipage}
 
 
 
-\vspace{0.25in}
+%\vspace{0.25in}
 \section*{Taylor and MacLaurin Series}
 \vspace{0.25in}
 If a function $F$ is infinitely differentiable at $a$, its Taylor series centered at $a$ is
@@ -460,13 +460,13 @@ If a function $F$ is infinitely differentiable at $a$, its Taylor series centere
   \sum_{k=0}^\infty \frac{F^{(k)}(a)}{k!}  (x-a)^k.
 \end{equation*}
 When $a$ is zero, the Taylor series is also known as the MacLaurin Series.
+\vspace{0.1in}
 \section*{Polar to Cartesian}
-\vspace{-0.25in}
-\begin{minipage}[c]{0.25\textwidth}
-\begin{align*}
-x &= r \cos(\theta) \\
-y &= r \sin(\theta)
-\end{align*}
+\vspace{-0.2in}
+\begin{minipage}[c]{0.5\textwidth}
+\begin{equation*}
+x = r \cos(\theta) \quad y = r \sin(\theta)
+\end{equation*}
 For $r > 0$ and $0 \leq \theta < 2 \uppi$
 \begin{align*}
 r &= \sqrt{x^2 + y^2} \\
@@ -597,6 +597,7 @@ $\int F(\sec(\vartheta), \tan(\vartheta)^n) \sec(\vartheta), \tan(\vartheta)
           (0cm,1.25cm)  node[fill=white] {$(0,1)$};
 \end{tikzpicture}
 
+\vfill 
 \noindent Revised \today. Barton Willis is the author of this work. This work is
 licensed under Attribution 4.0 International (CC BY 4.0) \,  \qrcode[height=0.25in]{https://creativecommons.org/licenses/by/4.0/}. For the current version of
 this document, visit \, \qrcode[height=0.25in]{https://github.com/barton-willis/calculus-two} 

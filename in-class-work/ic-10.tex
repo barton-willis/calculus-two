@@ -1,0 +1,139 @@
+\documentclass[12pt,fleqn,answers]{exam}
+%\usepackage{pifont}
+%\usepackage{dingbat,bbding}
+
+\usepackage{amssymb}
+\usepackage[intlimits]{amsmath}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+\usepackage[final]{microtype}
+\frenchspacing
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[]{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+%\shadedsolutions
+%\definecolor{SolutionColor}{rgb}{1,0.72,0.46} %{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{10}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Thursday 28 September 13:20}
+\newcommand{\class}{MATH 202, Fall \the\year}
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work  \quiz}}
+\textbf{Row and Seat}:\hrulefill\\
+\vspace{0.1in}
+\vspace{0.1in}
+\noindent  In class work  \textbf{\quiz\/}  has questions \textbf{1} through  \textbf{\numquestions} \/ with a total of \textbf{\numpoints\/}  points.   
+Turn in your work at the end of class  \emph{on paper}. This assignment is due \emph{\due}.
+
+\vspace{0.1in}
+
+
+\begin{questions}
+
+ \question Find each antiderivative:
+
+ \begin{parts}
+
+    \part [2] $\int \frac{x+1}{(x-3)(x-9)} \, \mathrm{d}x $
+
+    \begin{solution}[2.5in]
+         \begin{equation*}
+        \int \frac{x+1}{(x+3)(x-9)} \, \mathrm{d} x 
+        = \int \frac{1}{6 \left( x+3\right) }+\frac{5}{6 \left( x-9\right) }
+        \, \mathrm{d} x =  \frac{\log{\left( \left| x+3\right| \right) }}{6}+\frac{5 \log{\left( \left| x-9\right| \right) }}{6}
+        \end{equation*}
+    \end{solution}
+
+    \part [2] $\int \frac{1}{{{\left( x-1\right) }^{2}} x} 
+     \, \mathrm{d}x$
+     \begin{solution}[2.5in]
+        \begin{equation*}
+            \int \frac{1}{{{\left( x-1\right) }^{2}} x} \, \mathrm{d} x 
+            = \int \frac{1}{x}-\frac{1}{x-1}+\frac{1}{{{\left( x-1\right) }^{2}}}
+             \, \mathrm{d} x = 
+             \ln{\left( \left| x\right| \right) }-\frac{1}{x-1}-\ln{\left( \left| x-1\right| \right) }
+        \end{equation*}
+     \end{solution}
+  
+     \newpage 
+
+     \part [2] $\int \frac{1}{x^2 + 18 x +1} \, \mathrm{d}x$ 
+     
+     \textbf{Hint:} The factorization of $x^2 + 18 x +1$ is
+     the gnarly $\left( x-4 \sqrt{5}+9\right) \, \left( x+4 \sqrt{5}+9\right)$.
+     So the pfd has the form
+     \begin{equation*}
+        \frac{1}{x^2 + 18 x +1} = \frac{A}{x-4 \sqrt{5}+9} 
+          + \frac{B}{ x+4 \sqrt{5}+9}
+     \end{equation*}
+     And sure, you can solve the problem starting with this. An alternative
+     is to make a substitution  $x = z + \alpha$, where $\alpha$
+     is a  ``magic'' number you choose to transform the 
+     problem into comfort math. And comfort math might be
+     \begin{equation*}
+         \frac{\mathrm{d}}{\mathrm{d} x} \left (\frac{1}{\alpha}
+          \tanh^{-1} \left(\frac{x}{\alpha} \right) \right)
+          = \frac{1}{{{\alpha }^{2}}-{{x}^{2}}}.
+     \end{equation*} 
+     
+   \begin{solution}
+    \begin{align*}
+    \int \frac{1}{x^2 + 18 x +1} \, \mathrm{d} x
+    &= \int \frac{1}{(z+\alpha)^2 + 18 (z+\alpha) + 1} \, \mathrm{d} z \\
+    &= \int \frac{1}{z^2 + (18 + 2 \alpha) + 18 \alpha +1} \,
+    \mathrm{d} z, \\
+    \intertext{Choose $\alpha = -9$. Then} 
+    &= \int \frac{1}{z^2 - 80} \,   \mathrm{d} z, \\
+    &= -\frac{1}{\sqrt{80}} \tanh^{-1} \left(z / \sqrt{80}\right), \\
+    &=  -\frac{1}{\sqrt{80}} \tanh^{-1} \left((x+9) / \sqrt{80}\right)
+    \end{align*}
+   \end{solution}
+ \end{parts}
+\end{questions}
+\end{document}
+
