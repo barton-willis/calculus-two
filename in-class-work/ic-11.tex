@@ -86,7 +86,7 @@ through  \textbf{\numquestions} \/ with a total of
     of the form $\int_0^\infty F(x) \, \mathrm{d} x$. You will need 
     to evaluate such integrals using
     \mbox{$\displaystyle
-        \int_0^\infty F(x) \, \mathrm{d} x = \lim_{a \to \infty}  \int_0^a F(x) \, \mathrm{d} x.
+        \lim_{a \to \infty}  \int_0^a F(x) \, \mathrm{d} x.
     $}
 
 \begin{parts}
@@ -104,7 +104,7 @@ through  \textbf{\numquestions} \/ with a total of
      \newpage 
      \part [1] Find the $x$ coordinate of the \emph{centroid} of the 
      region $Q$.
-     \begin{solution}[2.5in]
+     \begin{solution}[4.5in]
      \end{solution} 
    
      \part [1] Find the $y$ coordinate of the \emph{centroid} of the 
@@ -119,15 +119,18 @@ through  \textbf{\numquestions} \/ with a total of
 \end{parts}
 
 \newpage
- \question The 1987 Edition of \emph{Larry's Obscure Table of Obscure but 
+ \question The floor function rounds a real number $x$ down to the 
+ next integer that is less than or equal to $x$. For example, 
+ $\lfloor \uppi \rfloor = 3$ and $\lfloor 3 \rfloor = 3$. The 
+ 1987 (Edition B) of \emph{Larry's Obscure Table of Obscure but 
  Useful Integrals}, lists the antiderivative
- (reprinted with permission)
- $    \int 2 \lfloor x \rfloor  \, \mathrm{d} x = 
-     (2x -1) \lfloor x \rfloor -\lfloor x \rfloor^2$.
+ (reprinted here with permission)
+ $    \int  \lfloor x \rfloor  \, \mathrm{d} x = 
+     \frac{1}{2} (2x -1) \lfloor x \rfloor - \frac{1}{2} \lfloor x \rfloor^2$.
   
 \begin{parts}
 
-    \part [1] Use Desmos to graph $y = (2x -1) \lfloor x \rfloor -\lfloor x \rfloor^2$
+    \part [1] Use Desmos to graph $\frac{1}{2} (2x -1) \lfloor x \rfloor - \frac{1}{2} \lfloor x \rfloor^2$.
     for $0 \leq x \leq 4$. Reproduce your graph here. 
      Does the graph appear to be continuous? (When an antiderivative 
      exists, it must be continuous.)

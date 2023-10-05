@@ -1,0 +1,106 @@
+\documentclass[12pt,fleqn]{exam}
+\usepackage{amssymb}
+\usepackage[intlimits]{amsmath}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+\usepackage[final]{microtype}
+\frenchspacing
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[]{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+%\shadedsolutions
+%\definecolor{SolutionColor}{rgb}{1,0.72,0.46} %{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{12}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Thursday 5 October 13:20}
+\newcommand{\class}{MATH 202, Fall \the\year}
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work  \quiz}}
+\textbf{Row and Seat}:\hrulefill\\
+
+\begin{quote}
+    \emph{“Study hard what interests you the most in the most 
+    undisciplined, irreverent and original manner possible.”} 
+    \hfill \sc{Richard Feynman} 
+\end{quote}
+
+\noindent  In class work  \textbf{\quiz}  has questions \textbf{1} 
+through  \textbf{\numquestions} \/ with a total of 
+\textbf{\numpoints\/}  points.Turn in your work at the end of class 
+\emph{on paper}. This assignment is due \emph{\due}.
+
+\vspace{0.1in}
+
+
+\begin{questions} 
+    
+  \question[2] Find the \emph{numeric value} of the integral 
+  $\int_0^\infty \frac{x}{1+x^4} \, \mathrm{d} x$.
+  \textbf{Hint:} To find an antiderivative of $\int \frac{x}{1+x^4} \, \mathrm{d} x$, use 
+  the substitution $z = x^2$.
+
+  \begin{solution}[3.0in]
+  \end{solution}
+
+
+  \question [1] Show that $\int_0^\infty \frac{28 + \cos(x)}{1+x^2} \, \mathrm{d} x$
+  converges. To do this, use a comparison test with 
+  $ \frac{\alpha}{1+x^2}$, where $\alpha$ is a number that you cleverly 
+  choose.
+  \begin{solution}%[3.0in]
+  \end{solution}
+
+  \newpage
+  \question [1] Show that 
+  $\int_1^\infty \frac{107 + \mathrm{e}^{-x}}{1+x^2} \, \mathrm{d} x$
+  converges. To do this, use a limit comparison test. 
+  \begin{solution}[3.0in]
+  \end{solution}
+
+  \end{questions}
+\end{document}
+
