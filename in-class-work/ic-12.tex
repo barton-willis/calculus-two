@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{amssymb}
 \usepackage[intlimits]{amsmath}
 \usepackage{epsfig}
@@ -83,7 +83,24 @@ through  \textbf{\numquestions} \/ with a total of
   \textbf{Hint:} To find an antiderivative of $\int \frac{x}{1+x^4} \, \mathrm{d} x$, use 
   the substitution $z = x^2$.
 
-  \begin{solution}[3.0in]
+  \begin{solution}[3.0in] Let's begin by finding an antiderivative; once
+    we found it, we'll use the FTC along with a limit to find the value 
+    of the improper integral. We have
+    \begin{align*}
+    \int \frac{x}{1+x^4} \, \mathrm{d} x &= \frac{1}{2}  \int \, \frac{1}{1+(x^2)^2} \, \mathrm{d} x^2,  
+                          && (\frac{1}{2} \mathrm{d} x^2 = 2 x \mathrm{d} x) \\
+                                                         &= \frac{1}{2}  \int  \frac{1}{1+z^2} \, \mathrm{d} z, \\
+                                                         &= \frac{1}{2} \arctan(z), \\
+                                                          &= \frac{1}{2} \arctan(x^2).
+    \end{align*}
+    Second, we take on the improper integral:
+     \begin{align*}
+    \int_0^\infty  \frac{x}{1+x^4} \, \mathrm{d} x &= \lim_{a \to \infty}  \int_0^a  \frac{x}{1+x^4} \, \mathrm{d} x, \\
+                &=  \lim_{a \to \infty} \left( \frac{1}{2} \arctan(x^2) \right |_{0}^a, \\
+                &=  \lim_{a \to \infty} \left( \frac{1}{2} \arctan(a^2)  -  \frac{1}{2} \arctan(0) \right), \\
+                 &=  \lim_{a \to \infty} \left( \frac{1}{2} \arctan(a^2)  \right), \\
+                 &= \frac{\uppi}{4}
+    \end{align*}
   \end{solution}
 
 
@@ -91,14 +108,36 @@ through  \textbf{\numquestions} \/ with a total of
   converges. To do this, use a comparison test with 
   $ \frac{\alpha}{1+x^2}$, where $\alpha$ is a number that you cleverly 
   choose.
-  \begin{solution}%[3.0in]
+  \begin{solution} For all real numbers $x$, we have $ 27 \leq 28 + \cos(x) \leq 29$. Let's (cleverly) choose $\alpha$
+  to be $29$. Then for all  real numbers $x$, we have
+  \begin{equation}
+    0 \leq  \frac{28 + \cos(x)}{1+x^2} \leq  \frac{29}{1+x^2}.
+  \end{equation}
+  But $\int_0^\infty \frac{29}{1+x^2} \, \mathrm{d} x$ converges, so $\int_0^\infty \frac{28 + \cos(x)}{1+x^2} \, \mathrm{d} x$ converges.
+  
+  \textbf{Be careful} We only know that $\int_0^\infty \frac{28 + \cos(x)}{1+x^2} \, \mathrm{d} x$ is a real number,
+  but the comparison test \textbf{doesn't} tell us its value.  We'll it does tell us that
+  \begin{equation*}
+    \int_0^\infty \frac{28 + \cos(x)}{1+x^2} \, \mathrm{d} x  \leq  \int_0^\infty \frac{29}{1+x^2} \, \mathrm{d} x
+    = \frac{29 \ensuremath{\pi} }{2} \approx 45.553093477052.
+  \end{equation*}
+  Numerical integration gives us the approximation $ \int_0^\infty \frac{28 + \cos(x)}{1+x^2} \, \mathrm{d} x \approx
+   44.560$
   \end{solution}
 
   \newpage
   \question [1] Show that 
   $\int_1^\infty \frac{107 + \mathrm{e}^{-x}}{1+x^2} \, \mathrm{d} x$
   converges. To do this, use a limit comparison test. 
-  \begin{solution}[3.0in]
+  \begin{solution}[3.0in] We know that  $\int_1^\infty \frac{1}{1+x^2} \, \mathrm{d} x$ converges. And
+  for all real $x \geq 1$ we have $\frac{107 + \mathrm{e}^{-x}}{1+x^2} > 0$ and $\frac{1}{1+x^2} \geq 0$.
+  Finally, everything in sight is continuous; so look at
+  \begin{align*}
+   \lim_{x \to \infty} \frac{\frac{1}{1+x^2}} {\frac{107 + \mathrm{e}^{-x}} {1+x^2} } &=
+    \lim_{x \to \infty} \frac{1}{107 + \mathrm{e}^{-x}}, \\
+    &= \frac{1}{107}.   
+    \end{align*}
+  So $\int_1^\infty \frac{107 + \mathrm{e}^{-x}}{1+x^2} \, \mathrm{d} x$ converges.
   \end{solution}
 
   \end{questions}
