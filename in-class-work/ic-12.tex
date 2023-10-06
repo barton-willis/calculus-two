@@ -88,10 +88,12 @@ through  \textbf{\numquestions} \/ with a total of
     of the improper integral. We have
     \begin{align*}
     \int \frac{x}{1+x^4} \, \mathrm{d} x &= \frac{1}{2}  \int \, \frac{1}{1+(x^2)^2} \, \mathrm{d} x^2,  
-                          && (\frac{1}{2} \mathrm{d} x^2 = 2 x \mathrm{d} x) \\
-                                                         &= \frac{1}{2}  \int  \frac{1}{1+z^2} \, \mathrm{d} z, \\
-                                                         &= \frac{1}{2} \arctan(z), \\
-                                                          &= \frac{1}{2} \arctan(x^2).
+                          && \left (x \mathrm{d} x = \frac{1}{2} \mathrm{d} x^2 \right), \\
+                                                         &= \frac{1}{2}  \int  \frac{1}{1+z^2} \, \mathrm{d} z, 
+                                                         && (\mbox{replace } x^2 \mbox{ by } z )\\
+                                                         &= \frac{1}{2} \arctan(z), 
+                                                         &&(\mbox{standard antiderivative})\\
+                                                         &= \frac{1}{2} \arctan(x^2) && (\mbox{replace} z \mbox{ by } x^2 ).
     \end{align*}
     Second, we take on the improper integral:
      \begin{align*}
@@ -125,12 +127,12 @@ through  \textbf{\numquestions} \/ with a total of
    44.560$
   \end{solution}
 
-  \newpage
+  %\newpage
   \question [1] Show that 
   $\int_1^\infty \frac{107 + \mathrm{e}^{-x}}{1+x^2} \, \mathrm{d} x$
   converges. To do this, use a limit comparison test. 
   \begin{solution}[3.0in] We know that  $\int_1^\infty \frac{1}{1+x^2} \, \mathrm{d} x$ converges. And
-  for all real $x \geq 1$ we have $\frac{107 + \mathrm{e}^{-x}}{1+x^2} > 0$ and $\frac{1}{1+x^2} \geq 0$.
+  for all real $x \geq 1$ we have $\frac{107 + \mathrm{e}^{-x}}{1+x^2} > 0$ and $\frac{1}{1+x^2} >  0$.
   Finally, everything in sight is continuous; so look at
   \begin{align*}
    \lim_{x \to \infty} \frac{\frac{1}{1+x^2}} {\frac{107 + \mathrm{e}^{-x}} {1+x^2} } &=
