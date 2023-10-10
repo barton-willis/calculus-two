@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn,answers]{exam}
+\documentclass[12pt,fleqn]{exam}
 \usepackage{amssymb}
 \usepackage[intlimits]{amsmath}
 \usepackage{epsfig}
@@ -20,7 +20,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[]{fourier}
 \usepackage{isomath}
-\usepackage{upgreek,amsmath}
+\usepackage{upgreek}
 \usepackage{graphicx}
 
 \newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
@@ -82,7 +82,8 @@ through  \textbf{\numquestions} \/ with a total of
     
   \question [2] Use Desmos to graph $y = \sqrt{x^2+1} - x$. Reproduce
   the graph here.  Based on the graph, what is your guess for 
-  the numeric value of $\displaystyle \lim_{x \to \infty} \sqrt{x^2+1} - x$?
+  the numeric value of $\displaystyle \lim_{x \to \infty}
+   \left( \sqrt{x^2+1} - x \right)$?
 
 
  
@@ -94,8 +95,12 @@ through  \textbf{\numquestions} \/ with a total of
         \includegraphics[scale=0.2]{desmos-graph(20).png}
       %\end{figure*}
     \end{center}
-    The graph indicates that $\displaystyle \lim_{x \to \infty} \sqrt{x^2+1} - x = 0$. Since $\displaystyle \lim_{x \to \infty} \sqrt{x^2+1} = \infty$
-  and \\ \mbox{$\displaystyle \lim_{x \to \infty}  - x = -\infty$}, the limit problem $\displaystyle \lim_{x \to \infty} \sqrt{x^2+1} - x$ gives
+    The graph indicates that $\displaystyle \lim_{x \to \infty} 
+    \left(\sqrt{x^2+1} - x \right) = 0$. Since 
+    $\displaystyle \lim_{x \to \infty} \sqrt{x^2+1} = \infty$
+  and \\ \mbox{$\displaystyle \lim_{x \to \infty}  - x = -\infty$}, 
+  the limit problem $\displaystyle \lim_{x \to \infty} 
+  \left(\sqrt{x^2+1} - x\right) $ gives
 an indeterminate form of the type $\infty - \infty$.  
 
 \quad  Knowing that we're dealing with an  indeterminate form of the type $\infty - \infty$ might
@@ -107,13 +112,15 @@ tell us something about how to find the limit, but it tells us nothing about the
   \begin{solution}%[2.5in]
   We'll use the trick of moving the radicals to the denominator. We have
   \begin{align*}
-  \lim_{x \to \infty} \sqrt{x^2+1} - x  &= \lim_{x \to \infty} \left(\sqrt{x^2+1} - x \right)   \times \frac{\sqrt{x^2+1}  + x}{\sqrt{x^2+1}  + x}, \\
-                                                                 &= \lim_{x \to \infty} \frac{(x^2+1) - x^2}{\sqrt{x^2+1}  + x}, \\
-                                                                 &=  \lim_{x \to \infty} \frac{1}{\sqrt{x^2+1}  + x}, \\
-      \intertext{We have $\displaystyle \lim_{x \to \infty}    \sqrt{x^2+1}  + x = \infty$, so we have}                                                        
+  \lim_{k \to \infty} \left(\sqrt{k^2+1} - k \right)  &= \lim_{k \to \infty} \left(\sqrt{k^2+1} - k \right)   \times \frac{\sqrt{k^2+1}  + k}{\sqrt{k^2+1}  + k}, \\
+                                                                 &= \lim_{k \to \infty} \frac{(k^2+1) - k^2}{\sqrt{k^2+1}  + k}, \\
+                                                                 &=  \lim_{k \to \infty} \frac{1}{\sqrt{k^2+1}  + k}, \\
+      \intertext{We have $\displaystyle \lim_{x \to \infty}   \left( \sqrt{k^2+1}  + k \right) = \infty$, so we have}                                                        
                                                                  &=  0
   \end{align*}
-  Although the calculation $\displaystyle \lim_{x \to \infty} \frac{1}{\sqrt{x^2+1}  + x} = \frac{1}{\infty} = 0$ is based on a theorem, it's not considered   to be something you should do in public. Specifically, the theorem is: If $\displaystyle \lim_a   F \in \reals$ and $\displaystyle \lim_a G \in \reals = \infty$,
+  Although the calculation $\displaystyle \lim_{k \to \infty} \frac{1}{\sqrt{k^2+1}  + k} = \frac{1}{\infty} = 0$ is based on a theorem, it's not   
+  something you should do in public. Specifically, the theorem is: 
+  If $\displaystyle \lim_a   F \in \reals$ and $\displaystyle \lim_a G = \infty$,
   then $\displaystyle \lim_a \frac{F}{G} = 0$. Be careful with this--the limit of the numerator must be a real number.
   \end{solution}
 
@@ -122,16 +129,16 @@ tell us something about how to find the limit, but it tells us nothing about the
   $b_k = k \ln \left(1+\frac{8}{k} \right)$ converges. If it does, find its 
   limit. As always, show your work.
   \begin{solution}%[2.5in]
-We need the limit of a product. Since $\displaystyle \lim_{k \to \infty} k = \infty$ and $\displaystyle \lim_{k \to \infty} \left(1+\frac{8}{k} \right) = 0$, we have an indeterminate form of the type $0 \times \infty$. By rearranging this to $\frac{\left(1+\frac{8}{k} \right) }{\frac{1}{k}}$,
+We need the limit of a product. Since $\displaystyle \lim_{k \to \infty} k = \infty$ and $\displaystyle \lim_{k \to \infty} \ln \left(1+\frac{8}{k} \right) = 0$, we have an indeterminate form of the type $0 \times \infty$. By rearranging this to $\frac{\ln\left(1+\frac{8}{k} \right) }{\frac{1}{k}}$,
 we have an  indeterminate form of the type $\frac{0}{0}$. And maybe the l'Hôpital rule will help.  We have
 \begin{align*}
-  \lim_{ k  \to \infty} \ln \left(1+\frac{8}{k} \right) &=  \lim_{k \to \infty} \frac{\left(1+\frac{8}{k} \right) }{\frac{1}{k}}, \\
+  \lim_{ k  \to \infty} \ln \left(1+\frac{8}{k} \right) &=  \lim_{k \to \infty} \frac{ \ln \left(1+\frac{8}{k} \right) }{\frac{1}{k}}, \\
                                                                                           &= \lim_{k \to \infty} \frac{ -\frac{8}{\left( \frac{8}{k}+1\right) \, {{k}^{2}}}}{-\frac{1}{k^2}}\\
                                                                                           &=  \lim_{k \to \infty} \frac{8}{\frac{8}{k}+1}, \\
                                                                                           &= 8.
 \end{align*}
   Actually, until we've determined that the limit of the quotient of derivatives is a real number, equality between the first and second lines is 
-  not certain.  Notionally, we could use $\overset{?}{=}$ To mean equality as long as the right side is a real number, but that notation (I didn't invent it) is a bit weird.
+  not certain.  Notionally, we could use $\overset{?}{=}$ To mean equality as long as the right side is a real number, but that notation (I didn't invent it) is nonstandard.
   \end{solution}
 
   \newpage
@@ -161,7 +168,7 @@ $c_n = 2^n +3^n$.
 \begin{solution}[2.5in] We have
 \begin{align*}
   \left[ c_n = 5 c_{n-1}-6 c_{n-2} \right] &= \left[  2^n +3^n = 5 ( 2^{n-1} +3^{n-1}) - 6 (  2^{n-2} +3^{n-2} ) \right], \\
-                                                                      &=  \left[  2^n +3^n = \frac{5}{2}  \times  2^{n} + \frac{3}{2} \times 3^{n} - \frac{6}{4}   \times 2^n + \frac{6}{9} \times 3^n \right],\\
+                                                                      &=  \left[  2^n +3^n = \frac{5}{2}  \times  2^{n} + \frac{5}{3} \times 3^{n} - \frac{6}{4}   \times 2^n - \frac{6}{9} \times 3^n \right],\\
               &=\left[  2^n +3^n = 2^n +3^n     \right], \\
               &= \text{True}.                                                    
 \end{align*}
