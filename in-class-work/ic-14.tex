@@ -1,0 +1,149 @@
+\documentclass[12pt,fleqn]{exam}
+\usepackage{amssymb}
+\usepackage[intlimits]{amsmath}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+\usepackage[final]{microtype}
+\frenchspacing
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[]{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+%\shadedsolutions
+%\definecolor{SolutionColor}{rgb}{1,0.72,0.46} %{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{14}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Thursday 12 October 13:20}
+\newcommand{\class}{MATH 202, Fall \the\year}
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work  \quiz}}
+\textbf{Row and Seat}:\hrulefill\\
+
+\noindent \emph{“You are never dedicated to something you have complete confidence in.''} \hfill 
+   \\  $\phantom{xxx}$ \hfill {\sc Robert M. Pirsig}
+
+
+\noindent  In class work  \textbf{\quiz}  has questions \textbf{1} 
+through  \textbf{\numquestions} \/ with a total of 
+\textbf{\numpoints\/}  points.Turn in your work at the end of class 
+\emph{on paper}. This assignment is due \emph{\due}.
+
+\vspace{0.1in}
+
+
+\begin{questions} 
+    
+   \question[2] When Morwenna graduates from UNK and starts her first job, she expects to earn a 
+   starting annual salary of \$42,000. She plans to work for 42 years
+   and she expects to earn a 3\% raise each year. Thus, in her 
+   $\mathrm{n}^{\mathrm{th}}$  year 
+   of work, her salary is $42,000 \times 1.03^{n-1}$. During 
+   Morwenna's 42 years of labor, how much will she earn?
+
+   \begin{solution}[2.5in]
+   
+    
+   \end{solution}
+
+   \question Given a formula for a sequence $b$, find its limit.
+   Show all of your work.
+
+   \begin{parts}
+
+    \part [2] $\displaystyle b_n = \sum_{k=0}^{n} \left(\frac{2}{3}\right)^k$.
+    \begin{solution}%[2.5in]
+   
+    
+    \end{solution}
+
+    \newpage 
+    \part [2] $\displaystyle b_n = \sum_{k=0}^{n} \left(\frac{3}{2}\right)^k$.
+    \begin{solution}%[2.5in]
+   
+    
+    \end{solution}
+
+
+
+
+
+
+   \end{parts}
+ 
+   \newpage
+
+   \question [2] The Newton–Raphson method\footnote{Raphson invented
+   the method before Newton. If you didn't learn the Newton–Raphson method
+   in Calculus I, I should tell the Office of Student Records to 
+   expunge your MATH 115 credit.} is a way to find an 
+   approximate solution to an equation $F(x)=0$. Specifically,
+   the method starts with a guess for the solution, call it $a_1$,
+   and then refines the guess with values $a_2, a_3, \dots$. 
+   This sequence is called a \emph{Newton sequence}.
+   If all goes well, the sequence $a$ converges to 
+   solution to $F(x)=0$. Specifically for $F(x) = x^2 - 2$ and
+   an initial guess of $1$, the Newton sequence  is defined
+   recursively by 
+   \begin{equation*}
+    a_{n+1} = \begin{cases} 1  & n=0  \\
+                            a_n - \frac{a_n^2 - 2}{2 a_n} & n > 0
+    \end{cases}.
+\end{equation*}
+Assuming that the sequence $a$ converges to a positive number, find the numerical
+value of $\displaystyle \lim_{n \to \infty} a_n$.  Use the 
+fact that if $\displaystyle \lim_{n \to \infty} a_n  = L$,
+then $\displaystyle \lim_{n \to \infty} a_{n+1} = L$.
+
+\quad Many of you will have the urge to``simplify'' $a_n - \frac{a_n^2 - 2}{2 a_n}$
+to $\frac{a_n^2 + 2}{2 a_n}$ or possibly to 
+$\frac{a_n}{2} + \frac{1}{a_n}$. Doing so is an OK thing to do,
+but I suggest doing a bit more `T' from GNAT\footnote{GNAT = Graphical,
+Numerical, Algebraic, Think. I possibly invented the acronym, but 
+the concept was invented by Deborah Hughes Hallett.} before you give into your urge to simplify.
+
+
+\end{questions}
+\end{document}
