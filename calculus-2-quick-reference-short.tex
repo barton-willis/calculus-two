@@ -201,13 +201,13 @@ For \(n\in \mathbf{Z}_{>0}\)
     &\sum_{k=0}^{n-1}1 = n, \quad
     \sum_{k=0}^{n-1}{\left. k\right.} =\nicefrac{\left( n-1\right)  n}{2}\\
     &\sum_{k=0}^{n-1}{\left. {{k}^{2}}\right.} =\nicefrac{\left( n-1\right)  n\, \left( 2 n-1\right) }{6}, \\
-    &\sum_{k=0}^{n-1} x^k = \frac{1-x^n}{1-x}, \quad  x \neq 1 \\
-    &\sum_{k=0}^\infty z^k = \begin{cases} \frac{1}{1-z} & z \in (-1,1) \\
-                                      \infty & z \in [1,\infty] 
+    &\sum_{k=0}^{n-1} x^k = \sum_{k=1}^{n} x^{k-1} = \frac{1-x^n}{1-x}, \quad  x \neq 1 \\
+    &\sum_{k=0}^\infty x^k = \begin{cases} \frac{1}{1-x} & x \in (-1,1) \\
+                                      \infty & x \in [1,\infty] 
 \end{cases}.
    \end{align*}
 
-   When $z \in (-\infty, -1]$, the series $\sum_{k=0}^\infty z^k$ diverges.
+   When $x \in (-\infty, -1]$, the series $\sum_{k=0}^\infty x^k$ diverges.
  \end{minipage}
  \vspace{0.25in}
  \section*{Applications}
@@ -430,11 +430,11 @@ $L = \lim_{k \to \infty} \left| \frac{a_{k+1}}{a_k} \right|$.
 Let $a$ and $b$ be positive sequences. Define 
 $L = \lim_{k \to \infty} \frac{a_k}{b_k}$.
 \begin{itemize}[noitemsep]
-    \item If $L \in \reals_{> 0}$ and $\sum a_k$ converges then  
+    \item If $L \in \reals_{> 0}$ and $\sum a_k$ converges, then  
     $\sum b_k$ converges.
 
-    \item If $L \in \reals_{> 0}$ and $\sum a_k$ diverges then  
-    $\sum a_k$ diverges.
+    \item If $L \in \reals_{> 0}$ and $\sum a_k$ diverges, then  
+    $\sum b_k$ diverges.
 
     \item If $L = 0$ and $\sum b_k$  converges, then $\sum a_k $  converges
    
@@ -455,7 +455,7 @@ If a function $F$ is infinitely differentiable at $a$, its Taylor series centere
 \begin{equation*}
   \sum_{k=0}^\infty \frac{F^{(k)}(a)}{k!}  (x-a)^k.
 \end{equation*}
-When $a$ is zero, the Taylor series is also known as the MacLaurin Series.
+When $a$ is zero, the Taylor series is also known as a MacLaurin Series.
 \vspace{0.1in}
 \section*{Polar to Cartesian}
 %\vspace{-0.2in}
