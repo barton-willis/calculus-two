@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{amssymb}
 \usepackage[intlimits]{amsmath}
 \usepackage{epsfig}
@@ -83,10 +83,35 @@ through  \textbf{\numquestions} \/ with a total of
    of work, her salary is $42,000 \times 1.03^{n-1}$. During 
    Morwenna's 42 years of labor, how much will she earn?
 
-   \begin{solution}[2.5in]
+   \begin{solution}[2.5in] In this problem it's easy to get tangled up 
+      with errors between 41 and 42, and between a sum index that starts 
+      at zero or that starts at one. To navigate these problems, I suggest 
+      expressing the lifetime amount Morwenna earns as simply as possible;
+      for example\footnote{In 42 years of labor, Morwenna will earn 41 (not 42) raises. That 
+      explains why the final term in the sum is $42,000 \times 1.03^{41}$
+      and not $42,000 \times 1.03^{42}$}
+      \begin{equation*}
+         42,000 + 42,000 \times 1.03 + 42,000 \times 1.03^2 + \cdots 
+         + 42,000 \times 1.03^{41}.
+      \end{equation*}
+   Expressed this way, it's most natural to make the lower sum index be 
+   zero, not one, I think. And a bonus to using a lower sum index of zero 
+   is that way, the sum explicitly matches the geometric sum identity in the 
+   QRS. 
    
-    
-   \end{solution}
+
+   In summation notation, the lifetime earnings for Morwenna is 
+   \begin{equation*}
+     \sum_{n=0}^{41} 42,000 \times 1.03^n.
+   \end{equation*}
+   To express this explicitly as a number, we need to use outativity
+   along with the geometric sum identity; we have
+   \begin{align*}
+      \sum_{n=0}^{41} 42,000 \times 1.03^n &= 42,000 \sum_{n=0}^{41}  1.03^n, && \text{(outative property)} \\
+                  &= 42,000 \frac{1 - 1.03^{42}}{1-1.03},  &&\text{(geometric sum identity)} \\
+                  &= 3,444,974.25.  && \text{(round to the nearest penny)}
+   \end{align*}
+      \end{solution}
 
    \question Given a formula for a sequence $b$, find its limit.
    Show all of your work.
@@ -95,14 +120,42 @@ through  \textbf{\numquestions} \/ with a total of
 
     \part [2] $\displaystyle b_n = \sum_{k=0}^{n} \left(\frac{2}{3}\right)^k$.
     \begin{solution}%[2.5in]
+      We don't have any rules for finding the limit of a sequence 
+      whose formula is a sum. For us to have any chance of solving 
+      this problem, we need to find an alternative formula for the
+      sequence $b$ that doesn't involve a summation.
+
+      \quad Fortunately, the formula for $b$ is a geometric sum. And 
+      we have a nifty way to simplify to summation; we have
+      \begin{equation*}
+         \sum_{k=0}^{n} \left(\frac{2}{3}\right)^k =
+            \frac{1 - \left(\frac{2}{3} \right)^{n+1}}{1 - \frac{2}{3}}
+            = 3 \left (1 - \left(\frac{2}{3} \right)^{n+1} \right)
+      \end{equation*}
+   I know what you are thinking:  The QRS formula tells us that for for all positive integers $n$ and for all $x \neq 1$, we have $\sum_{k=0}^{n-1} x^k = \frac{1-x^n}{1-x}$, but
+   we need $\sum_{k=0}^{n} x^k$. Are we toast?  No way.  The upper sum index in $\sum_{k=0}^{n-1} x^k = \frac{1-x^n}{1-x}$ can be
+   replaced by any positive integer. But we have to remember that the mathematician standard: what we do to the left, we need to do to the
+   right.  So we can replace every $n$ by $n+1$ in the identity $\sum_{k=0}^{n-1} x^k = \frac{1-x^n}{1-x}$ to determine that
+   $\sum_{k=0}^{n} x^k = \frac{1-x^{n+1}}{1-x}$.
    
+   \quad Finding the limit now is possible; we have
+   \begin{equation}
+      \lim_{n \to \infty} b_n =  \lim_{n \to \infty} 3 \left (1 - \left(\frac{2}{3} \right)^{n+1} \right) = 3.
+  \end{equation}
+  The base of the exponential term  $\left(\frac{2}{3} \right)^{n+1}$ is in the interval $(-1,1)$, so this 
+  is a decaying exponential term.  And its limit is zero.
     
     \end{solution}
 
     \newpage 
     \part [2] $\displaystyle b_n = \sum_{k=0}^{n} \left(\frac{3}{2}\right)^k$.
     \begin{solution}%[2.5in]
-   
+    The strategy for this problem is much the same as before; we have
+       \begin{equation}
+      \lim_{n \to \infty} b_n =  \lim_{n \to \infty} \frac{1-  \left( \frac{3}{2}\right)^{n+1} }{1-\frac{3}{2}} = \infty.
+  \end{equation}
+    The base of the exponential term  $\left(\frac{3}{2} \right)^{n+1}$ is outside the interval $[-1,1]$, so this 
+  is a growing  exponential term.  And its limit is infinity.
     
     \end{solution}
 
@@ -113,7 +166,7 @@ through  \textbf{\numquestions} \/ with a total of
 
    \end{parts}
  
-   \newpage
+   %\newpage
 
    \question [2] The Newton–Raphson method\footnote{Raphson invented
    the method before Newton. If you didn't learn the Newton–Raphson method
@@ -137,13 +190,35 @@ value of $\displaystyle \lim_{n \to \infty} a_n$.  Use the
 fact that if $\displaystyle \lim_{n \to \infty} a_n  = L$,
 then $\displaystyle \lim_{n \to \infty} a_{n+1} = L$.
 
-\quad Many of you will have the urge to ``simplify'' $a_n - \frac{a_n^2 - 2}{2 a_n}$
+\quad Many of you will have the urge to``simplify'' $a_n - \frac{a_n^2 - 2}{2 a_n}$
 to $\frac{a_n^2 + 2}{2 a_n}$ or possibly to 
 $\frac{a_n}{2} + \frac{1}{a_n}$. Doing so is an OK thing to do,
 but I suggest doing a bit more `T' from GNAT\footnote{GNAT = Graphical,
 Numerical, Algebraic, Think. I possibly invented the acronym, but 
-Deborah Hughes Hallett invented, or at least popularized, the concept.} before you give into your urge to simplify.
+the concept was invented by Deborah Hughes Hallett.} before you give into your urge to simplify.
 
+\begin{solution}
+Equal things have equal limits. So we have
+\begin{equation*}
+  \lim_{n \to \infty} a_{n+1}   = \lim_{n \to \infty} \left(a_n - \frac{a_n^2 - 2}{2 a_n}\right).
+\end{equation*}
+The usual rules of limits tells us that this equation is equivalent to 
+\begin{equation*}
+  L   = L  - \frac{L^2 - 2}{2 L}
+\end{equation*}
+So assuming the sequence $a$ converges to a positive number,  the sequence $a$ converges to $\sqrt{2}$.
 
+Incidentally:  Every term in the sequence $a$ is a rational number; specifically, the first few terms are
+\begin{equation*}
+1,\frac{3}{2},\frac{17}{12},\frac{577}{408},\frac{665857}{470832},\frac{886731088897}{627013566048},\frac{1572584048032918633353217}{1111984844349868137938112}, \dots
+\end{equation*}
+The fact that sequence  whose range is in the set of rational number converges to an irrational number is a deep idea in mathematics. Also
+rounded to 15 decimal digits, we have
+\begin{equation*}
+\frac{1572584048032918633353217}{1111984844349868137938112} \approx 1.414213562373095
+\end{equation*}
+And $1.414213562373095$ is very close to $\sqrt{2}$.  We don't have a measure of  convergence rate of a sequence, but this is a 
+sequence that we might say converges very quickly. 
+\end{solution}
 \end{questions}
 \end{document}
