@@ -1,11 +1,11 @@
-\documentclass[12pt]{exam}
+\documentclass[12pt,fleqn]{exam}
 
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath}
 \usepackage{fleqn}
 \usepackage{epsfig,upgreek}
-\usepackage{mathptm}
+\usepackage{fourier}
 \newcommand{\reals}{\mathbf{R}}
 \addpoints
 \boxedpoints
@@ -22,44 +22,102 @@
 {\bf Row and Seat:}\hrulefill\
 %\normalsize
 
+\noindent \textbf{Warning:}  For the most part, I've only given answers, not solutions--this is BOB (back-of-book) fashion. Of course, for your
+exam you will need to \textbf{show your work}.
 
 
 \begin{questions}
 
+  \question Define a region $Q$ of the xy-plane by 
+  $Q = \{(x,y) | 0 \leq y \leq x \sin(x), 0 \leq x \leq \uppi \}$
+
+  \begin{parts}
+
+    \part Find $\mbox{area}(Q)$.
+    \begin{solution}
+      \begin{equation*}
+        \mbox{area}(Q) = \int_0^\uppi x \sin(x) \, \mathrm{d} x = 
+           \uppi.
+      \end{equation*}
+    \end{solution}
+
+    \part Find the x coordinate of the centroid of $Q$.
+
+    \begin{solution}
+      \begin{equation*}
+        \mbox{area}(Q) \overline{x} = \int_0^\uppi x^2 \sin(x) \, \mathrm{d} x = 
+           \uppi^2-4.
+      \end{equation*}
+      So $\overline{x}  = \frac{\uppi^2-4}{\uppi} \approx 
+      1.868353108854631$.
+    \end{solution}
+  \end{parts}
 \question Find the value of each indefinite or definite integral.
 \begin{parts}
 
 \part \(\displaystyle\int x e^{x^2} \, \mathrm{d} x = \)
 
 \begin{solution}[2.0in]
+  \begin{equation*}
+    \int x \mathrm{e}^{x^2} \, \mathrm{d} x = \frac{{{\mathrm{e}}^{{{x}^{2}}}}}{2}
+  \end{equation*}
 \end{solution}
 \part \(\displaystyle\int_0^1 \frac{x}{\left(1+x^2\right)^{3/2}} \, \mathrm{d}x = \)
 \begin{solution}[2.0in]
+  \begin{equation*}
+    \int_0^1 \frac{x}{\left(1+x^2\right)^{3/2}} \, \mathrm{d}x =
+    1-\frac{1}{\sqrt{2}}
+  \end{equation*}
+  
 \end{solution}
 \part \(\displaystyle\int x \sqrt{1-x^2} \, \mathrm{d}x = \)
 \begin{solution}[2.0in]
+  \begin{equation*}
+    \int x \sqrt{1-x^2} \, \mathrm{d}x = -\frac{{{\left( 1-{{x}^{2}}\right) }^{\frac{3}{2}}}}{3}
+  \end{equation*}
+ 
 \end{solution}
 
 \part \(\displaystyle \int \tan^{-1}(x) \, \mathrm{d}x = \)
 \begin{solution}[2.0in]
+\begin{equation*}
+  \int \tan^{-1}(x) \, \mathrm{d}x = 
+  x \operatorname{tan}^{-1}(x)-\frac{\ln{\left( {{x}^{2}}+1\right) }}{2}
+\end{equation*}
 \end{solution}
 \part \(\displaystyle \int x \ln(x) \, \mathrm{d}x = \)
 \begin{solution}[2.0in]
+  \begin{equation*}
+    \int x \ln(x) \, \mathrm{d}x = \frac{{{x}^{2}} \ln{(x)}}{2}-\frac{{{x}^{2}}}{4}
+  \end{equation*}
 \end{solution}
 \part \(\displaystyle \int_0^1 x e^{-x} \, \mathrm{d}x = \)
 \begin{solution}[2.0in]
+  \begin{equation*}
+    \int_0^1 x e^{-x} \, \mathrm{d}x = 1-2 {{\mathrm{e}}^{-1}}
+  \end{equation*}
 \end{solution}
 \part \(\displaystyle \int \frac{1}{(x+5)(x+9)} \, \mathrm{d}x = \)
 \begin{solution}[2.0in]
+  \begin{equation*}
+    \int \frac{1}{(x+5)(x+9)} \, \mathrm{d}x = 
+     \frac{\ln{\left| x+5\right| }}{4}-\frac{\ln{ \left| x+9\right| }}{4}
+  \end{equation*}
 \end{solution}
-\part \(\displaystyle \int \frac{x^2}{(x+5)(x+9)} \, \mathrm{d}x = \)
-\begin{solution}[2.0in]
-\end{solution}
+
 \part \(\displaystyle \int \cos^2(x) \, \mathrm{d}x = \)
 \begin{solution}[2.0in]
+  \begin{equation*}
+    \int \cos^2(x) \, \mathrm{d}x = \frac{\sin{\left( 2 x\right) }}{4}+\frac{x}{2}
+  \end{equation*}
 \end{solution}
 \part \(\displaystyle \int \cos^3(x) \sin(x) \, \mathrm{d}x = \)
+\begin{solution}[2.0in]
 
+  \begin{equation*}
+    \int \cos^3(x) \sin(x) \, \mathrm{d}x = -\frac{{{\cos{(x)}}^{3}}}{3}
+  \end{equation*}
+\end{solution}
 \end{parts}
 
 
@@ -69,16 +127,30 @@
 
 \part $\int_0^\infty x \mathrm{e}^{-x^2} \, \mathrm{d} x$
 \begin{solution}[2.0in]
+  \begin{equation*}
+    \int_0^\infty x \mathrm{e}^{-x^2} \, \mathrm{d} x =
+       \frac{1}{2}.
+  \end{equation*}
 \end{solution}
 \part $\int_0^\infty x \mathrm{e}^{-x} \, \mathrm{d} x$
 \begin{solution}[2.0in]
+  \begin{equation*}
+    \int_0^\infty x \mathrm{e}^{-x} \, \mathrm{d} x = 1.
+  \end{equation*}
 \end{solution}
 \part $\int_{-\infty}^\infty   \frac{1}{x^2 + 9} \, \mathrm{d} x$
 \begin{solution}[2.0in]
+  \begin{equation*}
+    \int_{-\infty}^\infty   \frac{1}{x^2 + 9} \, \mathrm{d} x =
+  \frac{\uppi}{3}.
+  \end{equation*}
 \end{solution}
 \part $\int_0^1 \frac{1}{x^{9/10}} \, \mathrm{d} x$
 \end{parts}
 \begin{solution}[2.0in]
+  \begin{equation*}
+    \int_0^1 \frac{1}{x^{9/10}} \, \mathrm{d} x = 10.
+  \end{equation*}
 \end{solution}
 \question[2] When Morwenna graduates from UNK and starts her first job, she expects to earn a 
    starting annual salary of \$42,000. She plans to work for 42 years
@@ -88,8 +160,9 @@
    Morwenna's 42 years of labor, how much will she earn?
 
    \begin{solution}[2.5in]
-   
-    
+    \begin{equation*}
+       42000 \sum_{k=0}^{41} 1.03^k = 3,444,974.25
+    \end{equation*}
    \end{solution}
 
    \question Given a formula for a sequence $b$, find its limit.
@@ -99,14 +172,18 @@
 
     \part [2] $\displaystyle b_n = \sum_{k=0}^{n} \left(\frac{2}{3}\right)^k$.
     \begin{solution}%[2.5in]
-   
+   \begin{equation}
+      \lim_{n \to \infty} b_n = 3.
+   \end{equation}
     
     \end{solution}
 
     \newpage 
     \part [2] $\displaystyle b_n = \sum_{k=0}^{n} \left(\frac{3}{2}\right)^k$.
     \begin{solution}%[2.5in]
-   
+   \begin{equation*}
+    \lim_{n \to \infty} b_n = \infty.
+   \end{equation*}
         \end{solution}
     \end{parts}
     
