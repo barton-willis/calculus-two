@@ -1,0 +1,215 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{amssymb}
+\usepackage[intlimits]{amsmath}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+\usepackage[final]{microtype}
+\frenchspacing
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[]{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+%\shadedsolutions
+%\definecolor{SolutionColor}{rgb}{1,0.72,0.46} %{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{15}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Thursday 19 October 13:20}
+\newcommand{\class}{MATH 202, Fall \the\year}
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work  \quiz}}
+\textbf{Row and Seat}:\hrulefill\\
+
+\noindent \emph{“The pencil is mightier than the pen.”} \hfill 
+   \\  $\phantom{xxx}$ \hfill {\sc Robert M. Pirsig}
+
+
+\noindent  In class work  \textbf{\quiz}  has questions \textbf{1} 
+through  \textbf{\numquestions} \/ with a total of 
+\textbf{6} points. Turn in your work at the end of class 
+\emph{on paper}. This assignment is due \emph{\due}.
+
+\vspace{0.1in}
+
+
+\begin{questions} 
+    
+
+
+        \question Use \emph{integration by parts} to find an antiderivative of 
+        each of the following:
+    
+        \begin{parts}
+    
+             \part   $\int x \mathrm{e}^{-x}  \, \mathrm{d} x$
+    
+             \begin{solution}[3.0in]
+              \begin{equation*}
+              \int x \mathrm{e}^{-x}  \, \mathrm{d} x = 
+              \left( \operatorname{-}x\operatorname{-}1\right)  {\mathrm{ e}^{-x}}
+            \end{equation*} 
+             \end{solution}
+    
+             \part   $\int x^2 \mathrm{e}^{-x}   \, \mathrm{d} x$
+    
+             \begin{solution}%[3.0in]
+                \begin{equation*}
+                    \int x^2 \mathrm{e}^{-x}   \, \mathrm{d} x = 
+                    \left( \operatorname{-}{{x}^{2}}\operatorname{-}2 x\operatorname{-}2\right)  {{\% e}^{-x}}.
+                \end{equation*}
+               
+             \end{solution}
+             
+    
+        \end{parts}
+    
+        \newpage 
+        
+        \question Define a region of the xy plane $Q$ by $Q = \{(x,y) |
+            0 \leq y \leq x \mathrm{e}^{-x}  \mbox{ and } 0 \leq x \leq 5  \}$. \textbf{Hint:} For both parts 
+            of this question, use an answer from
+            Question 1. 
+        \begin{parts}
+      
+            \part  Find $\mbox{Area}(Q)$
+            \begin{solution}[3.0in]
+                \begin{equation*}
+                    \mbox{Area}(Q) = \int_0^5  x \mathrm{e}^{-x} \, \mathrm{d} x 
+                     = 7 {\mathrm{ e}^{-5}}\operatorname{-}2.
+                \end{equation*}  
+            \end{solution}
+    
+    
+            \part  Find the x coordinate of the centroid of $Q$.
+            \begin{solution}%[3.0in]
+                         
+            \end{solution}
+        \end{parts}
+    
+        \newpage
+        \question Find a formula for each antiderivative.
+        \begin{parts}
+           \part   $
+            \int \frac{x+9}{\left( x+4\right) \, \left( x+5\right) } \, \mathrm{d} x$ (Use partial
+             fractions).
+    
+             \begin{solution}[3.0in]
+        \end{solution}
+    
+             \part   $\int \frac{{{x}^{3}}}{\sqrt{1\operatorname{-}{{x}^{2}}}} \, 
+             \mathrm{d}x$. (Use the substitution $x = \sin(\theta)$, where 
+             $\theta \in (-\frac{\uppi}{2}, \frac{\uppi}{2})$.)
+             \begin{solution}%[3.0in]
+             \end{solution}
+        \end{parts} 
+    \newpage
+    
+    \question Find the limit of each sequence $a$ whose formula is
+    
+    \begin{parts}
+    
+        \part  $a_n = \frac{(2n-1)(7 n + 1)}{n^2+1}$
+    
+        \begin{solution}[2.5in]
+            
+        \end{solution}
+    
+        \part   $a_n = n \ln \left(1 + \frac{\sqrt{2}}{n} \right)$
+    
+        \begin{solution}%[2.5in]
+            
+        \end{solution}
+    
+        \newpage
+    
+        \part   $a_n = \sqrt{n^2 + 46 n+ 1} - n$
+    
+        \begin{solution}[2.5in]
+            
+        \end{solution}
+    
+    \end{parts}
+    \question   Give an example of a sequence $a$ such that
+    $\displaystyle \lim_{k \to \infty} a_k = 0$ and $\displaystyle \lim_{n \to \infty} \sum_{k=1}^n a_k  = \infty$.
+    
+    \begin{solution}[1.50in]
+    \end{solution}
+    \question   Give an example of a sequence $a$ such that
+    $\displaystyle \lim_{k \to \infty} a_k = 0$ and $\displaystyle \lim_{n \to \infty} \sum_{k=1}^n a_k$ is a real 
+    number.
+    
+    \begin{solution}%[1.5in]
+    \end{solution}
+    
+    \newpage 
+    \question   Show that the series $\displaystyle \sum_{k=1}^\infty \sqrt{k^2 + 46 k+ 1} - k$
+    diverges. Justify your answer.
+    \begin{solution}[2.50in]
+    \end{solution}
+    
+    \question   Find the numerical value of the sum 
+    $\sum_{k=0}^\infty 5 \left(\frac{2}{3} \right)^k$.
+    
+    \begin{solution}%[2.50in]
+    \end{solution}
+    
+    \newpage 
+    
+    \question Find the numerical value for each improper integral.
+    
+    \begin{parts}
+    
+        \part   $\displaystyle \int_{-\infty}^\infty \frac{1}{81+x^2} \, \mathrm{d} x$.
+        \begin{solution}[3.50in]
+        \end{solution}
+    
+        \part   $\displaystyle \int_0^\infty \sin(x) \mathrm{e}^{-x} \, \mathrm{d} x$.
+        \begin{solution}[3.50in]
+        \end{solution}
+    \end{parts}
+    
+
+\end{questions}
+\end{document}

@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 
 \usepackage{pifont}
 \usepackage{dingbat}
@@ -196,17 +196,13 @@ exam you will need to \textbf{show your work}.
   \begin{solution}%[2.5in]
   We'll use the trick of moving the radicals to the denominator. We have
   \begin{align*}
-  \lim_{k \to \infty} \left(\sqrt{k^2+1} - k \right)  &= \lim_{k \to \infty} \left(\sqrt{k^2+1} - k \right)   \times \frac{\sqrt{k^2+1}  + k}{\sqrt{k^2+1}  + k}, \\
-                                                                 &= \lim_{k \to \infty} \frac{(k^2+1) - k^2}{\sqrt{k^2+1}  + k}, \\
-                                                                 &=  \lim_{k \to \infty} \frac{1}{\sqrt{k^2+1}  + k}, \\
-      \intertext{We have $\displaystyle \lim_{x \to \infty}   \left( \sqrt{k^2+1}  + k \right) = \infty$, so we have}                                                        
-                                                                 &=  0
+  \lim_{k \to \infty} \left(\sqrt{k^2+3k+1} - k \right)  &= \lim_{k \to \infty} \left(\sqrt{k^2+3 k + 1} - k \right)   \times \frac{\sqrt{k^2+1}  + k}{\sqrt{k^2+1}  + k}, \\
+                                                                 &= \lim_{k \to \infty} \frac{(k^2+3k+1) - k^2}{\sqrt{k^2+1}  + k}, \\
+                                                                 &=  \lim_{k \to \infty} \frac{3k + 1}{\sqrt{k^2+3k + 1}  + k}, \\
+                                                                 &= \lim_{k \to \infty} \frac{3k}{2k}, \\
+                                                                 &=  \frac{3}{2}
   \end{align*}
-  Although the calculation $\displaystyle \lim_{k \to \infty} \frac{1}{\sqrt{k^2+1}  + k} = \frac{1}{\infty} = 0$ is based on a theorem, it's not   
-  something you should do in public. Specifically, the theorem is: 
-  If $\displaystyle \lim_a   F \in \reals$ and $\displaystyle \lim_a G = \infty$,
-  then $\displaystyle \lim_a \frac{F}{G} = 0$. Be careful with this--the limit of the numerator must be a real number.
-  \end{solution}
+    \end{solution}
 
   \newpage
   \question [2] Determine if the sequence whose formula is 
