@@ -108,10 +108,10 @@ you must show all of your work.
     
         \end{parts}
     
-        %\newpage 
+        \newpage 
         
         \question Define a region of the xy plane $Q$ by $Q = \{(x,y) |
-            0 \leq y \leq x \mathrm{e}^{-x}  \mbox{ and } 0 \leq x \leq 5  \}$. \textbf{Hint:} For both parts 
+            0 \leq y \leq  \mathrm{e}^{-x}  \mbox{ and } 0 \leq x \leq 5  \}$. \textbf{Hint:} For both parts 
             of this question, use an answer from
             Question 1. 
         \begin{parts}
@@ -119,8 +119,8 @@ you must show all of your work.
             \part  Find $\mbox{Area}(Q)$
             \begin{solution}[3.0in]
                 \begin{equation*}
-                    \mbox{Area}(Q) = \int_0^5  x \mathrm{e}^{-x} \, \mathrm{d} x 
-                     = 1 - \frac{6}{\mathrm{e}^5} \approx 0.9595723180054871.
+                    \mbox{Area}(Q) = \int_0^5   \mathrm{e}^{-x} \, \mathrm{d} x 
+                     = 1- \frac{1}{\mathrm{e}^5}
                 \end{equation*}  
             \end{solution}
     
@@ -128,18 +128,17 @@ you must show all of your work.
             \part  Find the x coordinate of the centroid of $Q$.
             \begin{solution}%[3.0in]
                 \begin{equation*}
-                \mbox{Area}(Q) \overline{x} = \int_0^5  x^2 \mathrm{e}^{-x} \, \mathrm{d} x
-                   = 2 - \frac{37}{\mathrm{e}^5}
+                \mbox{Area}(Q)  \, \overline{x} = \int_0^5  x \mathrm{e}^{-x} \, \mathrm{d} x
+                   =  1 - \frac{6}{\mathrm{e}^5}.
                 \end{equation*}
                 So 
                 \begin{equation*}
-                   \overline{x} = \frac{2-37 {\mathrm{e}^{-5}}}{1-6 {\mathrm{e}^{-5}}}
-                     \approx 1.824454424313464
+                   \overline{x} = \frac{1 - \frac{6}{\mathrm{e}^5}}{1- \frac{1}{\mathrm{e}^5}}.
                 \end{equation*}
             \end{solution}
         \end{parts}
     
-        %\newpage
+        \newpage
         \question Find a formula for each antiderivative.
         \begin{parts}
            \part   $
@@ -157,13 +156,15 @@ you must show all of your work.
              \mathrm{d}x$. (Use the substitution $x = \sin(\theta)$, where 
              $\theta \in (-\frac{\uppi}{2}, \frac{\uppi}{2})$.)
              \begin{solution}%[3.0in]
+             It's OK to leave the expression in terms of a composition of a trigonometric function with an
+             inverse trigonometric function.  But here is it is explicitly as a algebraic function: 
                 \begin{equation*}
                     \int \frac{{{x}^{3}}}{\sqrt{1\operatorname{-}{{x}^{2}}}} \, 
              \mathrm{d}x = -\frac{{{x}^{2}}\, \sqrt{1-{{x}^{2}}}}{3}-\frac{2 \sqrt{1-{{x}^{2}}}}{3}.
                 \end{equation*}
              \end{solution}
         \end{parts} 
-    %\newpage
+    \newpage
     
     \question Find the limit of each sequence $a$ whose formula is
     
@@ -185,7 +186,7 @@ you must show all of your work.
             \end{equation*}
         \end{solution}
     
-        %\newpage
+        \newpage
     
         \part   $a_n = \sqrt{n^2 + 46 n+ 1} - n$
     
@@ -200,8 +201,10 @@ you must show all of your work.
     $\displaystyle \lim_{k \to \infty} a_k = 0$ and $\displaystyle \lim_{n \to \infty} \sum_{k=1}^n a_k  = \infty$.
     
     \begin{solution}[1.50in]
+    An example is $a_k = \frac{1}{k}$.  We have 
+    $\displaystyle \lim_{k \to \infty} \frac{1}{k} = 0$ and 
         \begin{equation*}
-              \sum_{k=1}^\infty \frac{1}{k} = \infty.
+              \lim_{n\to \infty}  \sum_{k=1}^n \frac{1}{k} = \infty.
         \end{equation*}
     \end{solution}
     \question   Give an example of a sequence $a$ such that
@@ -209,12 +212,13 @@ you must show all of your work.
     number.
     
     \begin{solution}%[1.5in]
+    An example is $a_k = \frac{1}{k^2}$. Then 
         \begin{equation*}
-            \sum_{k=1}^\infty \frac{1}{k^2}
+            \lim_{n \to \infty} \sum_{k=1}^n \frac{1}{k^2}  \text{ converges }.
       \end{equation*}
     \end{solution}
     
-    %\newpage 
+    \newpage 
     \question   Show that the series $\displaystyle \sum_{k=1}^\infty \sqrt{k^2 + 46 k+ 1} - k$
     diverges. Justify your answer.
     \begin{solution}[2.50in]
@@ -229,7 +233,7 @@ you must show all of your work.
         $\sum_{k=0}^\infty 5 \left(\frac{2}{3} \right)^k = 15$
     \end{solution}
     
-    %\newpage 
+    \newpage 
     
     \question Find the numerical value for each improper integral.
     
