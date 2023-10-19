@@ -113,10 +113,30 @@ exam you will need to \textbf{show your work}.
 \end{solution}
 \part \(\displaystyle \int \cos^3(x) \sin(x) \, \mathrm{d}x = \)
 \begin{solution}[2.0in]
-
+ The easy way is to substitute $z = \cos(x)$. Doing so, an 
+ antiderivative is
   \begin{equation*}
-    \int \cos^3(x) \sin(x) \, \mathrm{d}x = -\frac{{{\cos{(x)}}^{3}}}{3}
+    \int \cos^3(x) \sin(x) \, \mathrm{d}x = -\frac{{{\cos{(x)}}^{4}}}{4}
   \end{equation*}
+  If you peel off one factor of $\cos(x)$ and use the Pythagorean 
+  identity on the rest, then make the substitution $z = \sin(x)$, 
+  your answer will be
+      \begin{equation*}
+    \int \cos^3(x) \sin(x) \, \mathrm{d}x = 
+      \frac{1}{2} \sin(x)^2 - \frac{1}{4} \sin(x)^4.
+    \end{equation*}
+    Replacing $\sin(x)^2$ by $1-\cos(x)^2$ in this gives (after some 
+    algebra)
+    \begin{equation*}
+    \int \cos^3(x) \sin(x) \, \mathrm{d}x = 
+    \frac{1}{4} -\frac{{{\cos{(x)}}^{4}}}{4}.
+    \end{equation*}
+  Of course, antiderivatives are undetermined up to an additive
+  constant, so this is equivalent to 
+  \begin{equation*}
+    \int \cos^3(x) \sin(x) \, \mathrm{d}x = 
+     -\frac{{{\cos{(x)}}^{4}}}{4}.
+    \end{equation*}
 \end{solution}
 \end{parts}
 
