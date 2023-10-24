@@ -52,7 +52,7 @@
      
 \newcommand{\quiz}{16}
 \newcommand{\term}{Fall}
-\newcommand{\due}{Tuesday 23 October 13:20}
+\newcommand{\due}{Tuesday 24 October 13:20}
 \newcommand{\class}{MATH 202, Fall \the\year}
 \begin{document}
 \large
@@ -63,12 +63,12 @@
 \textbf{Row and Seat}:\hrulefill\\
 
 \noindent \emph{“The place to improve the world is first in one's own heart and head and hands, and then work outward from there.”} \hfill 
-   \\  $\phantom{xxx}$ \hfill {\sc Robert M. Pirsig}
+   \hfill {\sc Robert M. Pirsig}
 
 
 \noindent  In class work  \textbf{\quiz}  has questions \textbf{1} 
 through  \textbf{\numquestions} \/ with a total of 
-\textbf{6} points. Turn in your work at the end of class 
+\textbf{\numpoints\/} points. Turn in your work at the end of class 
 \emph{on paper}. This assignment is due \emph{\due}.
 
 \vspace{0.1in}
@@ -76,41 +76,70 @@ through  \textbf{\numquestions} \/ with a total of
 
 
 \begin{questions} 
+
+\question Define a function $F$ by $F(x) = \frac{\ln(x)}{\left(\frac{4}{3}\right)^x}$.
+
+\begin{parts}
+
+\part [1] Use Desmos to graph $y  = F(x)$ for $ 2 \leq x \leq  15$. Reproduce the graph here. Based on the graph, what is your
+guess for the numeric value of $\displaystyle \lim_{x \to \infty}  \frac{\ln(x)}{\left(\frac{4}{3}\right)^x}$?
+
+
+    \begin{solution}[1.50in]
+        
+    \end{solution}
+
+
+\part [1] Use Desmos to graph $y = \frac{F(x+1)}{F(x)}$ for $ 2 \leq x \leq  15$. Reproduce the graph here. Based on the graph, what is your
+guess for the numeric value of $\displaystyle   \lim_{x \to \infty}   \frac{F(x+1)}{F(x)} $?
+
+    \begin{solution}[1.50in]
+        
+    \end{solution}
+
+
+\part [1] Use the l'H\^opital rule to find the numeric value of $\displaystyle   \lim_{x \to \infty}   \frac{F(x+1)}{F(x)} $.
+
+   \begin{solution}%[1.50in]
+        
+    \end{solution}
+    
+\newpage
+
+
+\part [1] Use the \emph{ratio test} to determine if the series $\displaystyle \sum_{k=2}^\infty F(k)$ converges or diverges.
+
+   \begin{solution}[2.750in]
+        
+    \end{solution}
+    
+\end{parts}
     
 \question Use the \emph{ratio test} to determine if each series
 converges or diverges.
 
 \begin{parts}
 
-    \part [2] $\displaystyle \sum_{k=0}^\infty \frac{2^k}{3^k +8}$
+    \part [1] $\displaystyle \sum_{k=0}^\infty \frac{2^k}{3^k +8}$
 
-    \begin{solution}[3.0in]
+    \begin{solution}%[3.0in]
         
     \end{solution}
 
    
+   \newpage
+  
 
-    \part [2] $\displaystyle \sum_{k=0}^\infty \frac{ (2k)!}{k^2 + 9}$
-
-    \begin{solution}[3.0in]
-        
-    \end{solution}
-
-   
-
-    \part [2] $\displaystyle \sum_{k=0}^\infty \frac{ ((k)!)^3}{(3 k)!} 14^k$
+    \part [1] $\displaystyle \sum_{k=0}^\infty \frac{ ((k)!)^3}{(3 k)!} 14^k$
 
     \begin{solution}[4.50in]
         
     \end{solution}
         
-
-
+   
 \end{parts}
 
-\question [2] Let $a$ be a sequence and suppose the ratio test determines
-that the series $\sum a_k$ converges absolutely.  Show that 
-the series $\sum  k a_k$ converges absolutely. 
 
+\question [1] Find the numeric value of the $\displaystyle \lim_{k \to \infty} \frac{ ((k)!)^3}{(3 k)!} 14^k$.  Justify your answer.
 \end{questions}
 \end{document}
