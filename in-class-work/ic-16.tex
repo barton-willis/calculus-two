@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{amssymb}
 \usepackage[intlimits]{amsmath}
 \usepackage{epsfig}
@@ -85,15 +85,19 @@ through  \textbf{\numquestions} \/ with a total of
 guess for the numeric value of $\displaystyle \lim_{x \to \infty}  \frac{\ln(x)}{\left(\frac{4}{3}\right)^x}$?
 
 
-    \begin{solution}[1.50in]
-        
+    \begin{solution}[1.50in] The graph indicates that  $\displaystyle \lim_{x \to \infty}  \frac{\ln(x)}{\left(\frac{4}{3}\right)^x} = 0$.
+    
+        \includegraphics[scale=0.1]{desmos-graph(64).png}
     \end{solution}
 
 
 \part [1] Use Desmos to graph $y = \frac{F(x+1)}{F(x)}$ for $ 2 \leq x \leq  15$. Reproduce the graph here. Based on the graph, what is your
 guess for the numeric value of $\displaystyle   \lim_{x \to \infty}   \frac{F(x+1)}{F(x)} $?
 
-    \begin{solution}[1.50in]
+    \begin{solution}[1.50in] We have $\frac{F(x+1)}{F(x)} = \frac{3}{4} \frac{\ln(x+1)}{\ln(x)}$.  The graph indicates
+    that $\displaystyle   \lim_{x \to \infty}   \frac{F(x+1)}{F(x)} \approx 0.78$
+    
+    \includegraphics[scale=0.1]{desmos-graph(65).png}
         
     \end{solution}
 
@@ -101,6 +105,12 @@ guess for the numeric value of $\displaystyle   \lim_{x \to \infty}   \frac{F(x+
 \part [1] Use the l'H\^opital rule to find the numeric value of $\displaystyle   \lim_{x \to \infty}   \frac{F(x+1)}{F(x)} $.
 
    \begin{solution}%[1.50in]
+   
+   \begin{align*}  
+    \lim_{x \to \infty}   \frac{3}{4} \frac{\ln(x+1)}{\ln(x)} &=   \lim_{x \to \infty} \frac{3}{4} \frac{\frac{1}{x+1}} {\frac{1}{x}}, \\
+        &= \lim_{x \to \infty} \frac{3}{4} \frac{x}{x+1}, \\
+        &= \frac{3}{4}.
+   \end{align*}
         
     \end{solution}
     
@@ -110,7 +120,7 @@ guess for the numeric value of $\displaystyle   \lim_{x \to \infty}   \frac{F(x+
 \part [1] Use the \emph{ratio test} to determine if the series $\displaystyle \sum_{k=2}^\infty F(k)$ converges or diverges.
 
    \begin{solution}[2.750in]
-        
+        Since $\displaystyle  \lim_{x \to \infty}   \frac{3}{4} \frac{\ln(x+1)}{\ln(x)} \in [0,1)$, the series $\displaystyle \sum_{k=2}^\infty F(k)$ converges.
     \end{solution}
     
 \end{parts}
@@ -123,6 +133,12 @@ converges or diverges.
     \part [1] $\displaystyle \sum_{k=0}^\infty \frac{2^k}{3^k +8}$
 
     \begin{solution}%[3.0in]
+    \begin{align*}
+       \lim_{k \to \infty} \frac{2 \left( {{3}^{k}}+8\right) }{{{3}^{k+1}}+8} &=
+        \lim_{k \to \infty} \frac{2 \ln(3) 3^k}{ \ln(3) 3^{k+1}}, \\
+        &= \lim_{k \to \infty} \frac{2}{3},\\
+        &= \frac{2}{3}.
+     \end{align*}
         
     \end{solution}
 
@@ -133,6 +149,11 @@ converges or diverges.
     \part [1] $\displaystyle \sum_{k=0}^\infty \frac{ ((k)!)^3}{(3 k)!} 14^k$
 
     \begin{solution}[4.50in]
+    \begin{equation*}
+     \lim_{k \to \infty}  \frac{14 {{\left( k+1\right) }^{2}}}{3 \left( 3 k+1\right) \, \left( 3 k+2\right) }
+     = \frac{14}{27}.
+    \end{equation*}
+    So $\sum_{k=0}^\infty \frac{ ((k)!)^3}{(3 k)!} 14^k$ converges.
         
     \end{solution}
         
@@ -141,5 +162,7 @@ converges or diverges.
 
 
 \question [1] Find the numeric value of the $\displaystyle \lim_{k \to \infty} \frac{ ((k)!)^3}{(3 k)!} 14^k$.  Justify your answer.
+
+Since  $\sum_{k=0}^\infty \frac{ ((k)!)^3}{(3 k)!} 14^k$ converges, we have  $\displaystyle \lim_{k \to \infty} \frac{ ((k)!)^3}{(3 k)!} 14^k = 0$.
 \end{questions}
 \end{document}
