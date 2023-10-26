@@ -1,0 +1,119 @@
+\documentclass[12pt,fleqn]{exam}
+\usepackage{amssymb}
+\usepackage[intlimits]{amsmath}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+\usepackage[final]{microtype}
+\frenchspacing
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[]{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+%\shadedsolutions
+%\definecolor{SolutionColor}{rgb}{1,0.72,0.46} %{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{17}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Tuesday 26 October 13:20}
+\newcommand{\class}{MATH 202, Fall \the\year}
+\begin{document}
+%\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work  \quiz}}
+\textbf{Row and Seat}:\hrulefill\\
+
+\noindent \emph{“The more I read, the more I acquire, the more certain I am that I know nothing.”} \hfill {\sc Voltaire }
+
+
+\noindent  In class work  \textbf{\quiz}  has questions \textbf{1} 
+through  \textbf{\numquestions} \/ with a total of 
+\textbf{\numpoints\/} points. Turn in your work at the end of class 
+\emph{on paper}. This assignment is due \emph{\due}.
+
+\vspace{0.1in}
+
+
+
+\begin{questions} 
+
+\question [1] Find the numerical value of $\displaystyle \lim_{x \to \infty}   \left(1 + \frac{1}{x}\right)^x$.  Careful: This is 
+an indeterminate form of the type $1^\infty$.  To start, I suggest that you use the technique
+$
+  \displaystyle  \lim_{x \to \infty}   \left(1 + \frac{1}{x}\right)^x = \lim_{x \to \infty}  \mathrm{e}^{x   \ln (1 + \frac{1}{x})}.
+$
+
+\begin{solution}[2.6in]
+\end{solution}
+
+\question [1] Use the \emph{ratio} test to determine of the series $\sum_{k=0}^\infty \frac{  \left(\frac{k}{3} \right)^k }{ k!}$ converges or diverges.
+\begin{solution}%[2.6in]
+\end{solution}
+
+\newpage
+
+\question [1] Define a sequence $s$ by $\displaystyle s_n = \sum_{k=1}^n \frac{(-1)^{k+1}}{\sqrt{k}}$.  This is a convergent alternating series.
+Also define $\displaystyle s_\infty = \lim_{n \to \infty}  s_n$
+
+\begin{parts}
+
+\part [1] Use Desmos to graph $s$ on the interval $[1, 2, \dots, 150]$. Using Desmos, find the numeric values of $s_{149}$ and  $s_{150}$.
+As best you can, reproduce a cartoon of the graph of $s$.
+
+\begin{solution}[1.6in]
+\end{solution}
+
+\part[1] From the theory of convergent alternating series, we know that $s_{150} < s_\infty < s_{149}$.   Looking at the graph of $s$,
+I would guess that $s_\infty$ is pretty close to the arithmetic average of $s_{150} $ and $s_{149}$; that is $s_\infty  \approx \frac{s_{150} + s_{149}}{2}$.  Find the numeric value of $\frac{s_{150} + s_{149}}{2}$.
+
+\begin{solution}[0.6in]
+\end{solution}
+
+\part [1]  Define a sequence $w$ by $w_n = \frac{s_{n+1} + s_n}{2}$.  With a bit of effort, we could prove that the sequence $w$ is a convergent
+alternating sequence that converges to $s_\infty$.  Use Desmos to graph the sequences $s$ and  $w$ on the interval $[1, 2, \dots, 150]$.
+Which sequence would you say converges ``faster''?    As best you can, reproduce a cartoon graphs of $s$ and $w$.
+
+\end{parts}
+
+
+\end{questions}
+\end{document}
