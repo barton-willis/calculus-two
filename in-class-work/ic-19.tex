@@ -1,0 +1,100 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{amssymb}
+\usepackage[intlimits]{amsmath}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+\usepackage[final]{microtype}
+\frenchspacing
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[upright]{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+%\shadedsolutions
+%\definecolor{SolutionColor}{rgb}{1,0.72,0.46} %{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{18}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Tuesday 31 October 13:20}
+\newcommand{\class}{MATH 202, Fall \the\year}
+\begin{document}
+%\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work  \quiz}}
+\textbf{Row and Seat}:\hrulefill\\
+
+\normalsize
+\noindent \emph{“
+“Life is full of surprises, but never when you need one.” } \hfill {\sc Calvin }
+
+\vspace{0.1in}
+
+\noindent  In class work  \textbf{\quiz}  has questions \textbf{1} 
+through  \textbf{\numquestions} \/ with a total of 
+\textbf{\numpoints\/} points. Turn in your work at the end of class 
+\emph{on paper}. This assignment is due \emph{\due}.
+
+\vspace{0.1in}
+As handy as the factorial might be, sometimes we need the product of the odd integers; that is,
+we need a product of the form $1 \times 3 \times 5 \times \cdots \times (2 n - 1)$.  We'll define
+\begin{equation}
+   n !! = \prod_{k=1}^n (2 k -1),
+\end{equation}
+where $\prod$ means to find the product of the numbers. For example
+\begin{align*}
+   2 !! &= \prod_{k=1}^2 (2 k -1) = 1 \times 3 = 3, \\
+   3 !! &= \prod_{k=1}^3 (2 k -1) = 1 \times 3 \times 5 = 15, \\
+   4 !! &= \prod_{k=1}^4 (2 k -1) = 1 \times 3 \times 5 \times 7= 105. \\
+  \begin{align*}
+  It's not too hard to prove that for all positive integers $n$ that
+  \begin{equation}
+   \frac{(n+1) !!}{n !!}  = 2 n + 1.
+\end{equation}
+
+
+\begin{questions} 
+
+\question Use the ratio test to find the radius of convergence of the series $\sum_{k=0}^\infty  \frac{(k + 1)!!}{2^k k!} x^k$.
+
+
+\end{questions}
+\end{document}
