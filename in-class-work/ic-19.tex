@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn,answers]{exam}
+\documentclass[12pt,fleqn]{exam}
 \usepackage{amssymb}
 \usepackage[intlimits]{amsmath}
 \usepackage{epsfig}
@@ -53,7 +53,7 @@
      
 \newcommand{\quiz}{18}
 \newcommand{\term}{Fall}
-\newcommand{\due}{Tuesday 31 October 13:20}
+\newcommand{\due}{Thursday 2 November 13:20}
 \newcommand{\class}{MATH 202, Fall \the\year}
 \begin{document}
 %\large
@@ -63,9 +63,9 @@
 \noindent \makebox[3.0truein][l]{\textbf{In class work  \quiz}}
 \textbf{Row and Seat}:\hrulefill\\
 
-\normalsize
+\large
 \noindent \emph{“
-“Life is full of surprises, but never when you need one.” } \hfill {\sc Calvin (Bill Waterson)}
+“Life is full of surprises, but never when you need one.” } \hfill {\sc Calvin (Bill Watterson)}
 
 \vspace{0.1in}
 
@@ -79,35 +79,58 @@ through  \textbf{\numquestions} \/ with a total of
 
 \begin{questions} 
 
-\question [1] Use the fact that for all real $x$, the equation $\mathrm{e}^{x} = \sum_{k=0}^\inf \frac{1}{k!} x^k$ is an identity  to find a power series for $x \mapsto \mathrm{e}^{-x^2} $
-\begin{solution}[3.5in]
-
-\end{solution}
-
-
-\question [1] Define a function $\erf$ by the definite integral $\erf(x) = \frac{2}{\sqrt{\uppi}} \int_0^x \mathrm{e}^{-t^2} \, \mathrm{d} t$.
-
-\begin{solution}[3.5in]
-
-\end{solution}
-
-\question [1]  With a bit of faith and luck, maybe $\erf(x) \approx \sum_{k=0}^{100} \frac{(-1)^k} {(2 k + 1) k !}  x^{2 k+1}$. 
-Use Desmos to graph this approximation for $-5 < x < 5$.   Based on this graph, what do you guess for the value
-of $\displaystyle \lim_{x \to \infty} \erf(x)$? 
-
-\question [1]  Find the numerical values of $\sinh^{(0)} (0), \sinh^{(1)} (0),  \sinh^{(2)} (0),  \sinh^{(3)} (0), $ and $\sinh^{(4)} (0)$.
-Try to guess the pattern in these values.
-
+\question [1] Use the fact that for all real $x$ the equation $\displaystyle \mathrm{e}^x = \sum_{k=0}^\infty \frac{1}{k!}  x^k$ is an identity 
+ to find a power series representation for $\mathrm{e}^{-x^2} $.
 \begin{solution}[2.5in]
 
 \end{solution}
 
-\question [1] Find the radius of convergence for the power series $\displaystyle \sum_{k=0}^\infty \frac{1}{(2 k + 1)!} x^{2k + 1}$.
 
-\begin{solution}[2.5in]
+\question [1] Define a function $\erf$ by the definite integral $\erf(x) = \frac{2}{\sqrt{\uppi}} \large \int_0^x \mathrm{e}^{-t^2} \, \mathrm{d} t$.
+Find a power series representation for $\erf$.  Find the radius of convergence of this power series.
+\begin{solution}%[3.5in]
 
 \end{solution}
 
+\newpage
+
+\question [1]  With a bit of faith and luck, maybe a good approximation to $\erf$ is the sum of its first 101 terms.
+Use Desmos to graph this approximation for $-6 < x < 6$.   Actually, the function $\erf$ is known to Desmos. Plot
+a graph of both the sum of the first 101 terms of the power series for $\erf$ along with the function $\erf$.
+As best you can, reproduce the graphs here.
+
+
+\begin{solution}[1.5in]
+
+\end{solution}
+
+
+\question [1] Based on the Desmos graph of $\erf$, what is your conjecture for the value of $\displaystyle \lim_{x \to \infty} \erf(x)$? 
+
+
+\begin{solution}%[4.5in]
+
+\end{solution}
+
+\newpage
+
+\question [1]  Find the numerical value of $\displaystyle \lim_{x \to \infty}  \frac{2}{\sqrt{\uppi}}  \sum_{k=0}^{100} 
+\frac{(-1)^k}{ (2 k + 1) (k !)}   x^{2 k +1}$.  For ``large'' values of $x$, explain why 
+$\frac{2}{\sqrt{\uppi}}  \sum_{k=0}^{N} \frac{(-1)^k}{ (2 k + 1) (k !)}   x^{2 k +1}$ is not a good approximation to $\erf$
+no matter how large we make $N$.  
+
+\textbf{Remember:} No matter the degree of a polynomial, its limit toward infinity is determined 
+by the term of the polynomial with the highest power.  For example, provided $a_{1 000 000} \neq 0$, we have 
+\begin{equation*}
+  \lim_{x \to \infty}  \left( a_o + a_1 x + a_2 x^2 + \cdots + a_{1 000 000} x^{1 000 000} \right)  =  \lim_{x \to \infty} a_{1 000 000} x^{1 000 000} .
+\end{equation*}
+
+\begin{solution}[3.5in]
+
+\end{solution}
+
+\question  [1] Find a formula for the derivative of $\erf$; that is find a formula for $\erf^\prime$.  Make your formula as ``simple'' as you
+can.
 
 
 
