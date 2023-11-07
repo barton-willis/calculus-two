@@ -1,0 +1,117 @@
+\documentclass[12pt,fleqn]{exam}
+\usepackage{amssymb}
+\usepackage[intlimits]{amsmath}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+\usepackage[final]{microtype}
+\frenchspacing
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[]{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+\newcommand{\erf}{\mathrm{erf}}
+
+\usepackage{graphicx}
+\usepackage{color}
+%\shadedsolutions
+%\definecolor{SolutionColor}{rgb}{1,0.72,0.46} %{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+
+
+     
+\newcommand{\quiz}{20}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Tuesday 7 November 13:20}
+\newcommand{\class}{MATH 202, Fall \the\year}
+\begin{document}
+\large
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work  \quiz}}
+\textbf{Row and Seat}:\hrulefill\\
+
+
+
+\noindent  In class work  \textbf{\quiz}  has questions \textbf{1} 
+through  \textbf{\numquestions} \/ with a total of 
+\textbf{\numpoints\/} points. Turn in your work at the end of class 
+\emph{on paper}. This assignment is due \emph{\due}.
+
+\vspace{0.1in}
+\noindent \emph{“There’s no problem so awful that you can’t add some guilt to it and make it even worse.”} \\ \phantom{xxx} \hfill {\sc Calvin (Bill Watterson)}
+
+
+\begin{questions} 
+
+\question[2] Find the Taylor polynomial of order four centered at zero for the cosine function; that is find the polynomial
+$\displaystyle
+   P_4(x) = \sum_{k=0}^4 \frac{\cos^{(k)}(0)}{k!} x^k.
+$
+You'll need to find the numerical values of $\cos^{(0)}(0), \cos^{(1)}(0),  \cos^{(2)}(0),  \cos^{(3)}(0),$ and $ \cos^{(4)}(0)$.
+\begin{solution}[3.5in]
+
+\end{solution}
+
+\question[2] Use Desmos to graph $y = \cos(x)$ and $P_4$, the Taylor polynomial of order four centered at zero for the cosine function.
+Reproduce the graph here.  For $x \in (-2,2)$, use the graph to estimate the maximum of $| \cos(x) - P_4(x)|$.
+
+\begin{solution}%[2.5in]
+
+\end{solution}
+
+\newpage
+
+\question[2] Find the Taylor polynomial of order four centered at zero for the \emph{square} of the cosine function.  You could \emph{suffer}
+through the calculation by finding the first four derivatives of $\cos(x)^2$ and evaluate them at zero. Or you could use the fact we learned
+in class on Monday.  For $k \in \integers_{\geq 0}$ and infinitely differentiable functions $F$ and $G$, define
+\begin{equation*}
+   a_k = \frac{F^{(k)}(0)}{k!}, \quad 
+   b_k = \frac{G^{(k)}(0)}{k!}.
+\end{equation*}
+Then for all $n \in \integers_{\geq 0}$, we have
+\begin{equation*}
+   \frac{ \left(F G\right)^{(n)}(0)}{n!} = \sum_{k=0}^n  a_k b_{n-k}.
+\end{equation*}
+You will want to use these formulae with $F = \cos$ and $G = \cos$.  You can find the numbers $a_o, a_1, a_2, a_3, a_4$ 
+and $b_o, b_1, b_2, b_3, b_4$ from the 
+first question. 
+
+
+
+
+\end{questions}
+\end{document}
