@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{amssymb}
 \usepackage[intlimits]{amsmath}
 \usepackage{epsfig}
@@ -51,7 +51,8 @@
 \newcommand\AM{\textsc{am}}
 \newcommand\PM{\textsc{pm}}
 
-
+\usepackage{array}   % for \newcolumntype macro
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
      
 \newcommand{\quiz}{20}
 \newcommand{\term}{Fall}
@@ -83,7 +84,22 @@ $\displaystyle
 $
 You'll need to find the numerical values of $\cos^{(0)}(0), \cos^{(1)}(0),  \cos^{(2)}(0),  \cos^{(3)}(0),$ and $ \cos^{(4)}(0)$.
 \begin{solution}[3.5in]
+Let's make an nicely organized table of derivatives and their values 
+at the center; here it is
 
+\begin{center}
+\begin{tabular}{| L | L | | L |}
+\hline
+n & \cos^{(n)}(x) &  \frac{\cos^{(n)}(0)}{n!} \\ \hline 
+0 & \cos(x) & 1 \\
+1 & -\sin(x) & 0 \\
+2 & -\cos(x) & -\frac{1}{2} \\
+3 & \sin(x) & 0 \\
+4 & \cos(x) & \frac{1}{24} \\ \hline 
+\end{tabular}
+\end{center}
+
+So $P_4(x) = 1 - \frac{1}{2} x^2 + \frac{1}{24} x^4$.
 \end{solution}
 
 \question[2] Use Desmos to graph $y = \cos(x)$ and $y = P_4(x)$, the Taylor polynomial of order four centered at zero for the cosine function.
@@ -92,9 +108,12 @@ maximum of $ \underset{-2 \leq x \leq 2}{\max}| \cos(x) - P_4(x)|$.
 
 \begin{solution}%[2.5in]
 
+\includegraphics[scale=0.2]{desmos-graph(68).png}
+
+It appears the the maximum difference is about 0.08 (and it occurs at both endpoints).
 \end{solution}
 
-\newpage
+%\newpage
 
 \question[2] Find the Taylor polynomial of order four centered at zero for the \emph{square} of the cosine function.  You could \emph{suffer}
 through the calculation by finding the first four derivatives of $\cos(x)^2$ and evaluate them at zero. Or you could use the fact we learned
@@ -112,7 +131,17 @@ and $b_o, b_1, b_2, b_3, b_4$ from the
 first question. 
 
 
-
+\begin{solution}
+The easy way to expand $(1 - \frac{1}{2} x^2 + \frac{1}{24} x^4)^2$ and to ignore all powers of $x$ that are degree five
+or higher. Thus the 4th order TP for $\cos^2$ centered at zero is
+\begin{align*}
+   (1 - \frac{1}{2} x^2  + \frac{1}{24} x^4)^2 &= 1 + (-\frac{1}{2} - \frac{1}{2}) x^2 + (\frac{1}{24} + \frac{1}{4} + 
+   \frac{1}{24}) x^4 + \text{hot}, \\
+      &= 1 - x^2 +  \frac{1}{3} x^4 +  \text{hot}.
+\end{align*}
+In the physics and engineering communities,  $\text{hot}$ is a context dependent phrase meaning \emph{higher order terms}.
+So our TP is $1 - x^2  + \frac{1}{3} x^4 $
+\end{solution}
 
 \end{questions}
 \end{document}
