@@ -1,0 +1,143 @@
+\documentclass[12pt,fleqn]{exam}
+\usepackage{amssymb}
+\usepackage[intlimits]{amsmath}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+\usepackage[final]{microtype}
+\frenchspacing
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[]{fourier}
+
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+\newcommand{\erf}{\mathrm{erf}}
+\newcommand{\e}{\mathrm{e}}
+
+\usepackage{graphicx}
+\usepackage{color}
+%\shadedsolutions
+%\definecolor{SolutionColor}{rgb}{1,0.72,0.46} %{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+
+
+     
+\newcommand{\quiz}{21}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Thursday 9 November 13:20}
+\newcommand{\class}{MATH 202, Fall \the\year}
+\begin{document}
+\large
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work  \quiz}}
+\textbf{Row and Seat}:\hrulefill\\
+
+
+
+\noindent  In class work  \textbf{\quiz}  has questions \textbf{1} 
+through  \textbf{\numquestions} \/ with a total of 
+\textbf{\numpoints\/} points. Turn in your work at the end of class 
+\emph{on paper}. This assignment is due at \emph{\due}.
+
+\vspace{0.1in}
+
+\noindent \emph{“The place to improve the world is first in one's 
+own heart and head and hands, and then work outward from there.”}
+ \phantom{xxx} \hfill {\sc  Robert  Pirsig}
+
+
+\begin{questions} 
+
+
+
+\question For all real numbers $x$, we have
+$\displaystyle
+   \sin(x) = \sum_{k=0}^\infty \frac{(-1)^k}{(2k+1)!} x^{2 k + 1}.
+$
+
+\begin{parts}
+
+    \part [2] Find the power series representation for $\sin(x) - x$
+    centered at zero. \textbf{Hint:} When you don't know where to start, go to your
+    happy place: write the first few terms of the Taylor series for sine
+    centered at zero. Then subtract $x$.
+
+    \begin{solution}[3.5in]
+
+    \end{solution}
+
+
+    \part[2]  For $x \neq 0$, find the \emph{first two nonzero terms} 
+    in a power series representation for $\frac{\sin(x) - x}{x^3}$.
+    \begin{solution}%[2.5in]
+
+    \end{solution}
+
+\newpage
+    \part [2] Use the above result to find the \emph{numerical value}
+     of the
+    limit 
+    \begin{equation*}
+        \lim_{x \to 0} \frac{\sin(x) - x}{x^3}.
+    \end{equation*}
+
+\end{parts}
+\end{questions}
+\end{document}
+
+\question [2] Use the facts for all real $x$ and $y$
+\begin{align*}
+  \e^{\imag x} &= \cos(x) + \imag \sin(x), \\
+  \e^{\imag x}  \e^{\imag y}  &=   \e^{\imag (x + y)}
+\end{align*}
+to show that
+\begin{align*}
+    \cos{\left( x+y\right) }&=\cos{(x)} \cos{(y)}-\sin{(x)} \sin{(y)}, \\
+    \sin{\left( x+y\right) }&=\cos{(x)} \sin{(y)}+\sin{(x)} \cos{(y)}
+\end{align*}
+are both identities.  Here is a start:
+\begin{equation*}
+    \cos(x+y) + \imag \sin(x+y) = 
+    e^{\imag (x+y)} = e^{\imag x} e^{\imag y}
+        = (\cos(x) + \imag \sin(x)) (\cos(y) + \imag \sin(y)).
+\end{equation*}
+
+\begin{solution}%[2.5in]
+
+\end{solution}
+    
+\newpage
