@@ -1,0 +1,273 @@
+\documentclass[12pt, answers,fleqn]{exam}
+
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,color}
+\usepackage{fleqn}
+\usepackage{epsfig}
+\usepackage{upgreek}
+%\usepackage{mathptm}
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\erf}{\mathrm{erf}}
+%\usepackage[euler-digits,euler-hat-accent,T1]{eulervm}
+\usepackage{fourier}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{1,1,0.7}
+\newcommand{\dotprod}{\, {\scriptzcriptztyle \stackrel{\bullet}{{}}}\,}
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{{\bf MATH 202 Spring 2010}}
+{\bf Name:}\hrulefill\
+\noindent \makebox[3.0truein][l]{\bf Exam 3--Practice}
+{\bf Row and Seat:}\hrulefill\
+%\normalsize
+
+
+
+\begin{questions}
+
+\question Use power series to find the numerical value of each limit. You might like to use the facts
+\begin{align*}
+\ln(1+x) &= 
+ x\operatorname{-}\frac{{{x}^{2}}}{2}\operatorname{+}\frac{{{x}^{3}}}{3}\operatorname{-}\frac{{{x}^{4}}}{4}\operatorname{+}\frac{{{x}^{5}}}{5}\operatorname{-}\frac{{{x}^{6}}}{6}\operatorname{+} \cdots \\
+\sqrt{1+x} &= 1\operatorname{+}\frac{x}{2}\operatorname{-}\frac{{{x}^{2}}}{8}\operatorname{+}\frac{{{x}^{3}}}{16}\operatorname{-}\frac{5 {{x}^{4}}}{128}\operatorname{+}\frac{7 {{x}^{5}}}{256}\operatorname{-}\frac{21 {{x}^{6}}}{1024}\operatorname{+}\cdots \\
+\arctan(x) &= x\operatorname{-}\frac{{{x}^{3}}}{3}\operatorname{+}\frac{{{x}^{5}}}{5}\operatorname{-}\frac{{{x}^{7}}}{7}\operatorname{+}\frac{{{x}^{9}}}{9}\operatorname{+} \dots
+\end{align*}
+
+\begin{parts}
+\part $\displaystyle \lim_{x \to 0}{\frac{\log{\left( {{x}^{3}}\operatorname{+}1\right) }}{\sin{\left( 2 {{x}^{3}}\right) }}}$
+
+\begin{solution}
+$$\lim_{x \to 0}{\frac{\log{\left( {{x}^{3}}\operatorname{+}1\right) }}{\sin{\left( 2 {{x}^{3}}\right) }}} = \frac{1}{2}$$
+\end{solution}
+
+\part $\displaystyle \lim_{x \to 0} \frac{\arctan(x) - \sin(x)}{x^3}$
+
+\begin{solution}
+\begin{equation*}
+\lim_{x \to 0} \frac{\arctan(x) - \sin(x)}{x^3} = -\frac{1}{6}.
+\end{equation*}
+\end{solution}
+
+\part $\displaystyle \lim_{x \to 0} \frac{\arctan(x) - \sin(x)}{x^4}$
+
+\begin{solution}
+\begin{equation*}
+\lim_{x \to 0^{+}} \frac{\arctan(x) - \sin(x)}{x^4} = -\infty.
+\end{equation*}
+\end{solution}
+\end{parts}
+\question [1] Use the \emph{ratio} test to determine of the series $\sum_{k=0}^\infty \frac{  \left(\frac{k}{3} \right)^k }{ k!}$ converges or diverges.
+\begin{solution}%[2.6in]
+Algebra is supposed to be easier than calculus, so let's start by simplifying
+\begin{equation*}
+\frac{ (\frac{k+1}{3})^{k+1}}{(k+1)!} \times \frac{k!}{ \left(\frac{k}{3} \right)^k} = 
+\frac{1}{3} (\frac{k+1}{k})^k = \frac{1}{3}  \left(1 + \frac{1}{k} \right)^k.
+\end{equation*}
+So $\displaystyle  \lim_{x \to \infty} \frac{ (\frac{k+1}{3})^{k+1}}{(k+1)!} \times \frac{k!}{ (\frac{k}{3})^k} = \frac{1}{3}$.
+And so $\displaystyle \sum_{k=0}^\infty \frac{  \left(\frac{k}{3} \right)^k }{ k!}$ converges. 
+\end{solution}
+
+
+
+\question [5] Find the numerical value of  \(\displaystyle \sum_{k=4}^\infty \left(\frac{1}{2} \right)^k \).
+\begin{solution}[2.5in]
+\[
+ \sum_{k=4}^\infty \left(\frac{1}{2} \right)^k = \sum_{k=0}^\infty \left(\frac{1}{2} \right)^{k + 4}
+  = \frac{1}{2^4} \sum_{k=0}^\infty \left(\frac{1}{2} \right)^{k} = \frac{2}{2^4} = \frac{1}{8}.
+\]
+\end{solution}
+
+
+\question The de Jonqui\'ere function \(\operatorname{Li}_2\) can be defined by 
+\(\displaystyle
+  \operatorname{Li}_2(x) = \sum_{k=1}^\infty \frac{x^k}{k^2}
+\) and $\mathrm{dom}(\operatorname{Li}_2) = (-1,1)$
+
+\begin{parts}
+
+\part [5] Find the \emph{numerical value} of \(\operatorname{Li}_2(0)\).
+
+\begin{solution}[2.5in]
+\[
+ \operatorname{Li}_2(0) = \sum_{k=1}^\infty \frac{0^k}{k^2} = 0.
+\]
+\end{solution}
+
+\part [5] Find the \emph{radius of convergence} for the power series \( \sum_{k=1}^\infty \frac{x^k}{k^2}\).
+
+\begin{solution}[2.5in] We need to use the absolute ratio test; for \(x \neq 0\), we have
+\[
+  \lim_{k \to \infty} \left| \frac{x^{k+1}}{(k+1)^2} \frac{k^2}{x^k} \right| = |x|.
+\]
+So the sum converges for \(|x| < 1\); that is, the radius of convergence is 1.
+
+
+\end{solution}
+
+\part [5] Find the \emph{numerical value} of \(\operatorname{Li}_2^\prime(0)\). \textbf{Hint:}
+\(
+ \operatorname{Li}_2(x) = x + \frac{x^2}{4} +  \frac{x^3}{9} + \cdots.
+\)
+\end{parts}
+
+\begin{solution}[2.5in]
+\[
+\operatorname{Li}_2(0) = 1.
+\] 
+\end{solution}
+
+%\newpage
+\question Determine convergence or divergence of each series.  Fully
+justify your work. This doesn't mean you need to use our definition of convergent; instead use
+the theorems we've estiblished.
+\begin{parts}
+\part [5] \(\displaystyle \sum_{k=1}^\infty \frac{1}{k} \)
+
+
+\begin{solution}[2.5in] This is the harmonic series. It
+diverges. Alternatively, the integral test applies and tells us that
+the series diverges; the ratio test gives no information.
+\end{solution}
+
+\part[5]  \(\displaystyle \sum_{k=0}^\infty (-1)^k  \)
+
+
+\begin{solution}[2.5in] The sequence \(k \mapsto (-1)^k\) does not converge to
+zero; therefore the series \(\sum_{k=0}^\infty (-1)^k \) diverges.
+The alternating series test, the integral test, and the ratio test
+either do not apply or they give no information.
+\end{solution}
+
+\part[5]   \(\displaystyle \sum_{k=0}^\infty \frac{(-1)^k}{k+1} \)
+
+\begin{solution}[2.5in]  This is a convergent alternating series.  We need to 
+check three things.
+\begin{itemize}
+
+\item[\ding{52}] Is \(k \to \frac{1}{1+k}\) a positive sequence? {\bf Yes},
+\item [\ding{52}] Is \(k \to \frac{1}{1+k}\) a decreasing sequence? 
+{\bf Yes}
+
+\item [\ding{52}] does  \(k \to \frac{1}{1+k}\) converge to zero? {\bf Yes}
+\end{itemize}
+\end{solution}
+
+
+
+\part[5]  \(\displaystyle \sum_{k=0}^\infty \frac{1}{k!} \)
+
+\begin{solution}[2.5in]
+This is a series of positive terms; we'll try the ratio
+test.  We have
+\[
+  \lim_{k \to \infty} \frac{k!}{(k+1)!} = \lim_{k \to \infty}
+  \frac{1}{1+k} = 0.
+\]
+Therefore, the series converges.
+\end{solution}
+
+\end{parts}
+
+
+\question [5] My friend Milhous  claims that the sum \(\sum_k f_k\) converges provided
+that the sequence \(f\) converges to zero. Show Milhous an example of a seqence \(f\)
+that converges to zero, but the  sum \(\sum_k f_k\) diverges.
+
+\begin{solution} The sequence \(k \in \integers_{>0} \mapsto \frac{1}{k}\) converges
+to zero, but the harmonic sum \(\sum_{k = 1}^\infty \frac{1}{k}\) diverges.
+\end{solution}
+
+\question For all real numbers $x$, we have
+$\displaystyle
+   \sin(x) = \sum_{k=0}^\infty \frac{(-1)^k}{(2k+1)!} x^{2 k + 1}.
+$
+
+\begin{parts}
+
+    \part [2] Find the power series representation for $\sin(x) - x$
+    centered at zero. \textbf{Hint:} When you don't know where to start, go to your
+    happy place: write the first few terms of the Taylor series for sine
+    centered at zero. Then subtract $x$.
+
+    \begin{solution}[3.05in] Let's go to our happy place; for all real $x$, we have
+        \begin{equation*}
+            \sin(x) = x - \frac{1}{6} x^3 + \frac{1}{120} x^5 + \cdots.
+        \end{equation*}
+        Thus 
+        \begin{equation*}
+            \sin(x) - x =  - \frac{1}{6} x^3 + \frac{1}{120} x^5  + \cdots.
+        \end{equation*}
+        Arguably this answer is OK, but the ellipsis (that is the $\cdots$) leaves
+        too much to the imagination.  An explicit answer is
+    \begin{equation*}
+        \sin(x) - x =  \sum_{k=1}^\infty \frac{(-1)^k}{(2k+1)!} x^{2 k + 1}.
+    \end{equation*}
+\end{solution}
+    \part[2]  For $x \neq 0$, find the \emph{first two nonzero terms} 
+    in a power series representation for $\frac{\sin(x) - x}{x^3}$.
+    Again, try visiting your happy place.
+    \begin{solution}%[2.5in]
+        Here is my happy place:  
+        \begin{equation*}
+        \sin(x) - x =  - \frac{1}{6} x^3 + \frac{1}{120} x^5 \cdots
+        \end{equation*}
+    For $x \neq 0$, we have 
+    \begin{equation*}
+        \frac{\sin(x) - x}{x^3} =  - \frac{1}{6} + \frac{1}{120} x^2 \cdots
+        \end{equation*}
+    And explicitly, we have
+    \begin{equation*}
+        \frac{\sin(x) - x}{x^3} =  \sum_{k=1}^\infty \frac{(-1)^k}{(2k+1)!} x^{2 k - 2}
+        \end{equation*}
+    It's optional to do, but changing $k \to k + 1$ gives
+    \begin{equation*}
+        \frac{\sin(x) - x}{x^3} =  \sum_{k=0}^\infty -\frac{(-1)^k}{(2k+3)!} x^{2 k}
+        \end{equation*}
+    \end{solution}
+
+\newpage
+    \part [2] Use the above result to find the \emph{numerical value}
+     of the
+    limit 
+    \begin{equation*}
+        \lim_{x \to 0} \frac{\sin(x) - x}{x^3}.
+    \end{equation*}
+
+    \begin{solution}
+        We have
+        \begin{align*}
+            \lim_{x \to 0} \frac{\sin(x) - x}{x^3} &= \lim_{x \to 0 }
+            \sum_{k=0}^\infty -\frac{(-1)^k}{(2k+3)!} x^{2 k},\\
+            &= \sum_{k=0}^\infty -\frac{(-1)^k}{(2k+3)!} 0^{2 k}, \\
+            &= -\frac{1}{6}.            
+        \end{align*}
+     
+    \end{solution}
+        
+
+\end{parts}
+
+\question [1] Define a function $\erf$ by the definite integral $\erf(x) = \frac{2}{\sqrt{\uppi}} \large \int_0^x \mathrm{e}^{-t^2} \, \mathrm{d} t$.
+Find a power series representation for $\erf$.  Find the radius of convergence of this power series.
+\begin{solution}%[3.5in]
+We have
+\begin{align*}
+\erf(x) &= \frac{2}{\sqrt{\uppi}} \large \int_0^x \mathrm{e}^{-t^2} \, \mathrm{d} t, \\
+            &= \frac{2}{\sqrt{\uppi}} \large \int_0^x \sum_{k=0}^\infty \frac{(-1)^k}{k!}  t^{2 k} \, \mathrm{d} t, \\
+            &= \frac{2}{\sqrt{\uppi}}  \sum_{k=0}^\infty \large \int_0^x \frac{(-1)^k}{k!}  t^{2 k} \, \mathrm{d} t, \\
+            &= \frac{2}{\sqrt{\uppi}}  \sum_{k=0}^\infty\frac{(-1)^k}{k!} \large \int_0^x   t^{2 k} \, \mathrm{d} t, \\
+            &= \frac{2}{\sqrt{\uppi}}  \sum_{k=0}^\infty\frac{(-1)^k}{k!} \frac{x^{2 k+1}}{2 k + 1}.
+\end{align*}
+We could use the ratio test, but the theory of power series tells us that the termwise integration does not change
+the radius of convergence. So the radius of convergence is infinity.
+\end{solution}
+
+\end{questions}
+\end{document}
