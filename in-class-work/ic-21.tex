@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{amssymb}
 \usepackage[intlimits]{amsmath}
 \usepackage{epsfig}
@@ -96,16 +96,40 @@ $
     happy place: write the first few terms of the Taylor series for sine
     centered at zero. Then subtract $x$.
 
-    \begin{solution}[3.05in]
-
-    \end{solution}
-
-
+    \begin{solution}[3.05in] Let's go to our happy place; for all real $x$, we have
+        \begin{equation*}
+            \sin(x) = x - \frac{1}{6} x^3 + \frac{1}{120} x^5 + \cdots.
+        \end{equation*}
+        Thus 
+        \begin{equation*}
+            \sin(x) - x =  - \frac{1}{6} x^3 + \frac{1}{120} x^5  + \cdots.
+        \end{equation*}
+        Arguably this answer is OK, but the ellipsis (that is the $\cdots$) leaves
+        too much to the imagination.  An explicit answer is
+    \begin{equation*}
+        \sin(x) - x =  \sum_{k=1}^\infty \frac{(-1)^k}{(2k+1)!} x^{2 k + 1}.
+    \end{equation*}
+\end{solution}
     \part[2]  For $x \neq 0$, find the \emph{first two nonzero terms} 
     in a power series representation for $\frac{\sin(x) - x}{x^3}$.
     Again, try visiting your happy place.
     \begin{solution}%[2.5in]
-
+        Here is my happy place:  
+        \begin{equation*}
+        \sin(x) - x =  - \frac{1}{6} x^3 + \frac{1}{120} x^5 \cdots
+        \end{equation*}
+    For $x \neq 0$, we have 
+    \begin{equation*}
+        \frac{\sin(x) - x}{x^3} =  - \frac{1}{6} + \frac{1}{120} x^2 \cdots
+        \end{equation*}
+    And explicitly, we have
+    \begin{equation*}
+        \frac{\sin(x) - x}{x^3} =  \sum_{k=1}^\infty \frac{(-1)^k}{(2k+1)!} x^{2 k - 2}
+        \end{equation*}
+    It's optional to do, but changing $k \to k + 1$ gives
+    \begin{equation*}
+        \frac{\sin(x) - x}{x^3} =  \sum_{k=0}^\infty -\frac{(-1)^k}{(2k+3)!} x^{2 k}
+        \end{equation*}
     \end{solution}
 
 \newpage
@@ -115,6 +139,18 @@ $
     \begin{equation*}
         \lim_{x \to 0} \frac{\sin(x) - x}{x^3}.
     \end{equation*}
+
+    \begin{solution}
+        We have
+        \begin{align*}
+            \lim_{x \to 0} \frac{\sin(x) - x}{x^3} &= \lim_{x \to 0 }
+            \sum_{k=0}^\infty -\frac{(-1)^k}{(2k+3)!} x^{2 k},\\
+            &= \sum_{k=0}^\infty -\frac{(-1)^k}{(2k+3)!} 0^{2 k}, \\
+            &= -\frac{1}{6}.            
+        \end{align*}
+     
+    \end{solution}
+        
 
 \end{parts}
 \end{questions}
