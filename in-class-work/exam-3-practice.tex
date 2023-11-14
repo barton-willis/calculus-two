@@ -1,4 +1,4 @@
-\documentclass[12pt, answers,fleqn]{exam}
+\documentclass[12pt,fleqn]{exam}
 
 \usepackage{pifont}
 \usepackage{dingbat}
@@ -35,16 +35,27 @@
 \question Use power series to find the numerical value of each limit. You might like to use the facts
 \begin{align*}
 \ln(1+x) &= 
- x\operatorname{-}\frac{{{x}^{2}}}{2}\operatorname{+}\frac{{{x}^{3}}}{3}\operatorname{-}\frac{{{x}^{4}}}{4}\operatorname{+}\frac{{{x}^{5}}}{5}\operatorname{-}\frac{{{x}^{6}}}{6}\operatorname{+} \cdots \\
-\sqrt{1+x} &= 1\operatorname{+}\frac{x}{2}\operatorname{-}\frac{{{x}^{2}}}{8}\operatorname{+}\frac{{{x}^{3}}}{16}\operatorname{-}\frac{5 {{x}^{4}}}{128}\operatorname{+}\frac{7 {{x}^{5}}}{256}\operatorname{-}\frac{21 {{x}^{6}}}{1024}\operatorname{+}\cdots \\
-\arctan(x) &= x\operatorname{-}\frac{{{x}^{3}}}{3}\operatorname{+}\frac{{{x}^{5}}}{5}\operatorname{-}\frac{{{x}^{7}}}{7}\operatorname{+}\frac{{{x}^{9}}}{9}\operatorname{+} \dots
+ x\operatorname{-}\frac{{{x}^{2}}}{2}\operatorname{+}\frac{{{x}^{3}}}{3}\operatorname{-}\frac{{{x}^{4}}}{4}\operatorname{+}\frac{{{x}^{5}}}{5}\operatorname{-}\frac{{{x}^{6}}}{6}\operatorname{+} \cdots, \\
+\sqrt{1+x} &= 1\operatorname{+}\frac{x}{2}\operatorname{-}\frac{{{x}^{2}}}{8}\operatorname{+}\frac{{{x}^{3}}}{16}\operatorname{-}\frac{5 {{x}^{4}}}{128}\operatorname{+}\frac{7 {{x}^{5}}}{256}\operatorname{-}\frac{21 {{x}^{6}}}{1024}\operatorname{+}\cdots, \\
+\arctan(x) &= x\operatorname{-}\frac{{{x}^{3}}}{3}\operatorname{+}\frac{{{x}^{5}}}{5}\operatorname{-}\frac{{{x}^{7}}}{7}\operatorname{+}\frac{{{x}^{9}}}{9}\operatorname{+} \dots.
 \end{align*}
 
 \begin{parts}
 \part $\displaystyle \lim_{x \to 0}{\frac{\log{\left( {{x}^{3}}\operatorname{+}1\right) }}{\sin{\left( 2 {{x}^{3}}\right) }}}$
 
 \begin{solution}
-$$\lim_{x \to 0}{\frac{\log{\left( {{x}^{3}}\operatorname{+}1\right) }}{\sin{\left( 2 {{x}^{3}}\right) }}} = \frac{1}{2}$$
+For $x \neq 0$, we have
+\begin{align*}
+    \frac{\log{\left( {{x}^{3}}\operatorname{+}1\right) }}
+    {\sin{\left( 2 {{x}^{3}}\right) }} 
+      &= \frac{{{x}^{3}}\operatorname{-}\frac{{{x}^{6}}}{2}\operatorname{+}\frac{{{x}^{9}}}{3} + \cdots }{2 x^3-(4 x^9)/3+ \dots}\\
+      &= \frac{1-x^3/2+x^6/3-x^9/4+ \cdots}
+      {2\operatorname{-}\frac{4 {{x}^{6}}}{3} + \cdots}
+\end{align*}
+So 
+\begin{equation*}    
+    \lim_{x \to 0}{\frac{\log{\left( {{x}^{3}}\operatorname{+}1\right) }}{\sin{\left( 2 {{x}^{3}}\right) }}} = \frac{1}{2}.
+\end{equation*}
 \end{solution}
 
 \part $\displaystyle \lim_{x \to 0} \frac{\arctan(x) - \sin(x)}{x^3}$
