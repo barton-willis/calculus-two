@@ -1,0 +1,247 @@
+\documentclass[fleqn,12pt]{exam}
+\usepackage{pifont,enumerate,url}
+\usepackage{dingbat}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fleqn}
+\usepackage{epsfig,upgreek}
+\usepackage{color}
+\usepackage{nicefrac}
+\usepackage{pdfpages}
+\newcommand{\res}{\mathrm{res}}
+\newenvironment{handlist}{
+  \begin{enumerate}[\leftthumbsup]
+    \addtolength{\itemsep}{-1.0\itemsep}}
+  {\end{enumerate}}
+
+\usepackage[letterpaper, margin=0.75in]{geometry}
+
+% Let's put a proof inside a shaded box
+\usepackage{amsthm,xcolor}
+\usepackage{framed}
+
+\colorlet{shadecolor}{lightgray!15}
+\newenvironment{myproof}
+  {\begin{shaded}\begin{proof}}
+  {\end{proof}\end{shaded}}
+
+\newtheorem{prop}{Proposition}
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{tcolorbox}
+
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle \stackrel{\bullet}{{}}}\,}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\nat}{\mathbf{N}}
+\newcommand{\imag}{\mathrm{i}}
+\newcommand{\range}{\mathrm{range}}
+\newcommand{\Res}{\mathrm{Res}}
+\newcommand{\euler}{\mathrm{e}}
+\newcommand{\lub}{\mathrm{lub}}
+\newcommand{\ub}{\mathrm{ub}}
+\newcommand{\true}{\mathrm{true}}
+\newcommand{\erf}{\mathrm{erf}}
+\usepackage{fourier}
+%\shadedsolutions
+\definecolor{SolutionColor}{rgb}{1,0.95,1}
+%\definecolor{SolutionColor}{rgb}{1,1,0.7}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+\newcommand{\reals}{\mathbf{R}}
+
+\begin{document}
+
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{\textbf{MATH 202, Fall  \the\year}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work 22}}
+\textbf{Row and Seat}:\hrulefill\\
+\vspace{0.1in}
+
+%\normalsize
+
+
+\vspace{0.1in}
+
+
+
+\begin{questions}
+\question Use power series to find the numerical value of each limit. You might like to use the facts
+\begin{align*}
+\sin(x) &=  x\operatorname{-}\frac{{{x}^{3}}}{6}\operatorname{+}\frac{{{x}^{5}}}{120}\operatorname{+} \cdots, \\
+\cos(x) &=  1\operatorname{-}\frac{{{x}^{2}}}{2}\operatorname{+}\frac{{{x}^{4}}}{24}\operatorname{-}\frac{{{x}^{6}}}{720}\operatorname{+} \cdots, \\
+\ln(1+x) &= 
+ x\operatorname{-}\frac{{{x}^{2}}}{2}\operatorname{+}\frac{{{x}^{3}}}{3}\operatorname{-}\frac{{{x}^{4}}}{4}\operatorname{+}\frac{{{x}^{5}}}{5}\operatorname{-}\frac{{{x}^{6}}}{6}\operatorname{+} \cdots \\
+\sqrt{1+x} &= 1\operatorname{+}\frac{x}{2}\operatorname{-}\frac{{{x}^{2}}}{8}\operatorname{+}\frac{{{x}^{3}}}{16}\operatorname{-}\frac{5 {{x}^{4}}}{128}\operatorname{+}\frac{7 {{x}^{5}}}{256}\operatorname{-}\frac{21 {{x}^{6}}}{1024}\operatorname{+}\cdots \\
+\arctan(x) &= x\operatorname{-}\frac{{{x}^{3}}}{3}\operatorname{+}\frac{{{x}^{5}}}{5}\operatorname{-}\frac{{{x}^{7}}}{7}\operatorname{+}\frac{{{x}^{9}}}{9}\operatorname{+} \cdots
+\end{align*}
+
+\begin{parts}
+
+\part [1] $\displaystyle \lim_{x \to 0} \frac{\sin(x) - x + x^3/6}{x^5}$
+
+\begin{solution}[2.5in]
+
+\end{solution}
+
+\part [1] $\displaystyle \lim_{x \to 0} \frac{ \sin(3 x^2)}{1 - \cos(2 x)}$
+
+\begin{solution}%[2.5in]
+
+\end{solution}
+\end{parts}
+\newpage
+
+\question Use the \emph{ratio} test to determine the radius of convergence of each power series.
+
+
+\begin{parts}
+
+\part[1] $\displaystyle \sum_{k=0}^\infty \frac{(k!)^2}{ (2 k )!} x^k$
+
+\begin{solution}[3.0in]
+
+\end{solution}
+
+\part[1] $\displaystyle  \sum_{k=0}^\infty k ! x^k$
+
+\begin{solution}[3.0in]
+
+\end{solution}
+
+
+
+
+
+\end{parts}
+
+
+
+
+
+\question [1] Find the numerical value of  \(\displaystyle \sum_{k=3}^\infty \left(\frac{1}{10} \right)^k \).
+\begin{solution}%[2.5in]
+\[
+ \sum_{k=4}^\infty \left(\frac{1}{2} \right)^k = \sum_{k=0}^\infty \left(\frac{1}{2} \right)^{k + 4}
+  = \frac{1}{2^4} \sum_{k=0}^\infty \left(\frac{1}{2} \right)^{k} = \frac{2}{2^4} = \frac{1}{8}.
+\]
+\end{solution}
+\newpage
+
+
+\question The de Jonqui\'ere function \(\operatorname{Li}_4\) can be defined by 
+\(\displaystyle
+  \operatorname{Li}_4(x) = \sum_{k=1}^\infty \frac{x^k}{k^4}
+\) and $\mathrm{dom}(\operatorname{Li}_4) = (-1,1)$
+
+\begin{parts}
+
+\part [1] Find the \emph{numerical value} of \(\operatorname{Li}_4(0)\).
+
+\begin{solution}%[3.0in]
+\[
+ \operatorname{Li}_4(0) = \sum_{k=1}^\infty \frac{0^k}{k^2} = 0.
+\]
+\end{solution}
+
+\newpage
+
+\part [1] Find the \emph{numerical value} of \(\operatorname{Li}_4^\prime(0)\).
+\begin{solution}[3.0in]
+
+\end{solution}
+
+\part [1] Find the \emph{numerical value} of \(\operatorname{Li}_4^{\prime \prime}(0)\).
+\begin{solution}[3.0in]
+
+\end{solution}
+\end{parts}
+
+
+%\newpage
+\question Determine convergence or divergence of each series.  Fully
+justify your work quoting theorems from our class.
+\begin{parts}
+\part [1] \(\displaystyle \sum_{k=1}^\infty \frac{1}{8 k + 2} \)
+
+
+\begin{solution}[2.5in] This is the harmonic series. It
+diverges. Alternatively, the integral test applies and tells us that
+the series diverges; the ratio test gives no information.
+\end{solution}
+
+\part[1]  \(\displaystyle \sum_{k=0}^\infty (2 k + 1) (-1)^k  \)
+
+
+\begin{solution}%[2.5in] The sequence \(k \mapsto (-1)^k\) does not converge to
+zero; therefore the series \(\sum_{k=0}^\infty (-1)^k \) diverges.
+The alternating series test, the integral test, and the ratio test
+either do not apply or they give no information.
+\end{solution}
+
+\newpage
+
+\part[1]   \(\displaystyle \sum_{k=0}^\infty \frac{(-1)^k}{2^k + 3^k} \)
+
+\begin{solution}[2.5in]  This is a convergent alternating series.  We need to 
+check three things.
+\begin{itemize}
+
+\item[\ding{52}] Is \(k \to \frac{1}{1+k}\) a positive sequence? {\bf Yes},
+\item [\ding{52}] Is \(k \to \frac{1}{1+k}\) a decreasing sequence? 
+{\bf Yes}
+
+\item [\ding{52}] does  \(k \to \frac{1}{1+k}\) converge to zero? {\bf Yes}
+\end{itemize}
+\end{solution}
+
+
+
+
+
+\end{parts}
+
+\question For all real numbers $x$, we have
+$\displaystyle
+   \cos(x) = \sum_{k=0}^\infty \frac{(-1)^k}{(2k)!} x^{2 k}.
+$
+Define a wild and crazy function ${Q}$ as  ${Q(x)} = \int_0^x \cos \left(t^4 \right)  \, \mathrm{d} t.$
+\begin{parts}
+
+\part [1] Find a power series centered at zero for ${Q}$.
+
+\begin{solution}%[3.5in]
+
+\end{solution}
+
+\newpage
+
+\part [1] Find the radius of convergence for the power series you found in the previous question.
+
+\begin{solution}[3.5in]
+
+
+\end{solution}
+
+\end{parts}
+
+
+\question [1] For all $x \in (-1,1)$, we have $\displaystyle \sqrt{1+x} = \sum_{k=0}^\infty \binom{\frac{1}{2}} {k} x^k$. Find the numerical value of
+\begin{equation*} 
+   \sum_{k = 0}^{42} \binom{\frac{1}{2}} {k} \binom{\frac{1}{2}} {42-k}.
+\end{equation*}
+   
+  
+\end{questions}
+\end{document}
+
