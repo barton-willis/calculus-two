@@ -1,4 +1,4 @@
-\documentclass[fleqn,12pt]{exam}
+\documentclass[fleqn,answers,12pt]{exam}
 \usepackage{pifont,enumerate,url}
 \usepackage{dingbat}
 \usepackage{amsmath}
@@ -91,13 +91,18 @@
 \part [1] $\displaystyle \lim_{x \to 0} \frac{\sin(x) - x + x^3/6}{x^5}$
 
 \begin{solution}[2.5in]
-
+\begin{equation*}
+\lim_{x \to 0} \frac{\sin(x) - x + x^3/6}{x^5} = \lim_{x \to 0} \frac{ x^5/5! + \cdots}{x^5} = \frac{1}{120}.
+\end{equation*}
 \end{solution}
 
 \part [1] $\displaystyle \lim_{x \to 0} \frac{ \sin(3 x^2)}{1 - \cos(2 x)}$
 
 \begin{solution}%[2.5in]
-
+\begin{equation*}
+\lim_{x \to 0} \frac{ \sin(3 x^2)}{1 - \cos(2 x)} = \lim_{x \to 0} = 
+\lim_{x \to 0}  \frac{3 x^2 + \cdots}{(2 x)^2 + \cdots} = \frac{3}{4}. 
+\end{equation*}
 \end{solution}
 \end{parts}
 \newpage
@@ -110,13 +115,22 @@
 \part[1] $\displaystyle \sum_{k=0}^\infty \frac{(k!)^2}{ (2 k )!} x^k$
 
 \begin{solution}[3.0in]
-
+\begin{equation*}
+\lim_{k \to \infty} \left | \frac{((k+1)!)^2 x^{k+1}}{ (2k + 2)! x^k} \right| =
+\lim_{k \to \infty} \frac{k+1}{ 4 k + 2} |x| = \frac{|x|}{4}
+\end{equation*}
+The radius of convergence is 4.
 \end{solution}
 
 \part[1] $\displaystyle  \sum_{k=0}^\infty k ! x^k$
 
 \begin{solution}[3.0in]
 
+\begin{equation*}
+\lim_{k \to \infty} \left |  \frac{(k+1)! x}{k!}   \right| =
+\lim_{k \to \infty} (k+1) |x| = \begin{cases} \infty & x \neq 0 \\ 0 & x = 0 \end{cases}
+\end{equation*}
+The radius of convergence is zero.
 \end{solution}
 
 
@@ -132,8 +146,9 @@
 \question [1] Find the numerical value of  \(\displaystyle \sum_{k=3}^\infty \left(\frac{1}{10} \right)^k \).
 \begin{solution}%[2.5in]
 \[
- \sum_{k=4}^\infty \left(\frac{1}{2} \right)^k = \sum_{k=0}^\infty \left(\frac{1}{2} \right)^{k + 4}
-  = \frac{1}{2^4} \sum_{k=0}^\infty \left(\frac{1}{2} \right)^{k} = \frac{2}{2^4} = \frac{1}{8}.
+ \sum_{k=3}^\infty \left(\frac{1}{10} \right)^k = \sum_{k=3}^\infty \left(\frac{1}{10} \right)^{k + 3}
+  = \frac{1}{10^3} \sum_{k=0}^\infty \left(\frac{1}{10} \right)^{k} = \frac{1}{10^3} \frac{1}{1- \frac{1}{10}} = 
+  \frac{1}{900}
 \]
 \end{solution}
 \newpage
@@ -150,7 +165,7 @@
 
 \begin{solution}%[3.0in]
 \[
- \operatorname{Li}_4(0) = \sum_{k=1}^\infty \frac{0^k}{k^2} = 0.
+ \operatorname{Li}_4(0) = \sum_{k=1}^\infty \frac{0^k}{k^4} = 0.
 \]
 \end{solution}
 
@@ -158,12 +173,12 @@
 
 \part [1] Find the \emph{numerical value} of \(\operatorname{Li}_4^\prime(0)\).
 \begin{solution}[3.0in]
-
+We have $\operatorname{Li}_4 (x) = x + \frac{x^2}{2^4} + \cdots$, so $\operatorname{Li}_4^\prime(0) =1$.
 \end{solution}
 
 \part [1] Find the \emph{numerical value} of \(\operatorname{Li}_4^{\prime \prime}(0)\).
 \begin{solution}[3.0in]
-
+We have $\operatorname{Li}_4 (x) = x + \frac{x^2}{2^4} + \cdots$, so $\operatorname{Li}_4^{\prime \prime}(0) =\frac{1}{8}$.
 \end{solution}
 \end{parts}
 
@@ -175,16 +190,16 @@ justify your work quoting theorems from our class.
 \part [1] \(\displaystyle \sum_{k=1}^\infty \frac{1}{8 k + 2} \)
 
 
-\begin{solution}[2.5in] This is the harmonic series. It
-diverges. Alternatively, the integral test applies and tells us that
-the series diverges; the ratio test gives no information.
+\begin{solution}[2.5in] Since $\int_1^\infty \frac{1}{8 x + 2} \, \mathrm{d} x$ divereges, 
+the series $\displaystyle \sum_{k=1}^\infty \frac{1}{8 k + 2}$ diverges.
 \end{solution}
 
 \part[1]  \(\displaystyle \sum_{k=0}^\infty (2 k + 1) (-1)^k  \)
 
 
-\begin{solution}%[2.5in] The sequence \(k \mapsto (-1)^k\) does not converge to
-zero; therefore the series \(\sum_{k=0}^\infty (-1)^k \) diverges.
+\begin{solution}%[2.5in] 
+The sequence \(k \mapsto (-1)^k (2 k + 1) \) does not converge to
+zero; therefore the series \(\sum_{k=0}^\infty (2 k + 1) (-1)^k \) diverges.
 The alternating series test, the integral test, and the ratio test
 either do not apply or they give no information.
 \end{solution}
@@ -197,11 +212,11 @@ either do not apply or they give no information.
 check three things.
 \begin{itemize}
 
-\item[\ding{52}] Is \(k \to \frac{1}{1+k}\) a positive sequence? {\bf Yes},
-\item [\ding{52}] Is \(k \to \frac{1}{1+k}\) a decreasing sequence? 
+\item[\ding{52}] Is \(k \to \frac{1}{2^k + 3^k}\) a positive sequence? {\bf Yes},
+\item [\ding{52}] Is \(k \to \frac{1}{2^k + 3^k}\) a decreasing sequence? 
 {\bf Yes}
 
-\item [\ding{52}] does  \(k \to \frac{1}{1+k}\) converge to zero? {\bf Yes}
+\item [\ding{52}] does  \(k \to \frac{1}{2^k + 3^k}\) converge to zero? {\bf Yes}
 \end{itemize}
 \end{solution}
 
@@ -221,14 +236,18 @@ Define a wild and crazy function ${Q}$ as  ${Q(x)} = \int_0^x \cos \left(t^4 \ri
 \part [1] Find a power series centered at zero for ${Q}$.
 
 \begin{solution}%[3.5in]
-
+\begin{equation*}
+Q(x) =  \int_0^x \sum_{k=0}^\infty \frac{(-1)^k}{(2 k)! } t^{2 k}  \, \mathrm{d} t
+ = \sum_{k=0}^\infty \frac{(-1)^k}{(2 k)!  (2k) } x^{2 k + 1}
+\end{equation*}
 \end{solution}
 
 \newpage
 
 \part [1] Find the radius of convergence for the power series you found in the previous question.
 
-\begin{solution}[3.5in]
+\begin{solution}[3.5in] Since the radius of convergence of  $\sum_{k=0}^\infty \frac{(-1)^k}{(2k)!} x^{2 k}$
+is infinty, so is the radius of convergence for the PS for $Q$.
 
 
 \end{solution}
@@ -241,6 +260,11 @@ Define a wild and crazy function ${Q}$ as  ${Q(x)} = \int_0^x \cos \left(t^4 \ri
    \sum_{k = 0}^{42} \binom{\frac{1}{2}} {k} \binom{\frac{1}{2}} {42-k}.
 \end{equation*}
    
+   \begin{solution}  Let's define $a_k = \binom{\frac{1}{2}} {k}$. We have
+   $\sqrt{1+x} \sqrt{1+x} = 1 + x = \sum_{k=0}^\infty c_k x^k$, where $c_k = \sum_{\ell = 0}^k a_\ell a_{k-\ell}$.
+   So $\sum_{k = 0}^{42} \binom{\frac{1}{2}} {k} \binom{\frac{1}{2}} {42-k} = c_{42}$.  But $1 + x = 1 + x + 0 x^2 + 0 x^3 + \cdots$, so $c_{42} = 0$.
+   
+   \end{solution}
   
 \end{questions}
 \end{document}
