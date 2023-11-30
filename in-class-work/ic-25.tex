@@ -1,0 +1,133 @@
+\documentclass[12pt,fleqn]{exam}
+\usepackage{amssymb}
+\usepackage[intlimits]{amsmath}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+\usepackage[final]{microtype}
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[]{fourier}
+
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+\newcommand{\erf}{\mathrm{erf}}
+\newcommand{\e}{\mathrm{e}}
+
+\usepackage{graphicx}
+\usepackage{color}
+%\shadedsolutions
+%\definecolor{SolutionColor}{rgb}{1,0.72,0.46} %{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+
+
+     
+\newcommand{\quiz}{25}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Thursday 30 November 13:20}
+\newcommand{\class}{MATH 202, Fall \the\year}
+\begin{document}
+\large
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work  \quiz}}
+\textbf{Row and Seat}:\hrulefill\\
+
+
+
+\noindent  In class work  \textbf{\quiz}  has questions \textbf{1} 
+through  \textbf{\numquestions} \/ with a total of 
+\textbf{\numpoints\/} points. Turn in your work at the end of class 
+\emph{on paper}. This assignment is due at \emph{\due}.
+
+\vspace{0.1in}
+
+\noindent \emph{“Time is never wasted if you remember to bring along something to read.”}
+ \\ \phantom{xxx} \hfill {\sc Thomas Pynchon}
+
+
+\begin{questions} 
+    
+  
+
+
+
+\question In polar coordinates, an equation of a curve 
+$\mathcal{C}$ is $r = \sqrt{\frac{1}{4} - \sin(\theta)^2}$.
+
+\begin{parts}
+
+\part[2] Use Desmos to draw a graph of this polar equation. As best you
+can, reproduce the graph here.
+
+\begin{solution}[2.5in]
+    
+\end{solution}
+
+\part[2] Find all solutions to $0 = \sqrt{\frac{1}{4} - \sin(\theta)^2}$.
+These solutions give all the points on the curve that intersect the origin
+with $\theta \in [0, 2 \uppi]$. To find \emph{all} solutions to this
+equation, use the \emph{source of all knowledge} (\textbf{SOAK}), that is, 
+the unit circle.
+
+\begin{solution}%[2.5in]
+    
+\end{solution}
+
+\newpage
+
+\part[2] For each intersection of $\mathcal{C}$ with the origin, find
+the slope of the tangent line. Using Desmos, verify that 
+you have found the correct tangent lines. \textbf{Note:} Desmos
+refuses\footnote{I think Desmos should hire some UNK CS graduates 
+to fix this.} to graph a polar curve of the form $\theta = f(r)$. 
+And it particular, it will not graph the polar curve 
+$\theta = \frac{\uppi}{4}$,  for example. To workaround this,
+you'll need to find the cartesian equation of the tangent lines.
+
+\end{parts}
+
+
+\end{questions}
+
+\vfill 
+\noindent \textbf{Optional} For extra fun, find a cartesian equation of the curve $\mathcal{C}$.
+Show that for $x \in [-\frac{1}{2}, \frac{1}{2}]$, a cartesian
+equation of the curve is $y = \pm \frac{\sqrt{\sqrt{64 {{x}^{2}}+9}-8 {{x}^{2}}-3}}{{{2}^{\frac{3}{2}}}}$.
+And show that the other two solutions are not real. Finally,
+are there any values of $x$ that allow the nested radical 
+$\sqrt{\sqrt{64 {{x}^{2}}+9}-8 {{x}^{2}}-3}$ to denest?
+    
+\end{document}

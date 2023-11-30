@@ -1,1 +1,2 @@
 {"rule":"PASSIVE_VOICE","sentence":"^\\QAlthough the graph is defined by a split rule, it appears to be continuous.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qsolutions to this equation, use the source of all knowledge.\\E$"}
