@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{amssymb}
 \usepackage[intlimits]{amsmath}
 \usepackage{epsfig}
@@ -56,7 +56,7 @@
      
 \newcommand{\quiz}{25}
 \newcommand{\term}{Fall}
-\newcommand{\due}{Thursday 30 November 13:20}
+\newcommand{\due}{Thursday 30 November at 13:20}
 \newcommand{\class}{MATH 202, Fall \the\year}
 \begin{document}
 \large
@@ -70,12 +70,13 @@
 \noindent  In class work  \textbf{\quiz}  has questions \textbf{1} 
 through  \textbf{\numquestions} \/ with a total of 
 \textbf{\numpoints\/} points. Turn in your work at the end of class 
-\emph{on paper}. This assignment is due at \emph{\due}.
+\emph{on paper}. This assignment is due \emph{\due}.
 
 \vspace{0.1in}
 
-\noindent \emph{“Time is never wasted if you remember to bring along something to read.”}
- \\ \phantom{xxx} \hfill {\sc Thomas Pynchon}
+\noindent \emph{“As we express our gratitude, we must never forget that the highest 
+appreciation is not to utter words, but to live by them.”} 
+  \hfill {\sc John F. Kennedy}
 
 
 \begin{questions} 
@@ -93,17 +94,42 @@ $\mathcal{C}$ is $r = \sqrt{\frac{1}{4} - \sin(\theta)^2}$.
 can, reproduce the graph here.
 
 \begin{solution}[2.5in]
-    
+    The curve is a Lemniscate of Booth. It looks like the infinity 
+    symbol. Its graph is shown below.
+
+    \begin{center}
+        \includegraphics[scale=0.15]{desmos-graph(70).png}
+    \end{center}
+
+    Notice that the natural domain of $r = \sqrt{\frac{1}{4} - \sin(\theta)^2}$
+    is $\theta \in [-\frac{\uppi}{6}, -\frac{\uppi}{6}] \cup 
+    [\frac{5 \uppi}{6}, \frac{7\uppi}{6}]$; outside this 
+    set, the value of $r$ is not real. Desmos recognizes this and skips
+    over the territory where $r$ isn't real. 
+  
 \end{solution}
 
-\part[2] Find all solutions to $0 = \sqrt{\frac{1}{4} - \sin(\theta)^2}$.
-These solutions give all the points on the curve that intersect the origin
-with $\theta \in [0, 2 \uppi]$. To find \emph{all} solutions to this
+\part[2] Find all solutions to $0 = \sqrt{\frac{1}{4} - \sin(\theta)^2}$ 
+with $\theta \in [0, 2 \uppi]$.
+These solutions give all the points on the curve that intersect 
+the origin.  To find \emph{all} solutions to this
 equation, use the \emph{source of all knowledge} (\textbf{SOAK}), that is, 
 the unit circle.
 
-\begin{solution}%[2.5in]
-    
+\begin{solution}%[2.5in] We need to solve
+    \begin{align*}
+        \left [0 = \sqrt{\frac{1}{4} - \sin(\theta)^2} \right ] &=
+            \left [ 0=\frac{1}{4} - \sin(\theta)^2 \right ], && (\text{square root fact}) \\
+            &= \left [ -\frac{1}{2}=\sin(\theta) \lor
+            -\frac{1}{2}=\sin(\theta)
+            \right ], && (\text{factor and solve})\\
+            &= \left[ \theta=-\frac{\uppi}{6},
+                 \theta=\frac{\uppi}{6},\theta=\frac{5\uppi}{6},
+                 \theta=\frac{7 \uppi}{6} \right]. && (\text{SOAK})
+    \end{align*}
+But I asked for the solutions in the interval $[0, 2 \uppi)$,
+so I need to change $\theta=-\frac{\uppi}{6}$ to 
+$\theta=\frac{11 \uppi}{6}$.
 \end{solution}
 
 \newpage
@@ -117,6 +143,29 @@ And it particular, it will not graph the polar curve
 $\theta = \frac{\uppi}{4}$,  for example. To workaround this,
 you'll need to find the cartesian equation of the tangent lines.
 
+\begin{solution}
+    For the polar curve $r = f(\theta)$ and assuming $f(\theta_o) = $, 
+    we have
+    \begin{equation}
+      \left. \frac{\mathrm{d} y}{\mathrm{d}x } \right \vert_{\theta = \theta_o} =
+        \tan(\theta_o).
+    \end{equation}
+    So the tangents to the curve at the origin are
+    \begin{equation*}
+        y = \tan \left(\frac{\uppi}{6} \right) x, \quad 
+               y = \tan \left (\frac{5\uppi}{6} \right) x. 
+           \end{equation*}
+    Or simplifying these, we have
+    \begin{equation*}
+        y = \frac{1}{\sqrt{3}} x, \quad y = -\frac{1}{\sqrt{3}} x.
+           \end{equation*}
+
+    Here is a picture of the curve along with its tangent lines at
+    the origin.
+           \begin{center}
+    \includegraphics[scale=0.1]{desmos-graph(71).png}
+           \end{center}
+\end{solution}
 \end{parts}
 
 
