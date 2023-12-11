@@ -72,7 +72,7 @@
 
 \begin{flushleft}
   \large
-\textbf{\Numberstringnum{55} Questions for Dr.\ Willis}
+\textbf{\Numberstringnum{56} Questions for Dr.\ Willis}
 \end{flushleft}  
 \normalsize
 %\subsubsection*{FAQ}
@@ -191,6 +191,22 @@ is a number.
  \textbf{Answer} No. Functions and numbers are distinct objects, so a function 
  can \emph{never} be a number. It is possible for infinity to be in the range of a 
  function, for example, \(x \in \reals \mapsto \begin{cases}  x & \mbox{ if } x \neq 2 \\ \infty &  \mbox{ if } x = 2 \end{cases} \).  Although infinity is in the range of this function, the function certainly isn't infinity. Failing to distinguish a function from a number is an example of \emph{conflating}.
+
+ \item \textbf{Question} Since $\int x^3 \, \mathrm{d}x = \frac{1}{4} x^4$,
+  so it follows that $\int \cos(x)^3 \, \mathrm{d}x = \frac{1}{4} \cos(x)^4$, right?
+  
+\textbf{Answer} No, the formulae $\int x^3 \, \mathrm{d}x$
+and $\int \cos(\theta)^3 \, \mathrm{d}\theta$ don't match.
+To match the differential parts $\mathrm{d}x$ and $\mathrm{d} \theta$, we need to match $x$ with $\theta$.
+But to match the integrand, we need to match $x$ with $\cos(\theta)$.
+We can't match $x$ with both $\theta$ and with $\cos(\theta)$.
+Maybe you are thinking of  $\int \cos(x)^3 \, \mathrm{d} \cos(x)$.  This matches with
+$\int x^3 \, \mathrm{d}x$. So $\int \cos(x)^3 \, \mathrm{d} \cos(x) = 
+\frac{1}{4} \cos(x)^4$ is correct.
+
+
+
+
 
  \item \textbf{Question} What do you mean by an identity?
 
