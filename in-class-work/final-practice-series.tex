@@ -1,0 +1,163 @@
+\documentclass[12pt,fleqn]{exam}
+\usepackage{amssymb}
+\usepackage[intlimits]{amsmath}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+\usepackage[final]{microtype}
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[]{fourier}
+
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+\newcommand{\erf}{\mathrm{erf}}
+\newcommand{\e}{\mathrm{e}}
+
+\usepackage{graphicx}
+\usepackage{color}
+%\shadedsolutions
+%\definecolor{SolutionColor}{rgb}{1,0.72,0.46} %{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+
+
+     
+\newcommand{\quiz}{25}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Thursday 30 November at 13:20}
+\newcommand{\class}{MATH 202, Fall \the\year}
+\begin{document}
+\large
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{Exam 4 Practice}}
+\textbf{Row and Seat}:\hrulefill\\
+
+
+
+
+
+\noindent \emph{“We seem to understand the value of oil, timber, minerals and housing, but not the 
+value of unspoiled beauty, wildlife, solitude and spiritual renewal.”}\\
+  $\phantom{xxx}$ \hfill {\sc Calvin (Bill Waterson)}
+
+
+\begin{questions} 
+    
+ 
+\question Find the radius of convergence of each power series
+
+\begin{parts}
+
+    \part $\sum_{k=0}^\infty k! x^k$
+    \begin{solution}[3.5in] For $x \neq 0$, the ratio test gives
+        \begin{align*}
+            \lim_{k \to \infty} \left| 
+                  \frac {(k+1)! x^{k+1}}{ k! x^k} \right| 
+                  &=  \lim_{k \to \infty} |k+1| |x|, \\
+                  &= \infty.
+        \end{align*}
+    So the series  $\sum_{k=0}^\infty k! x^k$ does not converge
+    for any nonzero real number $x$; so the radius of 
+    convergence for $\sum_{k=0}^\infty k! x^k$ is zero.
+
+    \end{solution} 
+    
+    \part $\sum_{k=0}^\infty \frac{5 k+1}{7 k + 2} (x-1)^k$
+    \begin{solution}[3.5in] For $x \neq 1$, we have
+        \begin{align*}
+            \lim_{k \to \infty} \left|  
+                  \frac{5 k + 6}{7 k + 9}
+                  \frac{7 k + 2}{5 k + 1} |x| 
+                     \right| 
+                  &=  |x|
+        \end{align*}
+    So the series $\sum_{k=0}^\infty \frac{5 k+1}{7 k + 2} (x-1)^k$
+    converges when $|x| < 1$. And that makes the radius of convergence
+    1.
+
+    \end{solution}
+
+    \part $\sum_{k=0}^\infty \frac{(3k)!}{(k!)^3} \left(\frac{x}{5}\right)^k$
+    \begin{solution}[3.5in] Let's do some simplifications first; we have
+        \begin{align*}
+              \frac{(3 k +3)!}{ (3k)! } &= \frac{ (3k+1)(3k+2)(3k+3)}, \\
+              \frac{((k+1)!)^3 }{ (k!)^3 } &=  (k+1)^3.
+        \end{align*}
+        Now with these ingredients, we have 
+
+    
+
+    \end{solution}
+
+\end{parts}
+
+\question Find a power series representation for the function 
+$G(x) = \int_0^x \exp(-t^4) \, \mathrm{d} t$.  Also, find the
+radius of convergence of this power series.
+\begin{solution}[3.5in]
+
+\end{solution}
+
+\question Determine if each series converges or diverges.
+
+\begin{parts}
+
+    \part $\sum_{k=0}^\infty \frac{1}{1+k^4}$
+    \begin{solution}[3.5in]
+
+    \end{solution}
+
+    \part $\sum_{k=0}^\infty (-1)^k \frac{1}{1+k}$
+    \begin{solution}[3.5in]
+
+    \end{solution}
+
+
+    \part $\sum_{k=0}^\infty \frac{\sin(k)}{1+k^2}$
+    \begin{solution}[3.5in]
+
+    \end{solution}
+
+
+
+\end{parts}
+
+\end{questions}
+\end{document}
+
+
+
+
