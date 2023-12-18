@@ -58,9 +58,9 @@
 \thecy \,\,}
 
 
-\frenchspacing
+%\frenchspacing
 \usepackage[margin=0.5in]{geometry}
-\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[final]{microtype}
 
 \usepackage[american]{babel}
 \usepackage[T1]{fontenc}
@@ -72,7 +72,8 @@
 
 \begin{flushleft}
   \large
-\textbf{\Numberstringnum{55} Questions for Dr.\ Willis}
+\textbf{\Numberstringnum{56} Questions for Dr.\ Willis} \\
+\emph{Updated \today}
 \end{flushleft}  
 \normalsize
 %\subsubsection*{FAQ}
@@ -112,7 +113,7 @@ matter--either way is OK.''
   simplified is tough. But if you  (a) do all rational arithmetic (b) combine
   all like terms, (c) simplify all ``famous'' values of functions, 
   for example $\cos(0)=1$ and $\sqrt{81} = 9$, and (d) make an effort
-  to simplify all vanishing subexpressions to zero (for example, 
+  to simplify all vanishing sub expressions to zero (for example, 
   $\frac{1}{\sqrt{2}} - \frac{\sqrt{2}}{2}$ simplifies to zero), you'll be OK.
 
 \item  \textbf{Question}  Will  we review the entire dead week?
@@ -123,7 +124,7 @@ likely that we'll need to use at least part of dead week to cover
 new material. 
 
 
-\item  \textbf{Question}  Will you give us a review before every exam?
+\item  \textbf{Question}  Will you give us a review before every midterm exam?
 
 \textbf{Answer} Yes. The review will likely not have a complete solution key, 
 but yes there will be a review. The review for the final exam will be the union 
@@ -192,6 +193,22 @@ is a number.
  can \emph{never} be a number. It is possible for infinity to be in the range of a 
  function, for example, \(x \in \reals \mapsto \begin{cases}  x & \mbox{ if } x \neq 2 \\ \infty &  \mbox{ if } x = 2 \end{cases} \).  Although infinity is in the range of this function, the function certainly isn't infinity. Failing to distinguish a function from a number is an example of \emph{conflating}.
 
+ \item \textbf{Question} Since $\int x^3 \, \mathrm{d}x = \frac{1}{4} x^4$,
+  it follows that $\int \cos(\theta)^3 \, \mathrm{d} \theta = \frac{1}{4} \cos(\theta)^4$, right?
+  
+\textbf{Answer} No. The formulae $\int x^3 \, \mathrm{d}x$
+and $\int \cos(\theta)^3 \, \mathrm{d}\theta$ don't match.
+To match the differential parts $\mathrm{d}x$ and $\mathrm{d} \theta$, we need to match $x$ with $\theta$.
+But to match the integrands $x$ and $\cos(\theta)^3$, we need to match $x$ with $\cos(\theta)$.
+We can't simultaneously match $x$ with both $\theta$ and with $\cos(\theta)$.
+Maybe you are thinking of  $\int \cos(x)^3 \, \mathrm{d} \cos(x)$.  This matches with
+$\int x^3 \, \mathrm{d}x$. So $\int \cos(x)^3 \, \mathrm{d} \cos(x) = 
+\frac{1}{4} \cos(x)^4$ is correct.
+
+
+
+
+
  \item \textbf{Question} What do you mean by an identity?
 
 \textbf{Answer} An equation is an identity provided its solution set is
@@ -209,7 +226,7 @@ is an identity because both its solution set and its natural domain are \(\reals
 \item \textbf{Question} To prove that an equation is an identity, I was
  told to ``only work with one side at a time.'' Why is that?
 
- \textbf{Answer} First, to prove that an equation is an identity,
+ \textbf{Answer} To prove that an equation is an identity,
  we need to (i) solve the equation and (ii) show that its solution
  set is the same as its natural domain. During the process of solving,
  we can't do anything that enlarges the solution set, but doing anything
@@ -311,7 +328,10 @@ The formula for the sequence might be \(k \in \mathbf{Z}_{\geq 0} \mapsto \begin
 
 \item  \textbf{Question} Is it true that \(1 + 2 + 3 + \cdots = -1/12\)?
 
-  \textbf{Answer}  Maybe. For one meaning of the concept of convergence, the answer is yes; for other meanings, including the meaning that you will learn (or learned)  in calculus, the answer is no.  Some physical theories use the notion of convergence for which it is true that \(1 + 2 + 3 + \cdots = -1/12\).
+  \textbf{Answer}  Maybe. For one meaning of convergence, the answer is yes; for other meanings, including the 
+  meaning that you will learn (or learned)  in calculus, the answer 
+  is no.  Some physical theories use the notion of convergence 
+  for which it is true that \(1 + 2 + 3 + \cdots = -1/12\).
 
 \item  \textbf{Question} Is \(\sqrt{9} = \pm 3\)?
 

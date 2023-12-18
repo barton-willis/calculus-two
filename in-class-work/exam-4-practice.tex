@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{amssymb}
 \usepackage[intlimits]{amsmath}
 \usepackage{epsfig}
@@ -82,15 +82,18 @@ the stars each night, I’ll bet they’d live a lot differently.”}\\
       eliminate the parameter $t$. Sketch the resulting curve in
       the $xy$ cartesian coordinate system.
 
-\begin{solution}[2.5in]
+\begin{solution}[2.5in] Solving $  x = 3 t$ for $t$ yields $t = x/3$.
+  Substituting this into  $y = 9 t^2 + t$ gives $y = x^2 + x / 3$.
+  For a graph, try Desmos.
 \end{solution}
 
 \question For the parametricaly defined curve $\begin{cases}
     x = 3 \cos(t) \\ y = 9 \sin(t) \end{cases} \, 0 \leq  t \leq 2 \uppi$,
     eliminate the parameter $t$. Sketch the resulting curve in
-    the $xy$ cartesian coordinate sytem.
+    the $xy$ cartesian coordinate system.
 
 \begin{solution}%[2.5in]
+  $(x/3)^2 + (y/9)^2 = 1$.  For a graph, try Desmos.
 \end{solution}
 
 \newpage
@@ -100,6 +103,7 @@ the stars each night, I’ll bet they’d live a lot differently.”}\\
 numerical value of $\displaystyle 
 \left . \frac{\mathrm{d} y}{\mathrm{d}x} \right |_{x=2,y=4}$
 \begin{solution}[3.5in]
+  $\left . \frac{\mathrm{d} y}{\mathrm{d}x} \right |_{x=2,y=4} = 0$.
 \end{solution}
 
 \question For the parametrically defined curve 
@@ -109,6 +113,7 @@ of $\left . \frac{\mathrm{d} y}{\mathrm{d}x} \right |_{t=3}$
 and $\left . \frac{\mathrm{d}^2 y}{\mathrm{d} x^2} \right |_{t=3}$.
 
 \begin{solution}%[3.5in]
+  See your class notes.
 \end{solution}
 
 \newpage 
@@ -116,12 +121,19 @@ and $\left . \frac{\mathrm{d}^2 y}{\mathrm{d} x^2} \right |_{t=3}$.
 as a definite integral. Here $a$ is a positive real number.
 
 \begin{solution}[3.5in]
+  $$
+  \sqrt{2}\, \left| a\right|  \int_0^{2 \pi}   \sqrt{1-\sin{(theta)}}
+  \, \mathrm{d} \theta.
+  $$
 \end{solution}
 
 \question Find all points on the polar curve $r = 3 - 2 \sin(\theta)$
 that have a horizontal tangent line.
 
 \begin{solution}%[3.5in]
+ $\theta= \frac{\pi}{2}, \theta= \frac{\pi}{2},
+  \theta = \operatorname{arcsin}\left( \frac{3}{4}\right) ,
+  \theta = \pi - \operatorname{arcsin}\left( \frac{3}{4}\right)$
 \end{solution}
 
 \newpage 
@@ -129,10 +141,12 @@ that have a horizontal tangent line.
 $r = 3 - 2 \sin(\theta)$
 
 \begin{solution}[3.5in]
+ $\frac{11}{2} \pi.$
 \end{solution}
 
 \question Find the area bounded by the polar curve $r = \cos(4 \theta)$
 \begin{solution}[3.5in]
+  $\frac{\pi}{2}$
 \end{solution}
 
 
